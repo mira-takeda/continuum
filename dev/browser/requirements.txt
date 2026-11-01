@@ -1,0 +1,2 @@
+# Dev-only browser test dependency. Never imported by server.py or memory/.
+playwright

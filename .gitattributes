@@ -1,0 +1,2 @@
+# Normalize text files on commit; no byte rewrites of history.
+* text=auto

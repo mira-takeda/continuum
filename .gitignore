@@ -1,0 +1,16 @@
+# Runtime state (created on first run; never commit).
+data/
+
+# Python.
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Dev browser-test artifacts.
+dev/browser/shots/
+dev/browser/server_*.log
+
+# OS residue.
+.DS_Store
+Thumbs.db
