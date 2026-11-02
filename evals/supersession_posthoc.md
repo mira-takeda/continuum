@@ -61,10 +61,11 @@ sup metric lacks that forgiveness.
 Full answer texts are in `results.json` (`results.S1/S2`, category
 `corrections`); histories in `tasks/corrections.json`.
 
-Observation (not a failure): S2 corr-1 opens with a hedge
-("I don't have a restaurant choice recorded") before giving the right
-answer. Retrieval still surfaced the correct entry; sup does not test
-hedging, so this stays a scorer false negative.
+Caveat: S2 corr-1 opens with an incorrect uncertainty statement
+("I don't have a restaurant choice recorded") before giving the correct
+updated answer. Retrieval did surface the correct entry, so on the
+supersession question itself this stays a scorer false negative - but
+the opening sentence is wrong and is recorded here explicitly.
 
 ## Corrected reading
 
@@ -74,26 +75,29 @@ Corrected scorer (`posthoc_supersede.py`, separate file): strip
 ("not ", "dropped", …) is present. The marker list is reused exactly —
 not extended post-hoc to reach a nicer number.
 
-| system | frozen sup (preregistered) | corrected sup (post-hoc) | manual correct |
-|--------|---------------------------|--------------------------|----------------|
-| S1 | 3/8 = 0.375 | 6/8 = 0.75 | 8/8 |
-| S2 | 2/8 = 0.25 | 6/8 = 0.75 | 8/8 |
+| system | frozen sup (preregistered) | corrected sup (post-hoc) |
+|--------|---------------------------|--------------------------|
+| S1 | 3/8 = 0.375 | 6/8 = 0.75 |
+| S2 | 2/8 = 0.25 | 6/8 = 0.75 |
 
 The frozen S1-over-S2 sup gap (one probe: corr-5 citation
 contamination) is itself an artifact; under the corrected reading both
-systems tie at 6/8 mechanical and 8/8 manual.
+systems tie at 6/8 mechanical.
 
 Two probes (corr-6, corr-8) defeat even the corrected mechanical
 scorer: no substring rule can tell "Madrid as superseded birthplace"
 from "Madrid as current grown-up place", or "wet" as current method
 from "wet" as failed method. Only history-aware human reading resolves
-them — which is why the manual column exists and why it is labeled
-manual.
+them; see the human audit below, which is annotations, not a third scorer.
 
-## Genuine remaining failures
+## Human audit
 
-None. All 11 frozen sup failures (5 S1 + 6 S2) are scorer artifacts.
-Ambiguous: none.
+No substantive supersession failures were found in manual review: all
+16 answers give the correct updated value, so all 11 frozen sup
+failures (5 S1 + 6 S2) are scorer artifacts. Ambiguous: none.
+
+Caveat: S2 corr-1 opens with an incorrect uncertainty statement
+before the correct updated answer (see per-probe table).
 
 ## What this benchmark is (and is not)
 

@@ -46,6 +46,8 @@ The frozen sup rule (`new` present AND `old` textually absent,
 not Casa Loma" or "chose JAX and dropped PyTorch". A separate post-hoc
 audit (`evals/supersession_posthoc.md`, regenerated read-only by
 `evals/posthoc_supersede.py`) classifies all 11 frozen sup failures as
-scorer artifacts: corrected mechanical reading S1 = S2 = 6/8, manual
-correct 8/8 for both, zero genuine model/retrieval failures. The frozen
-scores above are unchanged and remain the preregistered result.
+scorer artifacts: corrected mechanical reading S1 = S2 = 6/8. Human
+audit found no substantive supersession failures (all 16 answers give
+the correct updated value; one caveat: S2 corr-1 opens with an
+incorrect uncertainty statement). The frozen scores above are unchanged
+and remain the preregistered result.

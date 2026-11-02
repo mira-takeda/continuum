@@ -37,12 +37,17 @@ def corrected_sup(answer, new, old):
     return 1 if any(m in a for m in MARKERS) else 0
 
 
-# Manual audit verdicts: (verdict, reason). verdict in
-# {"pass", "scorer-false-negative"}. Decided by reading history + answer.
+# Human audit annotations: (verdict, reason). These are human judgments from
+# reading history + answer, NOT an automatic measurement and NOT a third
+# "manual scorer" - do not present counts over them as a score.
 MANUAL = {
     # corr-1: "Casa Linda, not Casa Loma" — textbook corrective answer.
     ("S1", "corr-1"): ("scorer-false-negative", "corrective 'not X' phrasing"),
-    ("S2", "corr-1"): ("scorer-false-negative", "corrective 'not X' phrasing"),
+    # Caveat: the S2 answer opens with an incorrect uncertainty statement
+    # ("I don't have a restaurant choice recorded") before giving the
+    # correct updated answer.
+    ("S2", "corr-1"): ("scorer-false-negative",
+                       "corrective 'not X' phrasing; opens with incorrect uncertainty"),
     # corr-2: probe asks "what did we DROP?" — naming PyTorch is required.
     ("S1", "corr-2"): ("scorer-false-negative", "probe demands naming old value"),
     ("S2", "corr-2"): ("scorer-false-negative", "probe demands naming old value"),
@@ -91,8 +96,7 @@ def main():
             rows.append((r["id"], r["score"], r["supersede_ok"], c, v, reason))
         print(f"== {sys}: frozen sup "
               f"{sum(x[2] for x in rows)}/8 | corrected sup "
-              f"{sum(x[3] for x in rows)}/8 | manual correct "
-              f"{sum(1 for x in rows if x[4] in ('pass', 'scorer-false-negative'))}/8")
+              f"{sum(x[3] for x in rows)}/8")
         for pid, score, f, c, v, reason in rows:
             print(f"  {pid}: score={score} frozen_sup={f} corrected_sup={c} "
                   f"manual={v} ({reason})")
@@ -101,7 +105,9 @@ def main():
         print(f"FROZEN MISMATCHES: {mismatch} (investigate before trusting this)")
         return 1
     print("frozen recomputation matches results.json on all 16 records.")
-    print("genuine model/retrieval failures: none. ambiguous: none.")
+    print("No substantive supersession failures were found in manual review:")
+    print("all 16 answers give the correct updated value. Caveat: S2 corr-1")
+    print("opens with an incorrect uncertainty statement before the right answer.")
     return 0
 
 
