@@ -25,6 +25,7 @@ sys.path.insert(0, ROOT)
 
 from memory import access, approvals as approvals_mod
 from memory import core as core_mod, extract as extract_mod, index as index_mod
+from memory import delivery as delivery_mod
 from memory import projects as projects_mod
 from memory import retrieve as retrieve_mod, store
 from memory import turn as turn_mod
@@ -657,9 +658,25 @@ def run_turn_sse(handler, bid, message, attachments=None):
         # Product-only prefix: project ops are instructions, not memory, so they
         # lead the prompt instead of sitting inside <personal-memory>. The shared
         # turn core is untouched; evals never see this prefix.
-        full = turn_mod.build_turn_text(ROOT, message, ret, idx, proj_section, leak_guard=True)
-        if ops_help:
-            full = "<continuum-system>\n" + ops_help + "\n</continuum-system>\n\n" + full
+        try:
+            plan = delivery_mod.plan_turn(ROOT, sid=sid, bid=bid, message=message,
+                                          ret=ret, idx=idx, proj_section=proj_section,
+                                          ops_help=ops_help)
+            full = plan["full"]
+        except Exception as e:
+            try:
+                delivery_mod.invalidate(ROOT, sid)
+            except Exception:
+                pass
+            full = turn_mod.build_turn_text(ROOT, message, ret, idx, proj_section,
+                                            leak_guard=True)
+            if ops_help:
+                full = ("<continuum-system>\n" + ops_help + "\n</continuum-system>\n\n"
+                        + full)
+            plan = {"mode": "legacy-fallback", "commit": None,
+                    "stats": {"mode": "legacy-fallback", "added_chars": len(full),
+                              "error": str(e)[:200]}}
+            emit({"t": "delivery-fallback", "error": str(e)[:300]})
         if pre_note:
             full += "\n\n" + pre_note
         att_block = att_prompt_block(attachments or [])
@@ -679,11 +696,17 @@ def run_turn_sse(handler, bid, message, attachments=None):
             if ev.get("t") == "turn-started":
                 turn_id = ev.get("turn_id")
                 ACTIVE_TURNS[bid] = turn_id
+                if plan.get("commit"):
+                    try:
+                        delivery_mod.commit(ROOT, sid, plan["commit"])
+                    except Exception:
+                        pass  # state stays old; next turn re-sends (correct)
                 emit({"t": "started", "session_id": sid, "turn_id": turn_id,
                       "provider": host.provider,
                       "model": getattr(host, "model", None) or "muse-default",
                       "opened": ret["opened"], "paths": ret["paths"],
                       "shortlist": ret["shortlist"], "deep": ret["deep"],
+                      "delivery": plan.get("stats"),
                       "attachments": attachments or []})
                 continue
             if ev.get("t") == "approval":
@@ -738,6 +761,10 @@ def run_turn_sse(handler, bid, message, attachments=None):
         text = summary["text"]
         shown_text = "".join(shown)
         tok = summary["usage"] or {}
+        try:
+            delivery_mod.note_usage(ROOT, sid, tok.get("promptTokens"))
+        except Exception:
+            pass  # compaction guard is best-effort; state stays conservative
         model_name = f"muse-code/{muse_version() or 'unknown'}"
         pre_done = set()
         for o in (pre_ops or []):
@@ -922,7 +949,12 @@ def pro_control(host, sid, op, args):
     if op == "sideChat":
         return host.side_chat(sid)
     if op == "compact":
-        return host.compact_session(sid)
+        res = host.compact_session(sid)
+        try:
+            delivery_mod.invalidate(ROOT, sid)  # context rewritten: bootstrap again
+        except Exception:
+            pass
+        return res
     if op == "skillActivation":
         sel = (a.get("selector") or "").strip()
         scope, act = a.get("scope"), a.get("activation")
@@ -1431,6 +1463,10 @@ class H(BaseHTTPRequestHandler):
                 os.remove(SESSIONS)
             if os.path.exists(TRANSCRIPTS):
                 os.remove(TRANSCRIPTS)
+            try:
+                os.remove(delivery_mod.delivery_path(ROOT))
+            except OSError:
+                pass
             att_dir = os.path.join(P["data"], ATT_SUBDIR)
             if os.path.isdir(att_dir):
                 shutil.rmtree(att_dir)

@@ -31,6 +31,8 @@ def seed_state(tmp):
                      ["t1"], "conversation", "probe")
     with open(P["usage"], "w") as f:
         f.write('{"probe": 1}\n')
+    with open(os.path.join(data, "delivery.json"), "w") as f:
+        f.write('{"run_id": "probe", "sids": {"s1": {}}}\n')
     server_mod.save_json(os.path.join(data, "sessions.json"), {"demo": {"a": 1}})
     server_mod.save_json(os.path.join(data, "transcripts.json"),
                          {"demo": [{"user": "hi", "muse": "hello"}]})
@@ -102,7 +104,7 @@ class ResetTest(unittest.TestCase):
             self.assertEqual(json.load(f)["entries"], {})
         with open(os.path.join(data, "core.json")) as f:
             self.assertEqual(json.load(f)["entry_ids"], [])
-        for gone in ("log.jsonl", "usage.jsonl", "sessions.json",
+        for gone in ("log.jsonl", "usage.jsonl", "delivery.json", "sessions.json",
                      "transcripts.json",
                      "projects.json", "workspace.json",
                      "project_sessions.json"):
