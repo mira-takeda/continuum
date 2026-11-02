@@ -1327,8 +1327,17 @@ class H(BaseHTTPRequestHandler):
                     os.remove(P[k])
             if os.path.exists(SESSIONS):
                 os.remove(SESSIONS)
+            if os.path.exists(TRANSCRIPTS):
+                os.remove(TRANSCRIPTS)
+            att_dir = os.path.join(P["data"], ATT_SUBDIR)
+            if os.path.isdir(att_dir):
+                shutil.rmtree(att_dir)
             projects_mod.clear_mapping(ROOT)
+            projects_mod.clear_registry(ROOT)
+            projects_mod.clear_workspace(ROOT)
             projects_mod.clear_cache(ROOT)
+            # NOTE: external .continuum.md project files are deliberately NOT
+            # deleted here; they are human-owned project docs, not runtime state.
             if b.get("mode") == "sample":
                 from evals.sample_pack import SEED
                 for s in SEED:

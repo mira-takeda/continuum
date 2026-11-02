@@ -371,6 +371,21 @@ def clear_mapping(root):
         pass
 
 
+def clear_registry(root):
+    """Forget registered projects (external .continuum.md files untouched)."""
+    try:
+        os.remove(os.path.join(_data(root), REGISTRY_FILE))
+    except OSError:
+        pass
+
+
+def clear_workspace(root):
+    try:
+        os.remove(os.path.join(_data(root), WORKSPACE_FILE))
+    except OSError:
+        pass
+
+
 def assemble(root, bid):
     """Project block for the active project only. '' when none. The ONLY
     project content ever injected; unrelated projects never appear."""

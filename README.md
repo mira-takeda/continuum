@@ -181,10 +181,18 @@ are unaffected. Non-shell approval coverage is exercised with
 
 ## Uninstall / reset
 
-- **Forget everything**: stop the server and delete the `data/` directory
-  (or call `POST /api/reset`: `{"mode": "sample"}` reseeds the synthetic
-  demo pack, any other body wipes clean).
-  A restart recreates empty state.
+- **Reset (forget everything Continuum owns)**: stop the server and
+  delete the `data/` directory (or call `POST /api/reset`:
+  `{"mode": "sample"}` reseeds the synthetic demo pack, any other body
+  wipes clean). Reset clears all Continuum-owned local runtime/personal
+  state: encyclopedia entries, derived index/CORE, operation log, usage
+  log, chat sessions, transcripts, staged attachments, Muse session
+  mappings, and the project registry (registered projects, workspace
+  root, per-chat project mapping). A restart recreates empty state.
+- **What reset does NOT delete**: `.continuum.md` files inside your own
+  project folders. Those are human-readable project documents that live
+  with your projects, not Continuum runtime state; edit or delete them
+  yourself if you want them gone.
 - **Uninstall**: delete the repo folder. Continuum writes nothing outside
   it except your own `.continuum.md` files, your staged attachments
   (inside `data/`), and whatever Muse itself stores in its own directories
