@@ -27,32 +27,46 @@ supersession instead of deletion.
 ## Install Muse Code
 
 Continuum does not bundle or silently install Muse. If it is missing, the
-UI tells you so. Install it yourself with the official method:
+UI tells you so. Install it yourself with the official one-line installer
+(docs: <https://dev.meta.ai/docs/muse-code/>):
+
+macOS / Linux:
 
 ```sh
-curl -fsSL https://dev.meta.ai/install.sh | bash
+curl -fsSL https://dev.meta.ai/install.sh | sh
 ```
 
-Docs: <https://dev.meta.ai/docs/muse-code/>
+Windows PowerShell:
+
+```powershell
+irm https://dev.meta.ai/install.ps1 | iex
+```
+
+Then confirm `muse --version` works in a new terminal.
 
 ## Meta login / auth
 
-Auth belongs entirely to Muse. In a terminal, once:
+Auth belongs entirely to Muse. In a terminal, run `muse` once (or
+`muse login`): on first run Muse Code asks you to trust the workspace and
+prompts you to authenticate with a browser sign-in or an API key (reopen
+with `/login` inside an interactive session; billing and full options:
+<https://dev.meta.ai/docs/muse-code/auth>).
 
-```sh
-muse login
-```
+Continuum itself stores no Muse credentials — no keys, tokens or login
+state in its files, `localStorage`, transcripts or memory. But note the
+distinction: anything *you* type or paste into chat (including a secret)
+is your content — it will appear in transcripts, and Muse may keep it in
+memory if it judges it durable. Do not paste secrets into chat.
 
-then follow the Meta account flow. Continuum stores no keys, tokens or
-credentials anywhere — not in files, not in `localStorage`, not in
-transcripts or memory. If the machine is not authenticated, Continuum shows
-a **Connect Meta** banner linking to the official setup page instead of a
-cryptic failure.
+If the machine is not authenticated, Continuum shows a **Connect Meta**
+banner linking to the official setup page instead of a cryptic failure.
 
 ## Python setup
 
 No virtualenv needed for normal use — `server.py` uses the standard library
 only. A venv is only required for the optional dev browser tests:
+
+Windows PowerShell:
 
 ```powershell
 python -m venv .venv
@@ -61,9 +75,18 @@ pip install -r dev/browser/requirements.txt
 python -m playwright install chromium
 ```
 
+macOS / Linux:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r dev/browser/requirements.txt
+python -m playwright install chromium
+```
+
 ## Start
 
-From the repo root:
+From the repo root (`python` on Windows, `python3` on macOS/Linux):
 
 ```powershell
 python server.py
@@ -121,9 +144,13 @@ Superseded with undo. The Memory view and Memory Lab show the index,
 connections, accessibility states (Active/Recent/Deep — reduced
 accessibility, never deletion) and exactly which entries each answer used.
 
-`data/` is portable: copy it to another machine to take your memory with
-you. `data/index.json` and `data/core.json` are derived caches and can be
-rebuilt.
+Entries and transcripts are local **plaintext** Markdown/JSON: readable,
+editable, portable — and not encrypted. `data/entries/` plus
+`data/transcripts.json` move cleanly to another machine, but the rest of
+`data/` is machine-specific: the project registry holds absolute paths and
+Muse session ids are meaningless on another computer. After copying,
+re-register projects (or reset and start fresh). `data/index.json` and
+`data/core.json` are derived caches and rebuild automatically.
 
 ## Projects
 
@@ -133,8 +160,11 @@ approaches). Continuum tracks an active project per conversation: switching
 projects swaps context files without contaminating them, while global user
 memory travels through the encyclopedia. Ask Muse to create projects in
 normal language — it uses its native file tools; Continuum only registers
-and activates what Muse made. Nothing is ever written outside the project
-you mean, and credentials don't belong in `.continuum.md`.
+and activates what Muse made. Note the boundary: the active project
+selects *context* (which `.continuum.md` is read, where project memories
+go) — it is not a filesystem jail. Muse keeps its normal native ability
+to work anywhere on your computer, subject to its own approval flow.
+Credentials don't belong in `.continuum.md`.
 
 ## History
 
@@ -212,7 +242,7 @@ dev/browser/         # Playwright dev smokes (not product runtime)
 
 ## Evals and tests (for contributors)
 
-- Units: `python evals/test_*.py` (12 suites, stdlib + repo only).
+- Units: `python evals/test_*.py` (15 suites, stdlib + repo only).
 - Frozen 48-probe memory comparison lives in `evals/` with its report;
   do not re-tune against it.
 - Browser smokes: `python dev/browser/smoke_<area>.py [--no-start --url …]`

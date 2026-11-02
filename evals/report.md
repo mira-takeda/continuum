@@ -30,3 +30,11 @@ Probes: 48. Runtime: MSP (muse serve) provider=meta model=host-default.
 
 S1 context growth: first probe ~121 tok, last probe ~1346 tok (unbounded).
 S2 context: first probe ~425 tok, last probe ~2175 tok (bounded).
+
+## Note: historical mojibake in raw stored responses
+
+Some raw responses stored in `results.json` predate the UTF-8 transport
+fix and may contain mojibake (UTF-8 decoded as Latin-1). Scores are
+unaffected (frozen keyword scorer); the fixed product path is covered by
+current encoding regression tests (`evals/test_encoding.py`). This note
+is informational only — frozen results are preserved exactly.
