@@ -265,7 +265,7 @@ def turn_lock(bid):
 REAP_TIMEOUT = 12
 
 
-def _reap_orphan_turn(host, sid, turn_id, saw_done):
+def _reap_orphan_turn(host, sid, turn_id, saw_done, bid=None):
     """Best-effort: cancel an orphaned turn and consume its completion.
 
     Called when the turn thread exits WITHOUT having seen done (client
@@ -273,7 +273,12 @@ def _reap_orphan_turn(host, sid, turn_id, saw_done):
     turn's late done poisons the next turn on the same session
     (born-cancelled turn). Returns True when the orphan's done was
     consumed. Never raises; never blocks past REAP_TIMEOUT.
+
+    Detaching ACTIVE_TURNS first means a racing resend takes the queued
+    path (client resubmits later) instead of steering into a dying turn.
     """
+    if bid is not None:
+        ACTIVE_TURNS.pop(bid, None)
     if not turn_id or saw_done or sid is None:
         return False
     try:
@@ -729,7 +734,7 @@ def run_turn_sse(handler, bid, message, attachments=None):
                   "text": f"Turn timed out after {TURN_TIMEOUT}s with no "
                           "completion from Muse. Partial output (if any) is "
                           "kept below; send your message again to retry."})
-            _reap_orphan_turn(host, sid, turn_id, saw_done)
+            _reap_orphan_turn(host, sid, turn_id, saw_done, bid=bid)
         text = summary["text"]
         shown_text = "".join(shown)
         tok = summary["usage"] or {}
@@ -798,7 +803,7 @@ def run_turn_sse(handler, bid, message, attachments=None):
         # Client gone mid-turn: cancel + reap the orphan before releasing
         # the lock so its late done cannot terminate the next turn.
         try:
-            _reap_orphan_turn(host, sid, turn_id, saw_done)
+            _reap_orphan_turn(host, sid, turn_id, saw_done, bid=bid)
         except Exception:
             pass
     except MSPError as e:

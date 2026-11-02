@@ -248,6 +248,17 @@ class ServerFailureTest(unittest.TestCase):
         self.assertTrue(lk.acquire(blocking=False))
         lk.release()
 
+    def test_reap_detaches_active_turn(self):
+        server_mod.ACTIVE_TURNS[self.bid] = "t-r"
+        host = ScriptedHost("s-r", "t-r", [
+            done_frame("s-r", "cancelled", turn_id="t-r"),
+        ])
+        got = server_mod._reap_orphan_turn(host, "s-r", "t-r", False,
+                                           bid=self.bid)
+        self.assertTrue(got)
+        self.assertEqual(host.cancel_calls, [("s-r", "t-r")])
+        self.assertNotIn(self.bid, server_mod.ACTIVE_TURNS)
+
     def test_wait_turn_end(self):
         lk = server_mod.turn_lock(self.bid)
         self.assertTrue(server_mod._wait_turn_end(self.bid, timeout=1))
