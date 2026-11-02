@@ -15,6 +15,7 @@ import time
 import uuid
 
 OFFICIAL_INSTALL_SH = "curl -fsSL https://dev.meta.ai/install.sh | sh"
+OFFICIAL_INSTALL_PS1 = "irm https://dev.meta.ai/install.ps1 | iex"
 OFFICIAL_DOCS = "https://dev.meta.ai/docs/muse-code/"
 OFFICIAL_SETUP = "https://dev.meta.ai/api/auth/login/"
 CLIENT_NAME = "continuum"

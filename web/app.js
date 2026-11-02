@@ -566,7 +566,7 @@ function showSetup(){
   const bar=$('#setupBanner');if(!bar)return;bar.classList.remove('hidden');
   const r=state.runtime||{};
   let msg=t('setupOff'),act=null,href=null;
-  if(r&&r.installed===false){msg=t('setupNoInstall',{sh:r.install_sh||'—'});act=t('setupDocs');href=r.docs||null}
+  if(r&&r.installed===false){msg=t('setupNoInstall',{sh:r.install_cmd||r.install_sh||'—'});act=t('setupDocs');href=r.docs||null}
   else if(r&&r.provider!=='echo'&&!r.logged_in){msg=t('setupLogin');act=t('setupConnect');href=r.setup||null}
   else if(r&&!r.allowance){msg=t('setupNoSub',{auth:r.auth_text||'—'});act=t('setupConnect');href=r.setup||null}
   bar.querySelector('span').textContent=msg;

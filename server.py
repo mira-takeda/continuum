@@ -28,7 +28,8 @@ from memory import core as core_mod, extract as extract_mod, index as index_mod
 from memory import projects as projects_mod
 from memory import retrieve as retrieve_mod, store
 from memory import turn as turn_mod
-from memory.msp import (MSPError, MSPHost, OFFICIAL_DOCS, OFFICIAL_INSTALL_SH,
+from memory.msp import (MSPError, MSPHost, OFFICIAL_DOCS, OFFICIAL_INSTALL_PS1,
+                        OFFICIAL_INSTALL_SH,
                         OFFICIAL_SETUP, auth_status, find_muse, muse_version)
 
 SESSIONS = os.path.join(ROOT, "data", "sessions.json")
@@ -36,6 +37,11 @@ MSP_SESSIONS = os.path.join(ROOT, "data", "msp_sessions.json")
 TRANSCRIPTS = os.path.join(ROOT, "data", "transcripts.json")
 MAX_TRANSCRIPT_TURNS = 500
 TURN_TIMEOUT = 600
+
+
+def install_command():
+    """Platform-correct copyable installer (official flow per OS)."""
+    return OFFICIAL_INSTALL_PS1 if os.name == "nt" else OFFICIAL_INSTALL_SH
 
 # Localhost hardening (audit fix 1): per-process token + Host/Origin checks.
 # The token is generated fresh on every process start, served only inside the
@@ -1002,7 +1008,8 @@ def ui_bootstrap():
                     "provider": provider, "logged_in": st["logged_in"],
                     "allowance": st.get("allowance", False), "auth_text": st["text"][:300],
                     "docs": OFFICIAL_DOCS, "setup": OFFICIAL_SETUP,
-                    "install_sh": OFFICIAL_INSTALL_SH},
+                    "install_sh": OFFICIAL_INSTALL_SH,
+                    "install_cmd": install_command()},
         "workspace": projects_mod.get_workspace(ROOT),
         "projects": projs,
         "history": history,
@@ -1094,6 +1101,7 @@ class H(BaseHTTPRequestHandler):
                 "auth_text": st["text"][:500],
                 "docs": OFFICIAL_DOCS, "setup": OFFICIAL_SETUP,
                 "install_sh": OFFICIAL_INSTALL_SH,
+                "install_cmd": install_command(),
                 "host_alive": bool(HOST is not None and HOST.alive()),
                 "msp_sessions": load_json(MSP_SESSIONS, {})})
         if p == "/api/entries":
@@ -1350,18 +1358,23 @@ class H(BaseHTTPRequestHandler):
             b = self._body()
             if not b.get("approve"):
                 return self._send(403, {"error": "Installation needs explicit approval.",
-                                        "docs": OFFICIAL_DOCS, "install_sh": OFFICIAL_INSTALL_SH})
+                                        "docs": OFFICIAL_DOCS, "install_sh": OFFICIAL_INSTALL_SH,
+                                        "install_cmd": install_command()})
             if find_muse():
                 return self._send(200, {"ok": True, "already": True, "version": muse_version()})
+            if os.name == "nt":
+                # No bash heuristic on Windows: the official flow is the
+                # PowerShell installer, run by the user. Show the exact
+                # copyable command instead of attempting the wrong shell.
+                return self._send(200, {"ok": False,
+                                        "output": "Automatic install is not supported on Windows. "
+                                                  "Run this in PowerShell: " + OFFICIAL_INSTALL_PS1,
+                                        "install_cmd": OFFICIAL_INSTALL_PS1,
+                                        "docs": OFFICIAL_DOCS})
             # Official installer only; never silently.
             try:
-                if os.name == "nt":
-                    r = subprocess.run(["bash", "-lc", OFFICIAL_INSTALL_SH],
-                                       capture_output=True, text=True, timeout=300,
-                                       encoding="utf-8")
-                else:
-                    r = subprocess.run(OFFICIAL_INSTALL_SH, shell=True, capture_output=True,
-                                       text=True, timeout=300, encoding="utf-8")
+                r = subprocess.run(OFFICIAL_INSTALL_SH, shell=True, capture_output=True,
+                                   text=True, timeout=300, encoding="utf-8")
                 out = ((r.stdout or "") + (r.stderr or "")).strip()
                 return self._send(200, {"ok": r.returncode == 0, "output": out[-3000:],
                                         "docs": OFFICIAL_DOCS})
