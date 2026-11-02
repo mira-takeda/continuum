@@ -92,6 +92,17 @@ python -m playwright install chromium
 
 ## Start
 
+Recommended:
+
+- Windows: double-click `Start Continuum.bat`
+- macOS: double-click `Start Continuum.command`
+
+The launcher starts the local server and opens
+<http://127.0.0.1:8137/> in your browser. If a Continuum server is
+already running there, it just opens the browser.
+
+Terminal fallback (developers, custom ports):
+
 From the repo root (`python` on Windows, `python3` on macOS/Linux):
 
 ```powershell
