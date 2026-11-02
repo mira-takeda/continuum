@@ -134,8 +134,10 @@ class HttpEntriesTest(unittest.TestCase):
 
     def post(self, path, obj):
         url = f"http://127.0.0.1:{self.port}{path}"
-        req = urllib.request.Request(url, data=json.dumps(obj).encode("utf-8"),
-                                     headers={"Content-Type": "application/json"})
+        req = urllib.request.Request(
+            url, data=json.dumps(obj).encode("utf-8"),
+            headers={"Content-Type": "application/json",
+                     server_mod.TOKEN_HEADER: server_mod.API_TOKEN})
         try:
             with urllib.request.urlopen(req) as r:
                 return r.status, r.read().decode("utf-8")

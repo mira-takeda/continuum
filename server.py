@@ -12,6 +12,7 @@ the encyclopedia (parsed deterministically, no second LLM).
 import json
 import os
 import re
+import secrets
 import subprocess
 import sys
 import threading
@@ -35,6 +36,50 @@ MSP_SESSIONS = os.path.join(ROOT, "data", "msp_sessions.json")
 TRANSCRIPTS = os.path.join(ROOT, "data", "transcripts.json")
 MAX_TRANSCRIPT_TURNS = 500
 TURN_TIMEOUT = 600
+
+# Localhost hardening (audit fix 1): per-process token + Host/Origin checks.
+# The token is generated fresh on every process start, served only inside the
+# page this process renders, and never persisted (no data/, logs, Git).
+API_TOKEN = secrets.token_urlsafe(32)
+TOKEN_HEADER = "X-Continuum-Token"
+TOKEN_PLACEHOLDER = "__CONTINUUM_TOKEN__"
+LOCAL_HOSTS = {"localhost", "127.0.0.1", "::1"}
+SEC_HEADERS = {"X-Content-Type-Options": "nosniff",
+               "Referrer-Policy": "no-referrer",
+               "X-Frame-Options": "DENY",
+               "Content-Security-Policy": "frame-ancestors 'none'"}
+
+
+def _host_ok(host_hdr):
+    if not host_hdr:
+        return True  # non-browser clients; the token still guards mutations
+    h = host_hdr.strip().lower().split(",")[0].strip()
+    if h.startswith("["):
+        h = h[1:].split("]")[0]
+    else:
+        h = h.split(":")[0]
+    return h in LOCAL_HOSTS
+
+
+def _origin_ok(headers):
+    for k in ("Origin", "Referer"):
+        v = headers.get(k)
+        if v:
+            try:
+                host = (urllib.parse.urlparse(v).hostname or "").lower()
+            except Exception:
+                return False
+            if host not in LOCAL_HOSTS:
+                return False
+    return True
+
+
+def _token_ok(headers):
+    try:
+        return secrets.compare_digest(headers.get(TOKEN_HEADER, "").encode("ascii"),
+                                      API_TOKEN.encode("ascii"))
+    except Exception:
+        return False
 
 HOST = None
 HOST_LOCK = threading.Lock()
@@ -969,13 +1014,34 @@ def ui_bootstrap():
 
 
 class H(BaseHTTPRequestHandler):
-    def _send(self, code, obj, ctype="application/json; charset=utf-8"):
+    def _send(self, code, obj, ctype="application/json; charset=utf-8", extra=None):
         body = json.dumps(obj).encode() if isinstance(obj, (dict, list)) else obj
         self.send_response(code)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
+        for k, v in SEC_HEADERS.items():
+            self.send_header(k, v)
+        for k, v in (extra or {}).items():
+            self.send_header(k, v)
         self.end_headers()
         self.wfile.write(body)
+
+    def _check_host(self):
+        if not _host_ok(self.headers.get("Host")):
+            self._send(403, {"error": "forbidden host"})
+            return False
+        return True
+
+    def _check_mutation(self):
+        if not self._check_host():
+            return False
+        if not _origin_ok(self.headers):
+            self._send(403, {"error": "forbidden origin"})
+            return False
+        if not _token_ok(self.headers):
+            self._send(403, {"error": "missing or invalid api token"})
+            return False
+        return True
 
     def _body(self):
         try:
@@ -985,9 +1051,14 @@ class H(BaseHTTPRequestHandler):
         return json.loads(self.rfile.read(n).decode() or "{}") if n else {}
 
     def do_GET(self):
+        if not self._check_host():
+            return
         p = urllib.parse.urlparse(self.path).path
         if p in ("/", "/index.html"):
-            return self._send(200, open(os.path.join(ROOT, "web", "index.html"), "rb").read(), "text/html; charset=utf-8")
+            with open(os.path.join(ROOT, "web", "index.html"), encoding="utf-8") as f:
+                html = f.read().replace(TOKEN_PLACEHOLDER, API_TOKEN)
+            return self._send(200, html.encode("utf-8"), "text/html; charset=utf-8",
+                              extra={"Cache-Control": "no-store"})
         if p == "/api/pro/panels":
             q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
             bid = (q.get("session_id") or ["demo"])[0]
@@ -1082,6 +1153,8 @@ class H(BaseHTTPRequestHandler):
 
     def do_POST(self):
         global LOGIN_PROC
+        if not self._check_mutation():
+            return
         p = urllib.parse.urlparse(self.path).path
         P = store.data_paths(ROOT)
         if p == "/api/attachments":
@@ -1119,6 +1192,7 @@ class H(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "text/event-stream; charset=utf-8")
             self.send_header("Cache-Control", "no-cache")
+            self.send_header("X-Content-Type-Options", "nosniff")
             self.send_header("Connection", "close")
             self.end_headers()
             run_turn_sse_or_steer(self, bid, b.get("message", ""),

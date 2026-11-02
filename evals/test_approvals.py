@@ -231,6 +231,7 @@ class FakeHandler(server_mod.H):
         from email.message import Message
         h = Message()
         h["Content-Length"] = str(len(raw))
+        h[server_mod.TOKEN_HEADER] = server_mod.API_TOKEN
         self.headers = h
         self.rfile = io.BytesIO(raw)
         self.wfile = io.BytesIO()

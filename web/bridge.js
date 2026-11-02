@@ -5,7 +5,7 @@
  * Mapped to the real server.py payloads (verified against /api/* handlers).
  */
 export class ContinuumBridge {
-  constructor(){this.base='';}
+  constructor(){this.base='';this.token='';try{const m=document.querySelector('meta[name="continuum-token"]');if(m&&m.content&&!m.content.includes('__CONTINUUM_TOKEN__'))this.token=m.content;}catch{}}
 
   async bootstrap(){
     const response=await fetch(`${this.base}/api/ui/bootstrap`,{cache:'no-store'});
@@ -15,7 +15,7 @@ export class ContinuumBridge {
 
   async streamChat({message,session_id,project_id,attachments},onEvent,signal){
     const response=await fetch(`${this.base}/api/chat_stream`,{
-      method:'POST',headers:{'Content-Type':'application/json','Accept':'text/event-stream'},
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'text/event-stream','X-Continuum-Token':this.token},
       body:JSON.stringify({message,session_id,project_id,attachments:attachments||[]}),signal
     });
     if(!response.ok)throw new Error(`Chat HTTP ${response.status}: ${(await response.text()).slice(0,220)}`);
@@ -87,7 +87,7 @@ export class ContinuumBridge {
   async uploadAttachments(session_id,files){
     const fd=new FormData();fd.append('session_id',session_id);
     for(const f of files)fd.append('files',f,f.name);
-    const r=await fetch(`${this.base}/api/attachments`,{method:'POST',body:fd});
+    const r=await fetch(`${this.base}/api/attachments`,{method:'POST',headers:{'X-Continuum-Token':this.token},body:fd});
     if(!r.ok)throw new Error(`Attach HTTP ${r.status}: ${(await r.text()).slice(0,200)}`);
     return await r.json();
   }
@@ -98,7 +98,7 @@ export class ContinuumBridge {
     return await r.json();
   }
   async post(path,payload){
-    const r=await fetch(`${this.base}${path}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const r=await fetch(`${this.base}${path}`,{method:'POST',headers:{'Content-Type':'application/json','X-Continuum-Token':this.token},body:JSON.stringify(payload)});
     if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);
     const t=await r.text();try{return JSON.parse(t)}catch{return t};
   }
