@@ -1078,12 +1078,15 @@ class H(BaseHTTPRequestHandler):
             mapping = load_json(MSP_SESSIONS, {})
             sid = _msp_sid(mapping, bid)
             return self._send(200, pro_panels_state(host, sid))
-        if p.startswith("/web/") or p in ("/app.js", "/styles.css", "/bridge.js", "/i18n.js"):
+        if p.startswith("/web/") or p in ("/app.js", "/styles.css", "/bridge.js", "/i18n.js",
+                                         "/logo.png", "/favicon.ico"):
             name = p.split("/")[-1]
             base, ct = {"app.js": ("app.js", "text/javascript; charset=utf-8"),
                         "styles.css": ("styles.css", "text/css; charset=utf-8"),
                         "bridge.js": ("bridge.js", "text/javascript; charset=utf-8"),
-                        "i18n.js": ("i18n.js", "text/javascript; charset=utf-8")}.get(name, (None, None))
+                        "i18n.js": ("i18n.js", "text/javascript; charset=utf-8"),
+                        "logo.png": ("logo.png", "image/png"),
+                        "favicon.ico": ("logo.png", "image/png")}.get(name, (None, None))
             if base:
                 return self._send(200, open(os.path.join(ROOT, "web", base), "rb").read(), ct)
             self.send_error(404)
