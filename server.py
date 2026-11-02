@@ -262,6 +262,70 @@ def turn_lock(bid):
     return TURN_LOCKS.setdefault(bid, threading.Lock())
 
 
+REAP_TIMEOUT = 12
+
+
+def _reap_orphan_turn(host, sid, turn_id, saw_done):
+    """Best-effort: cancel an orphaned turn and consume its completion.
+
+    Called when the turn thread exits WITHOUT having seen done (client
+    disconnected, or server-side timeout). Without this, the orphaned
+    turn's late done poisons the next turn on the same session
+    (born-cancelled turn). Returns True when the orphan's done was
+    consumed. Never raises; never blocks past REAP_TIMEOUT.
+    """
+    if not turn_id or saw_done or sid is None:
+        return False
+    try:
+        host.cancel_turn(sid, turn_id)
+    except Exception:
+        pass
+    deadline = time.time() + REAP_TIMEOUT
+    try:
+        while time.time() < deadline:
+            try:
+                fr = host.notifications(timeout=0.5, sid=sid)
+            except TypeError:
+                fr = host.notifications(timeout=0.5)
+            if fr is None:
+                try:
+                    alive = host.alive()
+                except Exception:
+                    alive = True
+                if not alive:
+                    return True
+                continue
+            try:
+                ev = turn_mod.norm_frame(fr, sid)
+            except Exception:
+                continue
+            if ev is None:
+                continue
+            if ev.get("t") == "done":
+                end2 = time.time() + 1.0
+                while time.time() < end2:
+                    try:
+                        host.notifications(timeout=0.2, sid=sid)
+                    except TypeError:
+                        host.notifications(timeout=0.2)
+                return True
+    except Exception:
+        pass
+    return False
+
+
+def _wait_turn_end(bid, timeout=20):
+    """True once no turn runs for bid (lock free + no active turn). Bounded."""
+    deadline = time.time() + timeout
+    lk = turn_lock(bid)
+    while time.time() < deadline:
+        if ACTIVE_TURNS.get(bid) is None and lk.acquire(blocking=False):
+            lk.release()
+            return True
+        time.sleep(0.1)
+    return False
+
+
 def get_host():
     global HOST
     with HOST_LOCK:
@@ -534,6 +598,7 @@ def run_turn_sse(handler, bid, message, attachments=None):
     if not lk.acquire(blocking=False):
         emit({"t": "error", "text": "A turn is already running in this chat."})
         return
+    sid, turn_id, saw_done = None, None, False
     try:
         # Pre-turn: session routing ONLY (project switches, no filesystem
         # effect). Creation is never intercepted: Muse acts with native
@@ -634,6 +699,7 @@ def run_turn_sse(handler, bid, message, attachments=None):
             events.append(ev)
             if ev.get("t") == "done":
                 events.append(ev)
+                saw_done = True
                 tail, ops_block, proj_block = gate.flush_remainder()
                 if tail:
                     shown.append(tail)
@@ -655,6 +721,15 @@ def run_turn_sse(handler, bid, message, attachments=None):
         if proj_block:
             emit({"t": "project-ops", "block": proj_block})
         summary = turn_mod.summarize(events)
+        if summary["terminal"] is None and turn_id:
+            # Server-side timeout (or silent stream end): explicit error,
+            # never a silent empty turn. Then reap the orphan so its late
+            # completion cannot poison the next turn on this session.
+            emit({"t": "error", "timeout": True, "terminal": "timeout",
+                  "text": f"Turn timed out after {TURN_TIMEOUT}s with no "
+                          "completion from Muse. Partial output (if any) is "
+                          "kept below; send your message again to retry."})
+            _reap_orphan_turn(host, sid, turn_id, saw_done)
         text = summary["text"]
         shown_text = "".join(shown)
         tok = summary["usage"] or {}
@@ -710,7 +785,8 @@ def run_turn_sse(handler, bid, message, attachments=None):
         cap = idx2.get("config", {}).get("cap_entries", 300)
         ms = int((time.time() - t0) * 1000)
         log_usage({"ts": store.utcnow(), "model": model_name, "purpose": "chat-msp",
-                   "system": "S2", "prompt_tokens": tok.get("promptTokens"),
+                   "system": "S2", "timeout": summary["terminal"] is None,
+                   "prompt_tokens": tok.get("promptTokens"),
                    "total_tokens": tok.get("totalTokens"), "agent_chars": len(text),
                    "latency_ms": ms, "mocked": False, "provider": host.provider,
                    "session": sid, "turn": turn_id})
@@ -719,7 +795,12 @@ def run_turn_sse(handler, bid, message, attachments=None):
               "cap_warning": len(idx2.get("entries", {})) >= cap,
               "full_text": text})
     except StopIteration:
-        pass
+        # Client gone mid-turn: cancel + reap the orphan before releasing
+        # the lock so its late done cannot terminate the next turn.
+        try:
+            _reap_orphan_turn(host, sid, turn_id, saw_done)
+        except Exception:
+            pass
     except MSPError as e:
         try:
             emit({"t": "error", "text": str(e)})
@@ -1297,10 +1378,15 @@ class H(BaseHTTPRequestHandler):
             try:
                 host = get_host()
                 mapping = load_json(MSP_SESSIONS, {})
-                sid = _msp_sid(mapping, b.get("session_id", "demo"))
+                bid = b.get("session_id", "demo")
+                sid = _msp_sid(mapping, bid)
                 if sid:
                     host.cancel_turn(sid, None)
-                return self._send(200, {"ok": True})
+                # Synchronous stop: let the turn thread observe the cancel
+                # (bounded) so an immediate resend cannot overlap the dying
+                # turn's cancel window.
+                quiesced = _wait_turn_end(bid, timeout=20)
+                return self._send(200, {"ok": True, "quiesced": quiesced})
             except Exception as e:
                 return self._send(500, {"error": str(e)})
         if p == "/api/undo":

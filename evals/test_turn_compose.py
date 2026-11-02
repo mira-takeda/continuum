@@ -65,7 +65,7 @@ class FakeHost:
         self.calls.append(("start_turn", sid))
         return {"turnId": "t-e2e"}
 
-    def notifications(self, timeout=0.2):
+    def notifications(self, timeout=0.2, sid=None):
         if self.text is not None:
             t, self.text = self.text, None
             return {"method": "item/delta",

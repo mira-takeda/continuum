@@ -4,6 +4,7 @@ Browser UI -> local Python app -> Muse Code (MSP) -> Muse Spark.
 All Muse text, tool activity, approvals, questions, errors and results are
 forwarded verbatim; this module never paraphrases or regenerates them.
 """
+import collections
 import json
 import os
 import queue
@@ -117,6 +118,9 @@ class MSPHost:
         self.errors = queue.Queue()  # stderr lines
         self._pending = {}           # rpc id -> queue
         self._notify_q = queue.Queue()  # notifications for subscribers
+        self._stash = {}               # sid -> deque of frames popped by other threads
+        self._stash_lock = threading.Lock()
+        self._eof = False              # host stdout ended; every waiter must see it
         self._reader = threading.Thread(target=self._drain, daemon=True)
         self._er = threading.Thread(target=self._drain_err, daemon=True)
         self._reader.start()
@@ -164,6 +168,9 @@ class MSPHost:
                 except Exception:
                     self.errors.put("non-JSON stdout: " + line[:300])
                     continue
+                if not isinstance(d, dict):
+                    self.errors.put("non-object stdout: " + line[:300])
+                    continue
                 if "method" in d:
                     self._notify_q.put(d)
                 elif "id" in d:
@@ -187,11 +194,45 @@ class MSPHost:
         except Exception:
             pass
 
-    def notifications(self, timeout=0.2):
-        try:
-            return self._notify_q.get(timeout=timeout)
-        except queue.Empty:
-            return None
+    def notifications(self, timeout=0.2, sid=None):
+        """Next notification for one session. Frames for other sessions are
+        stashed (never dropped): concurrent turns and lingering threads can
+        no longer eat each other's done/text. sid=None keeps legacy pop-any
+        behavior. __host_eof__ is fanned out to every waiter."""
+        if self._eof:
+            return {"method": "__host_eof__", "params": {}}
+        if sid is not None:
+            with self._stash_lock:
+                q = self._stash.get(sid)
+                if q:
+                    return q.popleft()
+        deadline = time.time() + timeout
+        while True:
+            remaining = deadline - time.time()
+            if remaining <= 0:
+                return None
+            try:
+                fr = self._notify_q.get(timeout=min(remaining, 0.5))
+            except queue.Empty:
+                return None
+            if not isinstance(fr, dict):
+                continue
+            if fr.get("method") == "__host_eof__":
+                self._eof = True
+                return dict(fr)
+            if sid is None:
+                return fr
+            fsid = (fr.get("params") or {}).get("sessionId")
+            if fsid is None or fsid == sid:
+                return fr
+            with self._stash_lock:
+                dq = self._stash.get(fsid)
+                if dq is None:
+                    for k in [k for k, v in self._stash.items() if not v]:
+                        del self._stash[k]
+                    dq = self._stash.setdefault(
+                        fsid, collections.deque(maxlen=2000))
+                dq.append(fr)
 
     def start_session(self, session_id=None, approval_mode="promptUnmatched",
                       workspace_root=None):

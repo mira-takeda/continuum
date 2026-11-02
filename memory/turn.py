@@ -79,7 +79,7 @@ def norm_frame(frame, want_sid):
         if it.get("args"):
             ev["args"] = str(it["args"])[:800]
         return ev
-    if m == "approval/requested":
+    if m in ("approval/requested", "approval/request"):
         return {"t": "approval", "approvalId": p.get("approvalId"),
                 "requirementId": p.get("currentRequirementId"),
                 "toolName": p.get("toolName"), "subject": p.get("subject"),
@@ -107,7 +107,7 @@ def norm_frame(frame, want_sid):
     if m == "turn/completed":
         return {"t": "done", "terminal": p.get("terminal"), "error": p.get("error"),
                 "reason": p.get("reason"), "usage": p.get("usage"),
-                "durationMs": p.get("durationMs")}
+                "durationMs": p.get("durationMs"), "turnId": p.get("turnId")}
     if m in ("turn/started", "turn/foregroundCompleted", "session/statusChanged"):
         return {"t": "status", "method": m, "status": p.get("status")}
     if m == "session/todoListChanged":
@@ -140,12 +140,14 @@ def stream_turn(host, sid, full_text, display_text, timeout=TURN_TIMEOUT, on_idl
         if ev:
             yield ev
     start = host.start_turn(sid, full_text, display_text=display_text[:500])
-    yield {"t": "turn-started", "turn_id": start.get("turnId")}
+    expected_turn = (start or {}).get("turnId")
+    yield {"t": "turn-started", "turn_id": expected_turn}
     item_kinds = {}
+    seen_approvals = set()
     last_idle = time.time()
     deadline = time.time() + timeout
     while time.time() < deadline:
-        fr = host.notifications(timeout=0.5)
+        fr = host.notifications(timeout=0.5, sid=sid)
         if on_idle is not None and time.time() - last_idle > 15:
             try:
                 on_idle()
@@ -160,6 +162,16 @@ def stream_turn(host, sid, full_text, display_text, timeout=TURN_TIMEOUT, on_idl
         ev = norm_frame(fr, sid)
         if ev is None:
             continue
+        if ev.get("t") == "done":
+            tid = ev.get("turnId")
+            if expected_turn and tid and tid != expected_turn:
+                continue  # stale: completion of an older turn on this session
+        if ev.get("t") == "approval":
+            aid = ev.get("approvalId")
+            if aid and aid in seen_approvals:
+                continue  # de-duplicated delivery (request + requested)
+            if aid:
+                seen_approvals.add(aid)
         if ev.get("t") in ("approval", "questions", "approval-resolved", "questions-settled"):
             deadline = time.time() + timeout  # deciding; don't time out
         if ev.get("t") == "tool" and ev.get("itemId") and ev.get("kind"):

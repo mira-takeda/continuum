@@ -450,13 +450,13 @@ function handleEvent({data}){
   if(et==='todos'||et==='usage-changed'){proCapture(et,d);return}
   if(et==='memory-ops'){activity(t('memUpd'),'',d.block||'');return}
   if(et==='project-ops'){activity(t('projUpd'),'',d.block||'');return}
-  if(et==='error'){activity(t('agentErrT'),d.text||'');toast(d.text||t('agentErrT'));state.turnOpen=false;setTurnStatus('stError');
+  if(et==='error'){activity(t('agentErrT'),d.text||'');toast(d.text||t('agentErrT'));state.turnOpen=false;setTurnStatus('stError');if(state.assistant&&!state.assistant.textContent)state.assistant.textContent=String(d.text||t('agentErrT')).slice(0,500);
     if(d.need_auth||d.need_install)showSetup();return}
   if(et==='writes'){state.lastTurn.writes=d.writes||[];
     for(const w of state.lastTurn.writes||[]){toast(`${w.kind}: ${w.title||w.name||t('memWord')}`);
       if(w.activated&&w.name){state.projectId=w.name;updateChip();renderSidebarProjects()}}
     if(d.cap_warning)toast(t('capWarn'));return}
-  if(et==='done'){state.turnOpen=false;setTurnStatus(null);activity(t('turnDone'),d.terminal||'');return}
+  if(et==='done'){state.turnOpen=false;setTurnStatus(null);activity(t('turnDone'),d.terminal||'');if(d.terminal==='cancelled'&&state.assistant&&!state.assistant.textContent)state.assistant.textContent=t('stStopped');return}
   activity(t('genericEv')+(et||'message'),JSON.stringify(d).slice(0,300),JSON.stringify(d));
 }
 function renderApproval(f){
