@@ -1413,7 +1413,7 @@ def main():
     args = ap.parse_args()
     index_mod.load_or_build(ROOT)
     core_mod.load_or_build(ROOT)
-    print(f"memory-encyclopedia on http://127.0.0.1:{args.port}/  muse={find_muse() or 'NOT INSTALLED'}")
+    print(f"continuum on http://127.0.0.1:{args.port}/  muse={find_muse() or 'NOT INSTALLED'}")
     print(f"provider={os.environ.get('MUSE_PROVIDER', 'meta')} (Muse Code manages auth; `muse login` for Meta account)")
     ThreadingHTTPServer(("127.0.0.1", args.port), H).serve_forever()
 

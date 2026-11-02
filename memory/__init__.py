@@ -1,1 +1,1 @@
-"""Memory encyclopedia package."""
+"""Continuum memory package (personal encyclopedia)."""

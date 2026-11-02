@@ -17,7 +17,7 @@ import uuid
 OFFICIAL_INSTALL_SH = "curl -fsSL https://dev.meta.ai/install.sh | bash"
 OFFICIAL_DOCS = "https://dev.meta.ai/docs/muse-code/"
 OFFICIAL_SETUP = "https://dev.meta.ai/api/auth/login/"
-CLIENT_NAME = "memory_encyclopedia"
+CLIENT_NAME = "continuum"
 CLIENT_VERSION = "0.2"
 
 

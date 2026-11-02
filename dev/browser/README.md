@@ -6,7 +6,7 @@ runtime and not a user-facing dependency.
 ## Install (once, project-local env)
 
 ```powershell
-cd memory-encyclopedia
+cd continuum-public
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r dev/browser/requirements.txt
