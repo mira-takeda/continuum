@@ -24,6 +24,12 @@ supersession instead of deletion.
   interfaces and phones nothing home; all traffic is you → localhost →
   your Muse installation → Meta.
 
+Security note: Continuum binds to loopback and defends the API with
+Host/Origin checks plus a per-process token, but other processes
+running as the same local user are part of the local trust boundary
+and may potentially access the localhost service. It is not isolation
+from malicious local software.
+
 ## Install Muse Code
 
 Continuum does not bundle or silently install Muse. If it is missing, the
