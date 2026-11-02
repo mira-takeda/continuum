@@ -98,3 +98,7 @@ defaults to 8137).
 - The smoke sends one benign chat turn, so a normal run appends to the real
   `data/sessions.json` and `data/usage.jsonl`, like any dev chat.
 - If an approval card appears it is captured and reported, never auto-decided.
+- Ordering prerequisite: `smoke_projects.py` (switch_away step) and
+  `smoke_history.py` (FLOW A) need at least one pre-registered project
+  in `data/projects.json`. On a virgin tree, register one first
+  (e.g. via the Projects view) or those two steps fail by design.
