@@ -27,7 +27,7 @@ STATES = {
         "allowance": False, "auth_text": "not installed",
         "docs": "https://dev.meta.ai/docs/muse-code/",
         "setup": "https://dev.meta.ai/api/auth/login/",
-        "install_sh": "curl -fsSL https://dev.meta.ai/install.sh | sh"}},
+        "install_sh": "curl -fsSL https://dev.meta.ai/install.sh | sh", "install_cmd": "curl -fsSL https://dev.meta.ai/install.sh | sh"}},
     "nologin": {"connected": False, "runtime": {
         "installed": True, "provider": "meta", "logged_in": False,
         "allowance": False, "auth_text": "muse login required",
