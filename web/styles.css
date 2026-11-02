@@ -77,39 +77,40 @@ body.pro .activity-card{flex:none}
 @media(min-width:761px){.brand .close-sidebar{display:none}}
 
 /* ============================================================
-   Continuum sober palette (visual skin only; behavior untouched).
+   Continuum monochrome graphite palette (visual skin only).
    All theme color lives in the :root block below so future skins
-   only need to override variables + the flat (gradient/glow-free)
-   component rules that follow.
+   only need to override variables + the flat component rules.
+   Muted moss/brick survive ONLY where they encode state that must
+   be told apart at a glance (Allow vs Reject, online dot).
    ============================================================ */
 :root{
-  --bg:#171310; --panel:#1e1a15; --panel2:#25201a; --panel-soft:#26211b;
-  --line:#38322b; --line-soft:#2b2620;
-  --text:#ece6da; --muted:#a79c8b; --quiet:#7b7263;
-  /* legacy accent names remapped to the sober palette (kept for compat) */
-  --mint:#d9b98f; --aqua:#a87f52; --purple:#9a8f7c; --warm:#ddc5aa;
-  --accent:#c08d5a; --accent-dim:#8a6742;
+  --bg:#1a1a1d; --panel:#212125; --panel2:#26262b; --panel-soft:#28282e;
+  --line:#35353c; --line-soft:#2b2b31;
+  --text:#f1f1f3; --muted:#a2a2ab; --quiet:#6f6f78;
+  /* legacy accent names remapped to neutral grays (kept for compat) */
+  --mint:#dcdce0; --aqua:#a5a5ad; --purple:#8e8e96; --warm:#c9c9ce;
+  --accent:#e8e8eb; --accent-dim:#8f8f98;
   --danger:#b0564a; --ok:#7fa05f; --warn:#c9a24f;
   --shadow:0 18px 50px #00000059;
 }
-::selection{background:#c08d5a4d}
-::-webkit-scrollbar-thumb{background:#4a4237}
+::selection{background:#e8e8eb33}
+::-webkit-scrollbar-thumb{background:#4a4a52}
 .ambient{display:none}
 .main{background:none}
 .sidebar{background:var(--panel)}
 .brand-text small{color:var(--quiet)}
-.new-chat{background:#26211b;border-color:var(--line);color:var(--text)}
-.new-chat:hover{background:#2e2820}
+.new-chat{background:#2a2a30;border-color:var(--line);color:var(--text)}
+.new-chat:hover{background:#323238}
 .shortcut{color:var(--quiet)}
 .nav-label,.sidebar-section-header{color:var(--quiet)}
 .nav-link{color:var(--muted)}
-.nav-link:hover{background:#2a251f}
-.nav-link.active{background:#2c261f;color:var(--text);border-color:var(--line)}
+.nav-link:hover{background:#2a2a30}
+.nav-link.active{background:#333338;color:var(--text);border-color:var(--line)}
 .nav-icon{color:var(--quiet)}
 .sidebar-empty{color:var(--quiet)}
 .project-mini{color:var(--text)}
-.project-mini:hover{background:#2a251f}
-.project-mini i{background:#2e2820;color:var(--accent)}
+.project-mini:hover{background:#2a2a30}
+.project-mini i{background:#333338;color:var(--text)}
 .design-mode{border-color:var(--line);background:var(--panel2)}
 .design-mode-dot{border-color:var(--accent);box-shadow:none}
 .design-mode small{color:var(--muted)}
@@ -119,20 +120,20 @@ body.pro .activity-card{flex:none}
 .breadcrumb .slash{color:var(--line)}
 .breadcrumb strong{color:var(--text)}
 .runtime-chip{border-color:var(--line);background:var(--panel2);color:var(--muted)}
-.runtime-chip i{background:#8a6f4d}
+.runtime-chip i{background:#6f6f78}
 .runtime-chip.connected i{background:var(--ok);box-shadow:none}
 .icon-btn{color:var(--muted)}
-.icon-btn:hover{background:#2c261f;color:var(--text)}
-.orb-halo{border-color:#4a4237}
-.halo-two{border-color:#3a342c}
-.orb-core{border-color:var(--line);color:var(--accent);background:var(--panel2);box-shadow:none}
+.icon-btn:hover{background:#333338;color:var(--text)}
+.orb-halo{border-color:#4a4a52}
+.halo-two{border-color:#3a3a41}
+.orb-core{border-color:var(--line);color:var(--text);background:var(--panel2);box-shadow:none}
 .orb-tick{background:var(--accent);box-shadow:none}
 .eyebrow{color:var(--muted)}
 h1 em{background:none;color:var(--text)}
 .welcome-copy{color:var(--muted)}
 .suggestion{background:var(--panel2);border-color:var(--line);color:var(--text)}
-.suggestion:hover{border-color:var(--accent-dim);background:#2a241d}
-.suggestion-icon{color:var(--accent)}
+.suggestion:hover{border-color:var(--accent-dim);background:#2c2c32}
+.suggestion-icon{color:var(--text)}
 .suggestion small{color:var(--muted)}
 .composer-wrap{background:none}
 .composer{border-color:var(--line);background:var(--panel);box-shadow:none}
@@ -140,69 +141,70 @@ h1 em{background:none;color:var(--text)}
 .composer textarea{color:var(--text)}
 .composer textarea::placeholder{color:var(--quiet)}
 .composer-hint{color:var(--quiet)}
-.cmd-glyph{color:var(--accent)}
+.cmd-glyph{color:var(--muted)}
 .hint-divider{color:var(--line)}
-.send-btn{background:var(--accent);color:#1d1409}
-.send-btn:hover{background:#cfa06b}
+.send-btn{background:#ececee;color:#17171a;border-radius:50%}
+.send-btn:hover{background:#ffffff}
 .stop-btn{background:#3a2320;color:#e8c4bd;border-color:#6e3a34}
 .composer-note{color:var(--quiet)}
 .context-rail{background:var(--panel)}
 .rail-top small{color:var(--quiet)}
 .rail-card{border-color:var(--line);background:var(--panel2)}
 .rail-card-title{color:var(--muted)}
-.status-indicator{color:var(--warn)}
+.status-indicator{color:var(--muted)}
 .status-indicator.on{color:var(--ok)}
 .agent-line{border-color:var(--line-soft)}
-.agent-mark{border-color:var(--line);color:var(--text);background:#2a241d}
+.agent-mark{border-color:var(--line);color:var(--text);background:#2c2c32}
 .agent-line small{color:var(--muted)}
 .rail-mini-row{color:var(--muted)}
 .rail-mini-row strong{color:var(--text)}
-.mini-action{color:var(--accent)}
-.network{background:#14110d}
-.memory-node{border-color:var(--accent-dim);background:#2c251c;color:var(--text);box-shadow:none}
-.node-four{border-color:var(--line);background:#2a251f}
+.mini-action{color:var(--text)}
+.network{background:#17171a}
+.memory-node{border-color:var(--accent-dim);background:#2c2c32;color:var(--text);box-shadow:none}
+.node-four{border-color:var(--line);background:#2a2a30}
 .network-legend span{color:var(--muted)}
-.network-legend i{background:var(--accent)}
-.network-legend span:nth-child(2) i{background:#8a7f68}
-.network-legend span:nth-child(3) i{background:#6e6455}
+.network-legend i{background:#a5a5ad}
+.network-legend span:nth-child(2) i{background:#7c7c85}
+.network-legend span:nth-child(3) i{background:#5d5d66}
 .rail-info{color:var(--quiet)}
 .activity-item{border-color:var(--line);color:var(--text)}
-.activity-item:before{background:var(--accent)}
+.activity-item:before{background:var(--accent-dim)}
 .activity-item small{color:var(--muted)}
 .feed-empty{color:var(--quiet)}
 .rail-bottom{color:var(--quiet)}
 .rail-bottom strong{color:var(--text)}
-.rail-bottom-spark{color:var(--accent)}
-.message-avatar{background:#2c251c;color:var(--accent)}
+.rail-bottom-spark{color:var(--muted)}
+.message-avatar{background:#333338;color:var(--text)}
 .message-content{color:var(--text)}
-.message-row.user .message-content{background:#262119;border-color:var(--line)}
-.message-label{color:var(--accent)}
-.raw-data{color:var(--muted);background:#100e0b}
-.approval-card,.question-card{background:#221d16;border-color:#6b5a3e}
+.message-row.user .message-content{background:#2b2b31;border-color:var(--line)}
+.message-label{color:var(--muted)}
+.raw-data{color:var(--muted);background:#131316}
+.approval-card,.question-card{background:#242429;border-color:#4a4a52}
 .approval-card p,.question-card p{color:var(--muted)}
 .approval-actions button{background:#2c3324;color:#d6e4c8;border-color:#5a6b43}
 .approval-actions button.reject{background:#332220;color:#eac9c4;border-color:#6e3a34}
-.question-card input{background:#14110d;border-color:var(--line);color:var(--text)}
-.pro-row input,.pro-row select{background:#14110d;border-color:var(--line);color:var(--text)}
-.pro-row button{background:#2e2820;color:var(--text);border-color:var(--line)}
-.pro-row button:hover{background:#38312a}
+.question-card input{background:#17171a;border-color:var(--line);color:var(--text)}
+.pro-row input,.pro-row select{background:#17171a;border-color:var(--line);color:var(--text)}
+.pro-row button{background:#333338;color:var(--text);border-color:var(--line)}
+.pro-row button:hover{background:#3d3d44}
 .skill-row .skill-name{color:var(--text)}
 .exp-sec{border-color:var(--line)}
-.queue-badge{color:var(--warn)}
-.att-chip{color:var(--text);background:#26211b;border-color:var(--line)}
+.queue-badge{color:var(--muted)}
+.att-chip{color:var(--text);background:#2b2b31;border-color:var(--line)}
 .att-chip button{color:var(--muted)}
 .hist-preview{color:var(--muted)}
 .alt-kicker{color:var(--muted)}
 .alt-intro{color:var(--muted)}
 .alt-card{border-color:var(--line);background:var(--panel2)}
-.alt-card .card-icon{color:var(--accent)}
+.alt-card .card-icon{color:var(--text)}
 .alt-card p{color:var(--muted)}
 .empty-block{border-color:var(--line);color:var(--muted);background:transparent}
-.live-card{border-color:var(--accent-dim);background:#262119;color:var(--text)}
+.live-card{border-color:var(--line);background:#2b2b31;color:var(--text)}
 .live-card small{color:var(--muted)}
-.toast{background:#2a241d;color:var(--text);border-color:var(--line)}
+.toast{background:#333338;color:var(--text);border-color:var(--line)}
 .setup-banner button{border-color:var(--line)}
 .drop-hint{border-color:var(--line)}
-/* Brand mark: provided Continuum logo asset (wordmark text unchanged). */
+/* Brand mark: provided Continuum logo asset, monochromized to sit in
+   the graphite UI (wordmark text unchanged). */
 .logo{width:38px;height:38px;border:0;border-radius:10px;background:#0b0b0c;transform:none;box-shadow:none;overflow:hidden}
-.logo img{width:100%;height:100%;object-fit:cover;object-position:6% 62%;display:block}
+.logo img{width:100%;height:100%;object-fit:cover;object-position:6% 62%;display:block;filter:grayscale(1) brightness(1.35)}
