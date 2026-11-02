@@ -4,6 +4,11 @@ Presentation only: the translator NEVER rewrites the action - the UI always
 shows Muse's exact original command alongside. Unknown or risky-to-paraphrase
 actions fall back to an explicit low-confidence notice. Stdlib only; the
 top-level entry never raises and never touches the network.
+
+The command translator is PowerShell-oriented (cmdlets + switches with `-`).
+POSIX-style paths are treated as data, never as switches; Windows-style paths
+are basename-normalized on every platform. Anything unrecognized falls back
+to an explicit low-confidence notice instead of a wrong explanation.
 """
 import os
 import re
@@ -66,8 +71,24 @@ def _shorten(path):
     return p
 
 
+def _segments(path):
+    """Separator-agnostic path segments (both \\ and /), drive stripped."""
+    s = str(path or "").strip().rstrip("\\/")
+    if re.match(r"^[A-Za-z]:", s):
+        s = s[2:]
+    return [g for g in re.split(r"[\\\\/]+", s) if g not in ("", ".")]
+
+
 def _base(path):
-    return os.path.basename(str(path or "").rstrip("\\/")) or str(path or "")
+    segs = _segments(path)
+    return segs[-1] if segs else str(path or "")
+
+
+def _parent_display(path):
+    segs = _segments(path)
+    if len(segs) > 1:
+        return "/".join(segs[:-1])
+    return str(path or "")
 
 
 def _noun(path):
@@ -159,19 +180,23 @@ def _canon_cmd(token):
 
 
 def _split_args(toks):
-    """(named dict, positionals) from tokens after the command."""
+    """(named dict, positionals) from tokens after the command.
+
+    Only `-` starts a switch (PowerShell canonical form). A token starting
+    with `/` is a POSIX path, never a switch.
+    """
     named, pos, i = {}, [], 1
     while i < len(toks):
         t = toks[i]
-        if t[:1] in ("-", "/") and len(t) > 1 and not re.match(r"^[A-Za-z]:", t):
+        if t[:1] == "-" and len(t) > 1:
             if ":" in t:
-                k, v = t.lstrip("-/").split(":", 1)
+                k, v = t.lstrip("-").split(":", 1)
                 named[k.lower()] = v
-            elif i + 1 < len(toks) and toks[i + 1][:1] not in ("-", "/"):
-                named[t.lstrip("-/").lower()] = toks[i + 1]
+            elif i + 1 < len(toks) and toks[i + 1][:1] != "-":
+                named[t.lstrip("-").lower()] = toks[i + 1]
                 i += 1
             else:
-                named[t.lstrip("-/").lower()] = ""
+                named[t.lstrip("-").lower()] = ""
         else:
             pos.append(t)
         i += 1
@@ -258,7 +283,7 @@ def _explain_pwsh(cmd, toks):
                    if cmd == "move-item"
                    else [f"Copies {name}. The original will stay in place."])
         return {"title": f"{verb} a {noun}", "objects": [name],
-                "lines": [f"From: {_shorten(os.path.dirname(src) or src)}",
+                "lines": [f"From: {_shorten(_parent_display(src))}",
                           f"To: {_shorten(dst)}"], "effects": effects,
                 "fallback": False}
     if cmd == "rename-item":

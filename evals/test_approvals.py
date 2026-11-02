@@ -1,6 +1,8 @@
 """Approval explanations: deterministic, local, never rewrite the action.
 
-Covers the translator only (memory/approvals.py). No MSP, no network. Run:
+Covers the translator (memory/approvals.py) plus a relay-attach check with
+every external seam mocked. Stdlib + repo only; no Muse install, no MSP,
+no network required. Run:
   python evals/test_approvals.py
 """
 import io
@@ -159,6 +161,43 @@ class ExplainTest(unittest.TestCase):
             self.assertIn("title", e)
             self.assertIn("effects", e)
 
+    def test_posix_paths_are_data_not_switches(self):
+        fwd = self.f.replace("\\", "/")
+        tmpfwd = self.tmp.replace("\\", "/")
+        e = ap.explain_approval(shell_frame(f"Remove-Item '{fwd}'"))
+        self.assertFalse(e["fallback"])
+        self.assertEqual(e["title"], "Delete a file")
+        self.assertEqual(e["objects"], ["note.txt"])
+        e = ap.explain_approval(shell_frame(
+            f"Copy-Item '{fwd}' '{tmpfwd}/c.txt'"))
+        self.assertEqual(e["title"], "Copy a file")
+        e = ap.explain_approval(shell_frame(f"Set-Content '{fwd}' 'x'"))
+        self.assertEqual(e["title"], "Edit a file")
+        e = ap.explain_approval(shell_frame(
+            "Add-Content '/tmp/appr-no-such-dir-zzz/w.txt' 'x'"))
+        self.assertEqual(e["title"], "Create a file")
+        e = ap.explain_approval(shell_frame(
+            f"New-Item -ItemType Directory '{tmpfwd}/d'"))
+        self.assertEqual(e["title"], "Create a folder")
+        e = ap.explain_approval(shell_frame("mkdir '/tmp/appr-no-such-dir-zzz/e'"))
+        self.assertEqual(e["title"], "Create a folder")
+
+    def test_windows_paths_normalized_on_any_platform(self):
+        e = ap.explain_approval(frame({"kind": "fileAccess", "access": "read",
+                                        "path": "C:\\Users\\test\\note.txt"}))
+        self.assertFalse(e["fallback"])
+        self.assertEqual(e["title"], "Read a file")
+        self.assertEqual(e["objects"], ["note.txt"])
+        e = ap.explain_approval(shell_frame(
+            "Rename-Item 'C:\\t\\a.txt' 'b.txt'"))
+        self.assertEqual(e["title"], "Rename a file")
+        self.assertIn("To: b.txt", e["lines"])
+
+    def test_foreign_shell_flags_fall_back(self):
+        e = ap.explain_approval(shell_frame("rm -rf /tmp/stuff"))
+        self.assertTrue(e["fallback"])
+        self.assertEqual(e["title"], "Technical operation")
+
     def test_no_network_use(self):
         import socket
         with mock.patch.object(socket, "socket",
@@ -233,6 +272,8 @@ class ServerAttachTest(unittest.TestCase):
                                                  "text": "test"}), \
                  mock.patch.object(server_mod, "muse_version",
                                    return_value="muse-test"), \
+                 mock.patch.object(server_mod, "find_muse",
+                                   return_value="/fake/muse"), \
                  mock.patch.object(turn_mod, "stream_turn",
                                    return_value=iter(events)):
                 h = FakeHandler("POST", "/api/chat_stream",
