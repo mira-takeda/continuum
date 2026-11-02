@@ -38,3 +38,14 @@ fix and may contain mojibake (UTF-8 decoded as Latin-1). Scores are
 unaffected (frozen keyword scorer); the fixed product path is covered by
 current encoding regression tests (`evals/test_encoding.py`). This note
 is informational only — frozen results are preserved exactly.
+
+## Post-hoc note: supersession metric defect (scores preserved)
+
+The frozen sup rule (`new` present AND `old` textually absent,
+`run_eval.py`) penalizes valid corrective answers such as "Casa Linda,
+not Casa Loma" or "chose JAX and dropped PyTorch". A separate post-hoc
+audit (`evals/supersession_posthoc.md`, regenerated read-only by
+`evals/posthoc_supersede.py`) classifies all 11 frozen sup failures as
+scorer artifacts: corrected mechanical reading S1 = S2 = 6/8, manual
+correct 8/8 for both, zero genuine model/retrieval failures. The frozen
+scores above are unchanged and remain the preregistered result.
