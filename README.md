@@ -248,7 +248,7 @@ dev/browser/         # Playwright dev smokes (not product runtime)
 
 ## Evals and tests (for contributors)
 
-- Units: `python evals/test_*.py` (15 suites, stdlib + repo only).
+- Units: `python evals/test_*.py` (16 suites, stdlib + repo only).
 - Frozen 48-probe memory comparison lives in `evals/` with its report;
   do not re-tune against it.
 - Browser smokes: `python dev/browser/smoke_<area>.py [--no-start --url …]`
