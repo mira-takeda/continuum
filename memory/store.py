@@ -89,8 +89,24 @@ def list_ids(entries_dir):
     return sorted(f[:-3] for f in os.listdir(entries_dir) if f.endswith(".md"))
 
 
+EID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
+
+
+def entry_path(entries_dir, eid):
+    """Single choke point: validate id, contain resolved path in entries_dir."""
+    if not isinstance(eid, str) or not EID_RE.match(eid):
+        raise ValueError("invalid entry id")
+    if ".." in eid or "/" in eid or "\\" in eid or ":" in eid:
+        raise ValueError("invalid entry id")
+    base = os.path.realpath(entries_dir)
+    p = os.path.realpath(os.path.join(base, eid + ".md"))
+    if p != base and not p.startswith(base + os.sep):
+        raise ValueError("entry id escapes entries dir")
+    return p
+
+
 def load(entries_dir, eid):
-    p = os.path.join(entries_dir, eid + ".md")
+    p = entry_path(entries_dir, eid)
     with open(p, encoding="utf-8") as f:
         return parse_entry(f.read())
 
@@ -98,7 +114,7 @@ def load(entries_dir, eid):
 def save(entries_dir, eid, meta, body):
     meta["updated"] = utcnow()
     meta["id"] = eid
-    p = os.path.join(entries_dir, eid + ".md")
+    p = entry_path(entries_dir, eid)
     with open(p, "w", encoding="utf-8") as f:
         f.write(serialize(meta, body))
 
@@ -174,7 +190,7 @@ def touch(entries_dir, eid, cue_hit=False):
     if cue_hit:
         acc["cue_hits"] = int(acc.get("cue_hits", 0)) + 1
     # Touch rewrites counters only; body untouched.
-    p = os.path.join(entries_dir, eid + ".md")
+    p = entry_path(entries_dir, eid)
     with open(p, "w", encoding="utf-8") as f:
         f.write(serialize(meta, body))
     return meta
@@ -193,7 +209,7 @@ def confirm(entries_dir, log_path, eid):
 def repeat_observation(entries_dir, eid):
     meta, body = load(entries_dir, eid)
     meta["stability"] = round(min(1.0, float(meta.get("stability", 0.5)) + 0.10), 3)
-    p = os.path.join(entries_dir, eid + ".md")
+    p = entry_path(entries_dir, eid)
     with open(p, "w", encoding="utf-8") as f:
         f.write(serialize(meta, body))
     return meta
@@ -222,7 +238,7 @@ def undo_last(entries_dir, log_path):
             continue
         kind = op.get("kind")
         if kind == "create":
-            p = os.path.join(entries_dir, op["entry_id"] + ".md")
+            p = entry_path(entries_dir, op["entry_id"])
             if os.path.exists(p):
                 os.remove(p)
             op["undone"] = True
@@ -239,7 +255,7 @@ def undo_last(entries_dir, log_path):
         if kind in ("update", "confirm", "unlink", "supersede-mark"):
             b = op.get("before")
             if b:
-                p = os.path.join(entries_dir, op["entry_id"] + ".md")
+                p = entry_path(entries_dir, op["entry_id"])
                 with open(p, "w", encoding="utf-8") as f:
                     f.write(serialize(b["meta"], b["body"]))
             op["undone"] = True

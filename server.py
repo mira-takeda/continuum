@@ -1041,8 +1041,10 @@ class H(BaseHTTPRequestHandler):
             try:
                 meta, body = store.load(P["entries"], eid)
                 return self._send(200, {"meta": meta, "body": body})
-            except Exception as e:
-                return self._send(404, {"error": str(e)})
+            except ValueError:
+                return self._send(400, {"error": "invalid entry id"})
+            except Exception:
+                return self._send(404, {"error": "entry not found"})
         if p == "/api/ui/bootstrap":
             return self._send(200, ui_bootstrap())
         if p == "/api/projects":
@@ -1223,7 +1225,10 @@ class H(BaseHTTPRequestHandler):
             return self._send(200, {"undone": bool(r), "op": r})
         if p == "/api/unlink":
             b = self._body()
-            r = store.unlink(P["entries"], P["log"], b.get("from"), b.get("to"))
+            try:
+                r = store.unlink(P["entries"], P["log"], b.get("from"), b.get("to"))
+            except ValueError:
+                return self._send(400, {"error": "invalid entry id"})
             index_mod.update_one(ROOT, b.get("from"))
             core_mod.rebuild(ROOT)
             return self._send(200, {"ok": True, "op_id": r.get("op_id")})
