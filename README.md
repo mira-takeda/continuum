@@ -253,3 +253,53 @@ dev/browser/         # Playwright dev smokes (not product runtime)
   do not re-tune against it.
 - Browser smokes: `python dev/browser/smoke_<area>.py [--no-start --url …]`
   (see `dev/browser/README.md`); screenshots land in `dev/browser/shots/`.
+
+## Hackathon scope
+
+Built for the Meta Global AI Developer Hackathon
+(period: Oct 26 - Nov 4, 2026; track: Push the Frontier).
+Only work built during the event is presented; this public
+repository and the 3-minute demo cover the Continuum contribution
+below, distinguishable from Meta-provided technology.
+
+Meta provides (not our contribution):
+
+- Muse Code (local agent runtime)
+- Muse Spark / Meta model service
+- Muse Server Protocol (MSP)
+- native Muse filesystem/tools
+- native approvals
+- native model/reasoning controls
+
+Continuum provides (built during the hackathon):
+
+- persistent personal memory layer
+- project-scoped context and `.continuum.md`
+- global vs project memory routing
+- provenance and supersession
+- project registry/bookkeeping
+- persistent transcripts/history
+- cross-session continuity
+- Normal / Pro web UI
+- EN / ES interface
+- attachment staging/integration
+- approval presentation
+- authentication/onboarding integration
+- local-first persistence around Muse Code
+
+Model disclosure: Continuum uses Muse Code as the local agent
+runtime and has been developed and tested with Meta Muse Spark
+through Meta's hosted service. Continuum does not redistribute
+Meta model weights. Meta model/service terms are separate from
+Continuum's source-code license.
+
+## License
+
+Continuum source code is available under the PolyForm
+Noncommercial License 1.0.0 (see `LICENSE`).
+
+For commercial licensing, contact the author.
+
+This license covers Continuum's source code only. It does not
+apply to Meta models, Muse Code, or Meta services, which are
+governed by their own separate terms.
