@@ -154,14 +154,78 @@ class ThreeLayerTest(unittest.TestCase):
                          full_text(self.root, "s1", "status?"))
         self.assertEqual(proj_mod.assemble(self.root, "nobody"), "")
 
-    def test_no_automatic_creation(self):
+    def test_register_initializes_context_file(self):
+        # Registering (adopting) a project ensures its .continuum.md: without
+        # it the project is silently degraded (no block injected, scoped
+        # writes rejected). Ordinary subfolders are still never touched.
         epath = os.path.join(self.ws, "projE")
         os.makedirs(epath)
+        inner = os.path.join(epath, "inner")
+        os.makedirs(inner)
         proj_mod.register_project(self.root, "E", epath)
-        self.assertFalse(os.path.exists(os.path.join(epath, ".continuum.md")))
+        efile = os.path.join(epath, ".continuum.md")
+        self.assertTrue(os.path.isfile(efile))
+        body = open(efile, encoding="utf-8").read()
+        self.assertIn("# Project: E", body)
+        self.assertIn("## Decisions", body)
+        self.assertFalse(os.path.exists(os.path.join(inner, ".continuum.md")))
         self.assertEqual(proj_mod.detect_from_path(self.root, epath), "E")
         proj_mod.activate(self.root, "s1", "E")
-        self.assertEqual(proj_mod.assemble(self.root, "s1"), "")  # missing file, no crash
+        block = proj_mod.assemble(self.root, "s1")
+        self.assertIn("<project-context>", block)
+        self.assertIn("Project: E", block)
+        # ...and a scoped write now lands instead of rejecting.
+        r = apply(self.root, [{"kind": "create", "scope": "project:E",
+                               "section": "decisions", "title": "x",
+                               "body": "TOKEN_E_DECISION: E ships on Fridays."}],
+                  active="E")
+        self.assertEqual(r[0]["kind"], "project-append")
+
+    def test_register_preserves_existing_file_bytewise(self):
+        epath = os.path.join(self.ws, "projF")
+        os.makedirs(epath)
+        efile = os.path.join(epath, ".continuum.md")
+        human = ("# Project: F\nroot: elsewhere\nupdated: long-ago\n\n"
+                 "## Decisions\n- hand-written line\n\n"
+                 "## My custom section\n- unknown content stays\n")
+        with open(efile, "w", encoding="utf-8") as f:
+            f.write(human)
+        proj_mod.register_project(self.root, "F", epath)
+        proj_mod.activate(self.root, "s1", "F")
+        self.assertEqual(open(efile, encoding="utf-8").read(), human)
+
+    def test_activate_backfills_missing_file(self):
+        # Legacy registry entries (registered before auto-init) reach the
+        # same usable state on activate.
+        epath = os.path.join(self.ws, "projG")
+        os.makedirs(epath)
+        reg_path = os.path.join(self.root, "data", "projects.json")
+        os.makedirs(os.path.join(self.root, "data"), exist_ok=True)
+        import json as _json
+        reg = {}
+        try:
+            reg = _json.load(open(reg_path, encoding="utf-8"))
+        except Exception:
+            pass
+        reg.setdefault("projects", {})["G"] = epath
+        _json.dump(reg, open(reg_path, "w", encoding="utf-8"))
+        self.assertFalse(os.path.exists(os.path.join(epath, ".continuum.md")))
+        proj_mod.activate(self.root, "s1", "G")
+        self.assertTrue(os.path.isfile(os.path.join(epath, ".continuum.md")))
+        self.assertIn("Project: G", proj_mod.assemble(self.root, "s1"))
+
+    def test_init_failure_register_loud_activate_best_effort(self):
+        from unittest import mock
+        epath = os.path.join(self.ws, "projH")
+        os.makedirs(epath)
+        with mock.patch.object(proj_mod, "init_project",
+                               side_effect=OSError("read-only")):
+            with self.assertRaises(OSError):
+                proj_mod.register_project(self.root, "H", epath)
+            # Registration itself landed (retry works); activation never
+            # blocks chat on an unwritable folder.
+            self.assertEqual(proj_mod.activate(self.root, "s1", "H"), "H")
+            self.assertEqual(proj_mod.active_for(self.root, "s1"), "H")
 
     def test_secrets_guard(self):
         before = proj_mod.read_project(self.root, "A")

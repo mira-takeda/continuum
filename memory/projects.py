@@ -6,8 +6,10 @@ Three context layers, kept separate:
 3. Project context: one .continuum.md per registered project root.
 
 Rules: project roots come ONLY from explicit registration (never sniffed from
-ordinary subfolders); .continuum.md files are created ONLY by explicit
-init_project(); files are human-readable; no secrets are ever written.
+ordinary subfolders); registering or activating a project ensures its
+.context file exists (init is a no-op when the file already exists, so
+human edits and unknown sections are never touched); files are
+human-readable; no secrets are ever written.
 
 Muse-driven lifecycle (```project-ops fenced block, parsed deterministically):
 create/register/activate ops are validated and executed HERE by the backend.
@@ -111,6 +113,11 @@ def register_project(root, name, path):
     reg = _load(os.path.join(_data(root), REGISTRY_FILE), {}) or {}
     reg.setdefault("projects", {})[name] = ap
     _save(os.path.join(_data(root), REGISTRY_FILE), reg)
+    # A registered project without its context file is silently degraded
+    # (no project block injected, project-scoped writes rejected), so
+    # registration ensures the file. Loud on OSError: the caller sees the
+    # failure instead of a project that can never hold context.
+    init_project(root, name)
     return ap
 
 
@@ -351,6 +358,13 @@ def activate(root, bid, name_or_path):
     m = _load(_mapping_path(root), {})
     m[bid] = name
     _save(_mapping_path(root), m)
+    # Backfill for projects registered before auto-init existed (or whose
+    # file was deleted): best-effort only, so chat is never blocked when
+    # the project folder is not writable.
+    try:
+        init_project(root, name)
+    except OSError:
+        pass
     return name
 
 
