@@ -182,8 +182,10 @@ def apply_ops(root, raw_ops, session_turn, model_name, active_project=None):
                 continue
             title = (op.get("title") or f"Updated {old}")[:80]
             types = [t for t in (op.get("types") or ["fact"]) if t in store.ALLOWED_TYPES] or ["fact"]
-            # Correction from user speech is user-stated; otherwise conversation.
-            src = "user-stated" if "you" in (op.get("body") or "").lower() or True else "conversation"
+            # Same validated rule as create: explicit op source, else conversation.
+            src = op.get("source") or "conversation"
+            if src not in store.ALLOWED_SRC:
+                src = "conversation"
             sbody = (op.get("body") or "")[:1500]
             if not sbody.strip():
                 continue

@@ -178,5 +178,45 @@ class OpsGateTest(unittest.TestCase):
         self.assertIn("create_project", proj)
 
 
+class SupersedeSourceTest(unittest.TestCase):
+    def seed(self):
+        from memory import index as index_mod
+        from memory import store as store_mod
+        tmp = tempfile.mkdtemp(prefix="prov-src-")
+        ent = os.path.join(tmp, "data", "entries")
+        os.makedirs(ent)
+        log = os.path.join(tmp, "data", "log.jsonl")
+        r = store_mod.create(ent, log, "Old fact", ["fact"], "old body",
+                             ["s1t1"], "conversation", "m")
+        index_mod.build(tmp)
+        return tmp, ent, r["entry_id"]
+
+    def applied_source(self, op):
+        from memory import store as store_mod
+        tmp, ent, old = self.seed()
+        ops = [dict(op, kind="supersede", old_id=old)]
+        out = extract_mod.apply_ops(tmp, ops, "s1t2", "m")
+        self.assertEqual(len(out), 1)
+        meta, _ = store_mod.load(ent, out[0]["entry_id"])
+        return meta["provenance"]["source"]
+
+    def test_supersede_defaults_to_conversation(self):
+        self.assertEqual(
+            self.applied_source({"title": "New fact", "body": "you said X"}),
+            "conversation")
+
+    def test_supersede_honors_explicit_source(self):
+        self.assertEqual(
+            self.applied_source({"title": "New fact", "body": "b",
+                                 "source": "user-stated"}),
+            "user-stated")
+
+    def test_supersede_rejects_bogus_source(self):
+        self.assertEqual(
+            self.applied_source({"title": "New fact", "body": "b",
+                                 "source": "user"}),
+            "conversation")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
