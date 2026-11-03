@@ -1,0 +1,2045 @@
+{
+ "seed": 20261102,
+ "facts": {
+  "F001": {
+   "id": "F001",
+   "turn": 2,
+   "attr": "shed paint",
+   "value": "charcoal",
+   "history": []
+  },
+  "F002": {
+   "id": "F002",
+   "turn": 4,
+   "attr": "fence wood",
+   "value": "grapes",
+   "history": [
+    {
+     "turn": 9,
+     "old": "warbler",
+     "new": "grapes"
+    }
+   ]
+  },
+  "F003": {
+   "id": "F003",
+   "turn": 6,
+   "attr": "gate lock",
+   "value": "ivory",
+   "history": []
+  },
+  "F004": {
+   "id": "F004",
+   "turn": 8,
+   "attr": "path material",
+   "value": "cherry",
+   "history": []
+  },
+  "F005": {
+   "id": "F005",
+   "turn": 10,
+   "attr": "birdseed mix",
+   "value": "steel",
+   "history": []
+  },
+  "F006": {
+   "id": "F006",
+   "turn": 15,
+   "attr": "tool brand",
+   "value": "cork",
+   "history": [
+    {
+     "turn": 33,
+     "old": "cilantro",
+     "new": "cork"
+    }
+   ]
+  },
+  "F007": {
+   "id": "F007",
+   "turn": 20,
+   "attr": "bench finish",
+   "value": "ash",
+   "history": []
+  },
+  "F008": {
+   "id": "F008",
+   "turn": 25,
+   "attr": "planter soil",
+   "value": "nuthatch",
+   "history": []
+  },
+  "F009": {
+   "id": "F009",
+   "turn": 30,
+   "attr": "hose length",
+   "value": "finch",
+   "history": []
+  },
+  "F010": {
+   "id": "F010",
+   "turn": 35,
+   "attr": "lamp timer",
+   "value": "moss",
+   "history": [
+    {
+     "turn": 58,
+     "old": "peach",
+     "new": "moss"
+    }
+   ]
+  },
+  "F011": {
+   "id": "F011",
+   "turn": 40,
+   "attr": "shed paint",
+   "value": "poplar",
+   "history": []
+  },
+  "F012": {
+   "id": "F012",
+   "turn": 45,
+   "attr": "fence wood",
+   "value": "oats",
+   "history": []
+  },
+  "F013": {
+   "id": "F013",
+   "turn": 50,
+   "attr": "gate lock",
+   "value": "hickory",
+   "history": [
+    {
+     "turn": 83,
+     "old": "chisel",
+     "new": "hickory"
+    }
+   ]
+  },
+  "F014": {
+   "id": "F014",
+   "turn": 55,
+   "attr": "path material",
+   "value": "bamboo",
+   "history": []
+  },
+  "F015": {
+   "id": "F015",
+   "turn": 60,
+   "attr": "birdseed mix",
+   "value": "rust",
+   "history": []
+  },
+  "F016": {
+   "id": "F016",
+   "turn": 65,
+   "attr": "tool brand",
+   "value": "maroon",
+   "history": []
+  },
+  "F017": {
+   "id": "F017",
+   "turn": 70,
+   "attr": "bench finish",
+   "value": "pears",
+   "history": []
+  },
+  "F018": {
+   "id": "F018",
+   "turn": 75,
+   "attr": "planter soil",
+   "value": "olive",
+   "history": []
+  },
+  "F019": {
+   "id": "F019",
+   "turn": 80,
+   "attr": "hose length",
+   "value": "walnut",
+   "history": []
+  },
+  "F020": {
+   "id": "F020",
+   "turn": 85,
+   "attr": "lamp timer",
+   "value": "granite",
+   "history": [
+    {
+     "turn": 118,
+     "old": "cedar",
+     "new": "granite"
+    }
+   ]
+  },
+  "F021": {
+   "id": "F021",
+   "turn": 90,
+   "attr": "shed paint",
+   "value": "saw",
+   "history": []
+  },
+  "F022": {
+   "id": "F022",
+   "turn": 95,
+   "attr": "fence wood",
+   "value": "bread",
+   "history": []
+  },
+  "F023": {
+   "id": "F023",
+   "turn": 100,
+   "attr": "gate lock",
+   "value": "chives",
+   "history": []
+  },
+  "F024": {
+   "id": "F024",
+   "turn": 105,
+   "attr": "path material",
+   "value": "azure",
+   "history": []
+  },
+  "F025": {
+   "id": "F025",
+   "turn": 110,
+   "attr": "birdseed mix",
+   "value": "rice",
+   "history": []
+  },
+  "F026": {
+   "id": "F026",
+   "turn": 115,
+   "attr": "tool brand",
+   "value": "dove",
+   "history": []
+  },
+  "F027": {
+   "id": "F027",
+   "turn": 120,
+   "attr": "bench finish",
+   "value": "brass",
+   "history": [
+    {
+     "turn": 153,
+     "old": "beans",
+     "new": "brass"
+    }
+   ]
+  },
+  "F028": {
+   "id": "F028",
+   "turn": 125,
+   "attr": "planter soil",
+   "value": "level",
+   "history": []
+  },
+  "F029": {
+   "id": "F029",
+   "turn": 130,
+   "attr": "hose length",
+   "value": "hammer",
+   "history": []
+  },
+  "F030": {
+   "id": "F030",
+   "turn": 135,
+   "attr": "lamp timer",
+   "value": "sparrow",
+   "history": []
+  },
+  "F031": {
+   "id": "F031",
+   "turn": 140,
+   "attr": "shed paint",
+   "value": "coral",
+   "history": []
+  },
+  "F032": {
+   "id": "F032",
+   "turn": 145,
+   "attr": "fence wood",
+   "value": "robin",
+   "history": []
+  },
+  "F033": {
+   "id": "F033",
+   "turn": 150,
+   "attr": "gate lock",
+   "value": "leather",
+   "history": []
+  },
+  "F034": {
+   "id": "F034",
+   "turn": 155,
+   "attr": "path material",
+   "value": "bronze",
+   "history": []
+  },
+  "F035": {
+   "id": "F035",
+   "turn": 160,
+   "attr": "birdseed mix",
+   "value": "khaki",
+   "history": [
+    {
+     "turn": 193,
+     "old": "lark",
+     "new": "khaki"
+    }
+   ]
+  },
+  "F036": {
+   "id": "F036",
+   "turn": 165,
+   "attr": "tool brand",
+   "value": "thrush",
+   "history": []
+  },
+  "F037": {
+   "id": "F037",
+   "turn": 170,
+   "attr": "bench finish",
+   "value": "turquoise",
+   "history": []
+  },
+  "F038": {
+   "id": "F038",
+   "turn": 175,
+   "attr": "planter soil",
+   "value": "amber",
+   "history": []
+  },
+  "F039": {
+   "id": "F039",
+   "turn": 180,
+   "attr": "hose length",
+   "value": "canvas",
+   "history": []
+  },
+  "F040": {
+   "id": "F040",
+   "turn": 185,
+   "attr": "lamp timer",
+   "value": "maple",
+   "history": []
+  },
+  "F041": {
+   "id": "F041",
+   "turn": 190,
+   "attr": "shed paint",
+   "value": "pliers",
+   "history": []
+  },
+  "F042": {
+   "id": "F042",
+   "turn": 195,
+   "attr": "fence wood",
+   "value": "apples",
+   "history": [
+    {
+     "turn": 228,
+     "old": "drill",
+     "new": "apples"
+    }
+   ]
+  },
+  "F043": {
+   "id": "F043",
+   "turn": 200,
+   "attr": "gate lock",
+   "value": "glass",
+   "history": []
+  },
+  "F044": {
+   "id": "F044",
+   "turn": 205,
+   "attr": "path material",
+   "value": "balsa",
+   "history": []
+  },
+  "F045": {
+   "id": "F045",
+   "turn": 210,
+   "attr": "birdseed mix",
+   "value": "elm",
+   "history": []
+  },
+  "F046": {
+   "id": "F046",
+   "turn": 215,
+   "attr": "tool brand",
+   "value": "cream",
+   "history": []
+  },
+  "F047": {
+   "id": "F047",
+   "turn": 220,
+   "attr": "bench finish",
+   "value": "ochre",
+   "history": []
+  },
+  "F048": {
+   "id": "F048",
+   "turn": 225,
+   "attr": "planter soil",
+   "value": "lavender",
+   "history": []
+  },
+  "F049": {
+   "id": "F049",
+   "turn": 230,
+   "attr": "hose length",
+   "value": "marble",
+   "history": []
+  },
+  "F050": {
+   "id": "F050",
+   "turn": 235,
+   "attr": "lamp timer",
+   "value": "copper",
+   "history": []
+  },
+  "F051": {
+   "id": "F051",
+   "turn": 240,
+   "attr": "shed paint",
+   "value": "clay",
+   "history": []
+  },
+  "F052": {
+   "id": "F052",
+   "turn": 245,
+   "attr": "fence wood",
+   "value": "parsley",
+   "history": []
+  },
+  "F053": {
+   "id": "F053",
+   "turn": 250,
+   "attr": "gate lock",
+   "value": "brick",
+   "history": []
+  }
+ },
+ "corrections": {
+  "9": {
+   "target": "F002",
+   "old": "warbler",
+   "new": "grapes"
+  },
+  "33": {
+   "target": "F006",
+   "old": "cilantro",
+   "new": "cork"
+  },
+  "58": {
+   "target": "F010",
+   "old": "peach",
+   "new": "moss"
+  },
+  "83": {
+   "target": "F013",
+   "old": "chisel",
+   "new": "hickory"
+  },
+  "118": {
+   "target": "F020",
+   "old": "cedar",
+   "new": "granite"
+  },
+  "153": {
+   "target": "F027",
+   "old": "beans",
+   "new": "brass"
+  },
+  "193": {
+   "target": "F035",
+   "old": "lark",
+   "new": "khaki"
+  },
+  "228": {
+   "target": "F042",
+   "old": "drill",
+   "new": "apples"
+  }
+ },
+ "turns": [
+  {
+   "n": 1,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 2,
+   "kind": "fact",
+   "ref": "F001",
+   "text": "Remember for later: our shed paint is charcoal. Reply in one or two sentences."
+  },
+  {
+   "n": 3,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 4,
+   "kind": "fact",
+   "ref": "F002",
+   "text": "Remember for later: our fence wood is warbler. Reply in one or two sentences."
+  },
+  {
+   "n": 5,
+   "kind": "filler",
+   "text": "If a shelf holds 2 boxes per row and 3 rows, how many boxes fit? Reply in one or two sentences."
+  },
+  {
+   "n": 6,
+   "kind": "fact",
+   "ref": "F003",
+   "text": "Remember for later: our gate lock is ivory. Reply in one or two sentences."
+  },
+  {
+   "n": 7,
+   "kind": "filler",
+   "text": "Is 21 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 8,
+   "kind": "fact",
+   "ref": "F004",
+   "text": "Remember for later: our path material is cherry. Reply in one or two sentences."
+  },
+  {
+   "n": 9,
+   "kind": "correction",
+   "ref": "F002",
+   "text": "Correction: our fence wood is grapes, not warbler. Reply in one or two sentences."
+  },
+  {
+   "n": 10,
+   "kind": "fact",
+   "ref": "F005",
+   "text": "Remember for later: our birdseed mix is steel. Reply in one or two sentences."
+  },
+  {
+   "n": 11,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 12,
+   "kind": "filler",
+   "text": "Is 36 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 13,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 14,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 15,
+   "kind": "fact",
+   "ref": "F006",
+   "text": "Remember for later: our tool brand is cilantro. Reply in one or two sentences."
+  },
+  {
+   "n": 16,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 17,
+   "kind": "reference",
+   "ref": "F006",
+   "text": "Quick check: what did we say our tool brand was? Reply in one or two sentences."
+  },
+  {
+   "n": 18,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 19,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 20,
+   "kind": "fact",
+   "ref": "F007",
+   "text": "Remember for later: our bench finish is ash. Reply in one or two sentences."
+  },
+  {
+   "n": 21,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 22,
+   "kind": "filler",
+   "text": "Is 66 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 23,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 24,
+   "kind": "fileop",
+   "text": "Create a file named bench-files-scale/note.txt containing exactly: hello. Reply in one sentence."
+  },
+  {
+   "n": 25,
+   "kind": "fact",
+   "ref": "F008",
+   "text": "Remember for later: our planter soil is nuthatch. Reply in one or two sentences."
+  },
+  {
+   "n": 26,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 27,
+   "kind": "filler",
+   "text": "Is 81 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 28,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 29,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 30,
+   "kind": "fact",
+   "ref": "F009",
+   "text": "Remember for later: our hose length is finch. Reply in one or two sentences."
+  },
+  {
+   "n": 31,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 32,
+   "kind": "filler",
+   "text": "Is 96 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 33,
+   "kind": "correction",
+   "ref": "F006",
+   "text": "Correction: our tool brand is cork, not cilantro. Reply in one or two sentences."
+  },
+  {
+   "n": 34,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 35,
+   "kind": "fact",
+   "ref": "F010",
+   "text": "Remember for later: our lamp timer is peach. Reply in one or two sentences."
+  },
+  {
+   "n": 36,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 37,
+   "kind": "reference",
+   "ref": "F010",
+   "text": "Quick check: what did we say our lamp timer was? Reply in one or two sentences."
+  },
+  {
+   "n": 38,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 39,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 40,
+   "kind": "fact",
+   "ref": "F011",
+   "text": "Remember for later: our shed paint is poplar. Reply in one or two sentences."
+  },
+  {
+   "n": 41,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 42,
+   "kind": "filler",
+   "text": "Is 126 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 43,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 44,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 45,
+   "kind": "fact",
+   "ref": "F012",
+   "text": "Remember for later: our fence wood is oats. Reply in one or two sentences."
+  },
+  {
+   "n": 46,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 47,
+   "kind": "filler",
+   "text": "Is 141 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 48,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 49,
+   "kind": "fileop",
+   "text": "Append a line with the word world to bench-files-scale/note.txt. Reply in one sentence."
+  },
+  {
+   "n": 50,
+   "kind": "fact",
+   "ref": "F013",
+   "text": "Remember for later: our gate lock is chisel. Reply in one or two sentences."
+  },
+  {
+   "n": 51,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 52,
+   "kind": "filler",
+   "text": "Is 156 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 53,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 54,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 55,
+   "kind": "fact",
+   "ref": "F014",
+   "text": "Remember for later: our path material is bamboo. Reply in one or two sentences."
+  },
+  {
+   "n": 56,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 57,
+   "kind": "filler",
+   "text": "Is 171 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 58,
+   "kind": "correction",
+   "ref": "F010",
+   "text": "Correction: our lamp timer is moss, not peach. Reply in one or two sentences."
+  },
+  {
+   "n": 59,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 60,
+   "kind": "fact",
+   "ref": "F015",
+   "text": "Remember for later: our birdseed mix is rust. Reply in one or two sentences."
+  },
+  {
+   "n": 61,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 62,
+   "kind": "filler",
+   "text": "Is 186 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 63,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 64,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 65,
+   "kind": "fact",
+   "ref": "F016",
+   "text": "Remember for later: our tool brand is maroon. Reply in one or two sentences."
+  },
+  {
+   "n": 66,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 67,
+   "kind": "reference",
+   "ref": "F016",
+   "text": "Quick check: what did we say our tool brand was? Reply in one or two sentences."
+  },
+  {
+   "n": 68,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 69,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 70,
+   "kind": "fact",
+   "ref": "F017",
+   "text": "Remember for later: our bench finish is pears. Reply in one or two sentences."
+  },
+  {
+   "n": 71,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 72,
+   "kind": "filler",
+   "text": "Is 216 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 73,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 74,
+   "kind": "fileop",
+   "text": "Read bench-files-scale/note.txt and list its lines. Reply in one sentence."
+  },
+  {
+   "n": 75,
+   "kind": "fact",
+   "ref": "F018",
+   "text": "Remember for later: our planter soil is olive. Reply in one or two sentences."
+  },
+  {
+   "n": 76,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 77,
+   "kind": "filler",
+   "text": "Is 231 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 78,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 79,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 80,
+   "kind": "fact",
+   "ref": "F019",
+   "text": "Remember for later: our hose length is walnut. Reply in one or two sentences."
+  },
+  {
+   "n": 81,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 82,
+   "kind": "filler",
+   "text": "Is 246 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 83,
+   "kind": "correction",
+   "ref": "F013",
+   "text": "Correction: our gate lock is hickory, not chisel. Reply in one or two sentences."
+  },
+  {
+   "n": 84,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 85,
+   "kind": "fact",
+   "ref": "F020",
+   "text": "Remember for later: our lamp timer is cedar. Reply in one or two sentences."
+  },
+  {
+   "n": 86,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 87,
+   "kind": "filler",
+   "text": "Is 261 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 88,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 89,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 90,
+   "kind": "fact",
+   "ref": "F021",
+   "text": "Remember for later: our shed paint is saw. Reply in one or two sentences."
+  },
+  {
+   "n": 91,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 92,
+   "kind": "filler",
+   "text": "Is 276 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 93,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 94,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 95,
+   "kind": "fact",
+   "ref": "F022",
+   "text": "Remember for later: our fence wood is bread. Reply in one or two sentences."
+  },
+  {
+   "n": 96,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 97,
+   "kind": "reference",
+   "ref": "F022",
+   "text": "Quick check: what did we say our fence wood was? Reply in one or two sentences."
+  },
+  {
+   "n": 98,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 99,
+   "kind": "fileop",
+   "text": "Create bench-files-scale/todo.txt with exactly: sweep. Reply in one sentence."
+  },
+  {
+   "n": 100,
+   "kind": "fact",
+   "ref": "F023",
+   "text": "Remember for later: our gate lock is chives. Reply in one or two sentences."
+  },
+  {
+   "n": 101,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 102,
+   "kind": "filler",
+   "text": "Is 306 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 103,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 104,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 105,
+   "kind": "fact",
+   "ref": "F024",
+   "text": "Remember for later: our path material is azure. Reply in one or two sentences."
+  },
+  {
+   "n": 106,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 107,
+   "kind": "filler",
+   "text": "Is 321 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 108,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 109,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 110,
+   "kind": "fact",
+   "ref": "F025",
+   "text": "Remember for later: our birdseed mix is rice. Reply in one or two sentences."
+  },
+  {
+   "n": 111,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 112,
+   "kind": "filler",
+   "text": "Is 336 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 113,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 114,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 115,
+   "kind": "fact",
+   "ref": "F026",
+   "text": "Remember for later: our tool brand is dove. Reply in one or two sentences."
+  },
+  {
+   "n": 116,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 117,
+   "kind": "filler",
+   "text": "Is 351 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 118,
+   "kind": "correction",
+   "ref": "F020",
+   "text": "Correction: our lamp timer is granite, not cedar. Reply in one or two sentences."
+  },
+  {
+   "n": 119,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 120,
+   "kind": "fact",
+   "ref": "F027",
+   "text": "Remember for later: our bench finish is beans. Reply in one or two sentences."
+  },
+  {
+   "n": 121,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 122,
+   "kind": "filler",
+   "text": "Is 366 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 123,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 124,
+   "kind": "fileop",
+   "text": "Append a line with the word mop to bench-files-scale/todo.txt. Reply in one sentence."
+  },
+  {
+   "n": 125,
+   "kind": "fact",
+   "ref": "F028",
+   "text": "Remember for later: our planter soil is level. Reply in one or two sentences."
+  },
+  {
+   "n": 126,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 127,
+   "kind": "filler",
+   "text": "Is 381 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 128,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 129,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 130,
+   "kind": "fact",
+   "ref": "F029",
+   "text": "Remember for later: our hose length is hammer. Reply in one or two sentences."
+  },
+  {
+   "n": 131,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 132,
+   "kind": "filler",
+   "text": "Is 396 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 133,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 134,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 135,
+   "kind": "fact",
+   "ref": "F030",
+   "text": "Remember for later: our lamp timer is sparrow. Reply in one or two sentences."
+  },
+  {
+   "n": 136,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 137,
+   "kind": "reference",
+   "ref": "F030",
+   "text": "Quick check: what did we say our lamp timer was? Reply in one or two sentences."
+  },
+  {
+   "n": 138,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 139,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 140,
+   "kind": "fact",
+   "ref": "F031",
+   "text": "Remember for later: our shed paint is coral. Reply in one or two sentences."
+  },
+  {
+   "n": 141,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 142,
+   "kind": "filler",
+   "text": "Is 426 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 143,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 144,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 145,
+   "kind": "fact",
+   "ref": "F032",
+   "text": "Remember for later: our fence wood is robin. Reply in one or two sentences."
+  },
+  {
+   "n": 146,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 147,
+   "kind": "filler",
+   "text": "Is 441 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 148,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 149,
+   "kind": "fileop",
+   "text": "Read bench-files-scale/todo.txt and list its lines. Reply in one sentence."
+  },
+  {
+   "n": 150,
+   "kind": "fact",
+   "ref": "F033",
+   "text": "Remember for later: our gate lock is leather. Reply in one or two sentences."
+  },
+  {
+   "n": 151,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 152,
+   "kind": "filler",
+   "text": "Is 456 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 153,
+   "kind": "correction",
+   "ref": "F027",
+   "text": "Correction: our bench finish is brass, not beans. Reply in one or two sentences."
+  },
+  {
+   "n": 154,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 155,
+   "kind": "fact",
+   "ref": "F034",
+   "text": "Remember for later: our path material is bronze. Reply in one or two sentences."
+  },
+  {
+   "n": 156,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 157,
+   "kind": "filler",
+   "text": "Is 471 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 158,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 159,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 160,
+   "kind": "fact",
+   "ref": "F035",
+   "text": "Remember for later: our birdseed mix is lark. Reply in one or two sentences."
+  },
+  {
+   "n": 161,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 162,
+   "kind": "filler",
+   "text": "Is 486 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 163,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 164,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 165,
+   "kind": "fact",
+   "ref": "F036",
+   "text": "Remember for later: our tool brand is thrush. Reply in one or two sentences."
+  },
+  {
+   "n": 166,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 167,
+   "kind": "filler",
+   "text": "Is 501 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 168,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 169,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 170,
+   "kind": "fact",
+   "ref": "F037",
+   "text": "Remember for later: our bench finish is turquoise. Reply in one or two sentences."
+  },
+  {
+   "n": 171,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 172,
+   "kind": "filler",
+   "text": "Is 516 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 173,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 174,
+   "kind": "fileop",
+   "text": "Create bench-files-scale/idea.txt with exactly: skylight. Reply in one sentence."
+  },
+  {
+   "n": 175,
+   "kind": "fact",
+   "ref": "F038",
+   "text": "Remember for later: our planter soil is amber. Reply in one or two sentences."
+  },
+  {
+   "n": 176,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 177,
+   "kind": "reference",
+   "ref": "F038",
+   "text": "Quick check: what did we say our planter soil was? Reply in one or two sentences."
+  },
+  {
+   "n": 178,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 179,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 180,
+   "kind": "fact",
+   "ref": "F039",
+   "text": "Remember for later: our hose length is canvas. Reply in one or two sentences."
+  },
+  {
+   "n": 181,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 182,
+   "kind": "filler",
+   "text": "Is 546 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 183,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 184,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 185,
+   "kind": "fact",
+   "ref": "F040",
+   "text": "Remember for later: our lamp timer is maple. Reply in one or two sentences."
+  },
+  {
+   "n": 186,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 187,
+   "kind": "filler",
+   "text": "Is 561 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 188,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 189,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 190,
+   "kind": "fact",
+   "ref": "F041",
+   "text": "Remember for later: our shed paint is pliers. Reply in one or two sentences."
+  },
+  {
+   "n": 191,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 192,
+   "kind": "filler",
+   "text": "Is 576 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 193,
+   "kind": "correction",
+   "ref": "F035",
+   "text": "Correction: our birdseed mix is khaki, not lark. Reply in one or two sentences."
+  },
+  {
+   "n": 194,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 195,
+   "kind": "fact",
+   "ref": "F042",
+   "text": "Remember for later: our fence wood is drill. Reply in one or two sentences."
+  },
+  {
+   "n": 196,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 197,
+   "kind": "filler",
+   "text": "Is 591 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 198,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 199,
+   "kind": "fileop",
+   "text": "Append a line with the word awning to bench-files-scale/idea.txt. Reply in one sentence."
+  },
+  {
+   "n": 200,
+   "kind": "fact",
+   "ref": "F043",
+   "text": "Remember for later: our gate lock is glass. Reply in one or two sentences."
+  },
+  {
+   "n": 201,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 202,
+   "kind": "filler",
+   "text": "Is 606 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 203,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 204,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 205,
+   "kind": "fact",
+   "ref": "F044",
+   "text": "Remember for later: our path material is balsa. Reply in one or two sentences."
+  },
+  {
+   "n": 206,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 207,
+   "kind": "filler",
+   "text": "Is 621 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 208,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 209,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 210,
+   "kind": "fact",
+   "ref": "F045",
+   "text": "Remember for later: our birdseed mix is elm. Reply in one or two sentences."
+  },
+  {
+   "n": 211,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 212,
+   "kind": "filler",
+   "text": "Is 636 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 213,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 214,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 215,
+   "kind": "fact",
+   "ref": "F046",
+   "text": "Remember for later: our tool brand is cream. Reply in one or two sentences."
+  },
+  {
+   "n": 216,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 217,
+   "kind": "reference",
+   "ref": "F046",
+   "text": "Quick check: what did we say our tool brand was? Reply in one or two sentences."
+  },
+  {
+   "n": 218,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 219,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 220,
+   "kind": "fact",
+   "ref": "F047",
+   "text": "Remember for later: our bench finish is ochre. Reply in one or two sentences."
+  },
+  {
+   "n": 221,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 222,
+   "kind": "filler",
+   "text": "Is 666 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 223,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 224,
+   "kind": "fileop",
+   "text": "Read bench-files-scale/idea.txt and list its lines. Reply in one sentence."
+  },
+  {
+   "n": 225,
+   "kind": "fact",
+   "ref": "F048",
+   "text": "Remember for later: our planter soil is lavender. Reply in one or two sentences."
+  },
+  {
+   "n": 226,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 227,
+   "kind": "filler",
+   "text": "Is 681 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 228,
+   "kind": "correction",
+   "ref": "F042",
+   "text": "Correction: our fence wood is apples, not drill. Reply in one or two sentences."
+  },
+  {
+   "n": 229,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 230,
+   "kind": "fact",
+   "ref": "F049",
+   "text": "Remember for later: our hose length is marble. Reply in one or two sentences."
+  },
+  {
+   "n": 231,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 232,
+   "kind": "filler",
+   "text": "Is 696 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 233,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 234,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 235,
+   "kind": "fact",
+   "ref": "F050",
+   "text": "Remember for later: our lamp timer is copper. Reply in one or two sentences."
+  },
+  {
+   "n": 236,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 237,
+   "kind": "filler",
+   "text": "Is 711 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 238,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 239,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 240,
+   "kind": "fact",
+   "ref": "F051",
+   "text": "Remember for later: our shed paint is clay. Reply in one or two sentences."
+  },
+  {
+   "n": 241,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 242,
+   "kind": "filler",
+   "text": "Is 726 divisible by 3? Explain in one sentence. Reply in one or two sentences."
+  },
+  {
+   "n": 243,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 244,
+   "kind": "filler",
+   "text": "What shape holds water best: a bowl or a plate? Why? Reply in one or two sentences."
+  },
+  {
+   "n": 245,
+   "kind": "fact",
+   "ref": "F052",
+   "text": "Remember for later: our fence wood is parsley. Reply in one or two sentences."
+  },
+  {
+   "n": 246,
+   "kind": "filler",
+   "text": "Suggest a cheerful name for a garden shed. Reply in one or two sentences."
+  },
+  {
+   "n": 247,
+   "kind": "reference",
+   "ref": "F052",
+   "text": "Quick check: what did we say our fence wood was? Reply in one or two sentences."
+  },
+  {
+   "n": 248,
+   "kind": "filler",
+   "text": "Name one advantage of hand tools over power tools. Reply in one or two sentences."
+  },
+  {
+   "n": 249,
+   "kind": "fileop",
+   "text": "List the files in bench-files-scale/. Reply in one sentence."
+  },
+  {
+   "n": 250,
+   "kind": "fact",
+   "ref": "F053",
+   "text": "Remember for later: our gate lock is brick. Reply in one or two sentences."
+  }
+ ],
+ "probes": [
+  {
+   "id": "T1-P10-recent",
+   "after": 10,
+   "kind": "recent",
+   "ref": "F005",
+   "text": "What is our birdseed mix? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "steel"
+    ]
+   }
+  },
+  {
+   "id": "T1-P10-medium",
+   "after": 10,
+   "kind": "medium",
+   "ref": "F003",
+   "text": "What is our gate lock? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "ivory"
+    ]
+   }
+  },
+  {
+   "id": "T1-P10-old",
+   "after": 10,
+   "kind": "old",
+   "ref": "F001",
+   "text": "What is our shed paint? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "charcoal"
+    ]
+   }
+  },
+  {
+   "id": "T1-P10-corrected",
+   "after": 10,
+   "kind": "corrected",
+   "ref": "F002",
+   "text": "What is our current fence wood? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "corrected",
+    "new": "grapes",
+    "old": "warbler"
+   }
+  },
+  {
+   "id": "T1-P10-indirect",
+   "after": 10,
+   "kind": "indirect",
+   "ref": "F004",
+   "text": "What is the walkway made of? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "cherry"
+    ]
+   }
+  },
+  {
+   "id": "T1-P50-recent",
+   "after": 50,
+   "kind": "recent",
+   "ref": "F013",
+   "text": "What is our gate lock? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "hickory"
+    ]
+   }
+  },
+  {
+   "id": "T1-P50-medium",
+   "after": 50,
+   "kind": "medium",
+   "ref": "F009",
+   "text": "What is our hose length? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "finch"
+    ]
+   }
+  },
+  {
+   "id": "T1-P50-old",
+   "after": 50,
+   "kind": "old",
+   "ref": "F001",
+   "text": "What is our shed paint? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "charcoal"
+    ]
+   }
+  },
+  {
+   "id": "T1-P50-corrected",
+   "after": 50,
+   "kind": "corrected",
+   "ref": "F006",
+   "text": "What is our current tool brand? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "corrected",
+    "new": "cork",
+    "old": "cilantro"
+   }
+  },
+  {
+   "id": "T1-P50-indirect",
+   "after": 50,
+   "kind": "indirect",
+   "ref": "F011",
+   "text": "What color did we pick for the garden storage structure? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "poplar"
+    ]
+   }
+  },
+  {
+   "id": "T1-P100-recent",
+   "after": 100,
+   "kind": "recent",
+   "ref": "F023",
+   "text": "What is our gate lock? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "chives"
+    ]
+   }
+  },
+  {
+   "id": "T1-P100-medium",
+   "after": 100,
+   "kind": "medium",
+   "ref": "F015",
+   "text": "What is our birdseed mix? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "rust"
+    ]
+   }
+  },
+  {
+   "id": "T1-P100-old",
+   "after": 100,
+   "kind": "old",
+   "ref": "F001",
+   "text": "What is our shed paint? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "charcoal"
+    ]
+   }
+  },
+  {
+   "id": "T1-P100-corrected",
+   "after": 100,
+   "kind": "corrected",
+   "ref": "F013",
+   "text": "What is our current gate lock? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "corrected",
+    "new": "hickory",
+    "old": "chisel"
+   }
+  },
+  {
+   "id": "T1-P100-indirect",
+   "after": 100,
+   "kind": "indirect",
+   "ref": "F018",
+   "text": "What fills our plant containers? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "olive"
+    ]
+   }
+  },
+  {
+   "id": "T1-P250-recent",
+   "after": 250,
+   "kind": "recent",
+   "ref": "F053",
+   "text": "What is our gate lock? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "brick"
+    ]
+   }
+  },
+  {
+   "id": "T1-P250-medium",
+   "after": 250,
+   "kind": "medium",
+   "ref": "F028",
+   "text": "What is our planter soil? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "level"
+    ]
+   }
+  },
+  {
+   "id": "T1-P250-old",
+   "after": 250,
+   "kind": "old",
+   "ref": "F001",
+   "text": "What is our shed paint? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "charcoal"
+    ]
+   }
+  },
+  {
+   "id": "T1-P250-corrected",
+   "after": 250,
+   "kind": "corrected",
+   "ref": "F042",
+   "text": "What is our current fence wood? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "corrected",
+    "new": "apples",
+    "old": "drill"
+   }
+  },
+  {
+   "id": "T1-P250-indirect",
+   "after": 250,
+   "kind": "indirect",
+   "ref": "F033",
+   "text": "What secures the yard entrance? Answer briefly in one sentence.",
+   "expected": {
+    "rule": "present",
+    "words": [
+     "leather"
+    ]
+   }
+  }
+ ]
+}

@@ -1,4 +1,8 @@
-# Continuum — a memory in motion
+# Continuum
+
+Continuum is a local-first continuity and memory layer around Muse Code.
+
+## What Continuum is
 
 Continuum is a local web frontend for **Muse Code** with persistent personal
 memory and project context. The browser is only a different environment for
@@ -6,311 +10,181 @@ Muse Code: it streams Muse's exact text, tool activity, permission requests,
 questions, errors and results, verbatim. There is no second agent and no
 second model call interpreting Muse's output.
 
-Path: browser UI → local Python app → Muse Code (`muse serve`, MSP stdio)
-→ Muse Spark.
+Muse remains the agent with native tools. Continuum adds persistent memory,
+project context, history and an accessible web interface.
 
-A local Markdown encyclopedia augments every turn (derived CORE + retrieved
-entries). Muse maintains it through its own fenced blocks, parsed
-deterministically — never silently rewritten, with provenance and
-supersession instead of deletion.
+## What problem it solves
+
+- Continuity across sessions: new chats start fresh but remember you.
+- Persistent global memory: identity, preferences, decisions, shared history.
+- Project-scoped memory and context (`.continuum.md` per project).
+- Corrections and supersession instead of silent overwriting.
+- Project isolation: one project's facts don't leak into another.
+- Continuity after app/server restart.
+- An accessible web interface: Continuum provides a simple web interface
+  for working with Muse Code, projects, files, memory and approvals
+  without requiring users to be comfortable living in a terminal.
+
+## Architecture
+
+```text
+Continuum Web UI → local Python bridge → Muse Code / MSP
+→ Muse native tools → local computer
+```
+
+What each side does:
+
+- **Muse / Meta**: agent runtime, reasoning, native file/tool execution,
+  native approvals, model and reasoning controls, hosted model service.
+- **Continuum**: persistent memory encyclopedia, global/project routing,
+  project registry, `.continuum.md` context, provenance/supersession,
+  session/history organization, attachments, onboarding integration,
+  incremental context delivery, and the Normal/Pro web interface.
+
+## Built during the Meta Global AI Developer Hackathon 2026
+
+Continuum was built for the Meta Global AI Developer Hackathon
+(period: Oct 26 – Nov 4, 2026; track: Push the Frontier). Only work
+built during the event is presented as ours.
+
+Meta provides (not our contribution):
+
+- Muse Code
+- Muse Spark / hosted model service
+- MSP (Muse Server Protocol)
+- native file/tool execution
+- native approvals
+- native model/reasoning controls
+
+Continuum built during the hackathon:
+
+- persistent memory encyclopedia
+- global/project routing
+- `.continuum.md` project context
+- provenance/supersession
+- project registry
+- session/history UI
+- Normal/Pro web UI
+- attachments
+- onboarding/runtime integration
+- incremental context delivery
+- manual experimental memory refresh
+- EN/ES interface
+- one-click launchers
+
+Continuum is an independent project. Participation in the hackathon does
+not imply Meta endorsement.
 
 ## Requirements
 
 - **Muse Code** (tested with 1.4.14) with a Meta account that has Muse access.
-- **Python 3.10+** (3.12 tested). The product server is stdlib-only —
-  no `pip install` needed to run Continuum itself.
-- A modern browser (Chromium/Chrome/Edge/Firefox/Safari).
-- Loopback networking (`127.0.0.1`). Continuum never listens on other
-  interfaces and phones nothing home; all traffic is you → localhost →
-  your Muse installation → Meta.
+- **Python 3.10+** (3.12 tested). `server.py` is stdlib-only.
+- A modern browser. Loopback networking (`127.0.0.1`).
 
-Security note: Continuum binds to loopback and defends the API with
-Host/Origin checks plus a per-process token, but other processes
-running as the same local user are part of the local trust boundary
-and may potentially access the localhost service. It is not isolation
-from malicious local software.
+## Quick start
 
-## Install Muse Code
+Windows: double-click `Start Continuum.bat`
 
-Continuum does not bundle or silently install Muse. If it is missing, the
-UI tells you so. Install it yourself with the official one-line installer
-(docs: <https://dev.meta.ai/docs/muse-code/>):
-
-macOS / Linux:
-
-```sh
-curl -fsSL https://dev.meta.ai/install.sh | sh
-```
-
-Windows PowerShell:
-
-```powershell
-irm https://dev.meta.ai/install.ps1 | iex
-```
-
-Then confirm `muse --version` works in a new terminal.
-
-## Meta login / auth
-
-Auth belongs entirely to Muse. In a terminal, run `muse` once (or
-`muse login`): on first run Muse Code asks you to trust the workspace and
-prompts you to authenticate with a browser sign-in or an API key (reopen
-with `/login` inside an interactive session; billing and full options:
-<https://dev.meta.ai/docs/muse-code/auth>).
-
-Continuum itself stores no Muse credentials — no keys, tokens or login
-state in its files, `localStorage`, transcripts or memory. But note the
-distinction: anything *you* type or paste into chat (including a secret)
-is your content — it will appear in transcripts, and Muse may keep it in
-memory if it judges it durable. Do not paste secrets into chat.
-
-If the machine is not authenticated, Continuum shows a **Connect Meta**
-banner linking to the official setup page instead of a cryptic failure.
-
-## Python setup
-
-No virtualenv needed for normal use — `server.py` uses the standard library
-only. A venv is only required for the optional dev browser tests:
-
-Windows PowerShell:
-
-```powershell
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r dev/browser/requirements.txt
-python -m playwright install chromium
-```
-
-macOS / Linux:
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r dev/browser/requirements.txt
-python -m playwright install chromium
-```
-
-## Start
-
-Recommended:
-
-- Windows: double-click `Start Continuum.bat`
-- macOS: double-click `Start Continuum.command`
+macOS: double-click `Start Continuum.command`
 
 The launcher starts the local server and opens
-<http://127.0.0.1:8137/> in your browser. If a Continuum server is
-already running there, it just opens the browser.
+<http://127.0.0.1:8137/>. If a Continuum server is already running
+there, it just opens the browser.
+
+First run: Continuum detects whether Muse Code is installed. If it is
+missing, the UI explains how to install it with the official installer
+(<https://dev.meta.ai/docs/muse-code/>). If Muse is installed but not
+authenticated, a **Connect Meta** banner links to the official setup
+flow instead of failing cryptically. Continuum stores no Muse
+credentials; auth belongs entirely to Muse (`muse login`).
 
 Terminal fallback (developers, custom ports):
 
-From the repo root (`python` on Windows, `python3` on macOS/Linux):
-
-```powershell
-python server.py
-```
-
-then open <http://127.0.0.1:8137/> in your browser. Custom port:
-
-```powershell
+```sh
+python server.py            # python3 on macOS/Linux
 python server.py --port 8140
 ```
 
-Stop with Ctrl-C in the terminal.
+Stop with Ctrl-C. See [docs/USER_GUIDE.md](docs/USER_GUIDE.md) for the
+full non-technical guide.
 
-## First run
+## Benchmarks & Reproducibility
 
-1. Continuum detects whether Muse Code is installed.
-2. If installed but logged out, you get the Connect Meta banner; log in,
-   press Recheck.
-3. If everything is ready, the app opens straight into a new conversation.
-4. `data/` starts empty and is created automatically: sessions, transcripts,
-   memory index, usage log and attachment staging all appear on first use.
-   Conversations begin with zero memories; Muse starts remembering what
-   matters from the first turn (see Memory below).
+Controlled single-machine runs (single run each; not statistical proof):
 
-## Interface language (EN/ES)
+- **Continuity V2** (fresh sessions, projects, restart): Continuum 10/10
+  valid probes, Muse-direct 1/10, 0 invalid. Same model and config.
+- **150-turn long session** (incremental delivery): prompt-token ratio
+  Continuum/direct stayed ~1.07–1.14x from turn 1 to turn 150
+  (1.085x at turn 150); sequence cost +8.1% DERIVED.
+- **Long-session recall matched Muse-direct exactly** (15/25 both) and
+  still degraded with context length in both conditions (5/5 → 2/5).
+- **Refresh Memory** (experimental) completed correctly at turn 100
+  (~1,029 injected tokens) but did not change the frozen probe score
+  (3/5 before, 3/5 after).
 
-The quiet `ES | EN` switch next to Normal/Pro changes Continuum's chrome
-only (menus, status, buttons, tooltips). It never translates Muse's replies,
-your messages, memories, project files, transcripts or attachments, and it
-never affects retrieval. Preference persists across reloads. Default: ES.
+No universal-superiority claims are made. Methodology, protocol hashes,
+full numbers, caveats and reproduction steps:
+[docs/EXPERIMENTS.md](docs/EXPERIMENTS.md).
 
-## Normal vs Pro
+## Limitations
 
-Both modes drive the **same** Muse agent with the same capabilities. Only
-the presentation differs, and switching never changes model, effort,
-permissions, session, project or memory.
+- AI/model outputs can still be wrong. Verify important information and
+  review tool actions before approving them.
+- Long-session reasoning and recall remain dependent on Muse/model
+  behavior; Continuum does not claim to solve model-side degradation.
+- Windows native shell execution may require Muse sandbox configuration
+  (`muse sandbox windows setup`, run by you, elevated); until then,
+  shell turns fail pre-approval with a clear environment error.
+- Refresh Memory is experimental.
+- Benchmark results are controlled single-machine runs, not universal
+  claims.
 
-- **Normal**: clean conversational UI, operational status
-  (Thinking / Using a tool / Waiting for approval / Responding…), elapsed
-  time, human-readable approval explanations with the byte-identical
-  technical action one click away.
-- **Pro**: the same agent plus raw/native telemetry and controls — exact
-  tool names and arguments, session info, usage/context, tasks/todos,
-  goals, skills, compact, approval modes, pending approvals, and gated
-  experimental items (permission profiles, logs) where your Muse version
-  supports them.
+## Privacy / Security
 
-## Memory
+- Local-first: memories, transcripts, sessions and staged attachments
+  live in `data/` on your machine as plaintext Markdown/JSON.
+- Memories/transcripts/projects stay local unless Muse or connected
+  services send information as part of normal model/tool operation.
+- The API binds to loopback only and is defended by Host/Origin checks
+  plus a per-process token — but other processes running as the same
+  OS user are inside the local trust boundary. No claim of hostile
+  local-process isolation.
+- Anything you type or paste into chat (including a secret) is your
+  content: it appears in transcripts and Muse may memorize it. Do not
+  paste secrets. Continuum stores no Muse credentials anywhere.
+- Reset (`POST /api/reset` or delete `data/`) clears all
+  Continuum-owned local state but never deletes `.continuum.md` files
+  inside your own project folders.
 
-You never type "remember this". After each turn, Muse may emit durable
-facts; Continuum stores them as one Markdown file per entry under
-`data/entries/`, with provenance (user-stated vs inferred), revision
-history and supersession links. The UI toasts Remembered / Updated /
-Superseded with undo. The Memory view and Memory Lab show the index,
-connections, accessibility states (Active/Recent/Deep — reduced
-accessibility, never deletion) and exactly which entries each answer used.
+## License & Third-Party Services
 
-Entries and transcripts are local **plaintext** Markdown/JSON: readable,
-editable, portable — and not encrypted. `data/entries/` plus
-`data/transcripts.json` move cleanly to another machine, but the rest of
-`data/` is machine-specific: the project registry holds absolute paths and
-Muse session ids are meaningless on another computer. After copying,
-re-register projects (or reset and start fresh). `data/index.json` and
-`data/core.json` are derived caches and rebuild automatically.
+Continuum source code is licensed under PolyForm Noncommercial 1.0.0.
+Required Notice: Copyright 2026 Satoru Takeda.
+Commercial use requires separate permission/license.
 
-## Projects
+Muse Code, Muse Spark and Meta-hosted services are provided by Meta
+and are subject to Meta's own applicable terms. Continuum does not
+redistribute Meta model weights.
 
-Each real project folder may hold a human-readable `.continuum.md` with
-project-only context (state, decisions, pending work, key paths, failed
-approaches). Continuum tracks an active project per conversation: switching
-projects swaps context files without contaminating them, while global user
-memory travels through the encyclopedia. Ask Muse to create projects in
-normal language — it uses its native file tools; Continuum only registers
-and activates what Muse made. Note the boundary: the active project
-selects *context* (which `.continuum.md` is read, where project memories
-go) — it is not a filesystem jail. Muse keeps its normal native ability
-to work anywhere on your computer, subject to its own approval flow.
-Credentials don't belong in `.continuum.md`.
+## Disclaimer
 
-## History
+Continuum is experimental software. AI-generated output may be
+inaccurate or incomplete. Verify important information and review tool
+actions before approving them.
 
-Every conversation keeps its transcript (`data/transcripts.json`, text plus
-attachment metadata — never file contents). History cards show a
-deterministic local title (no extra model call), project, date, turn count
-and a preview; raw session ids stay behind a collapsed technical block
-(auto-open in Pro). Resume continues the same Muse session. New Chat starts
-a blank conversation in a fresh Muse session while keeping your project and
-all memory.
-
-## Attachments
-
-The paperclip (or drag-and-drop onto the conversation) stages files
-server-side — max 5 files, 10 MB each — and Muse reads them with its native
-file tools during that turn. Chips show name/size with per-file remove;
-selecting or removing never destroys your draft. Originals are never moved
-or modified, and transcripts record only filename/type/size. Staged copies
-live under `data/attachments/<chat>/` (portable with `data/`, delete them
-with it when you reset).
-
-## Model and reasoning controls (Pro)
-
-The model list always comes from your live provider catalog at runtime
-(`model/list`) — nothing is hardcoded. Switching models or reasoning effort
-uses Muse's native session controls, is fully reversible, and never touches
-memory, projects, sessions or transcripts. Pricing/availability details, if
-shown, come from provider metadata only.
-
-## Known limitation: Windows shell sandbox
-
-Native shell approvals need a one-time elevated setup that this project
-deliberately does not run for you:
-
-```powershell
-muse sandbox windows setup
-```
-
-Until you run it yourself (Administrator/UAC prompt), shell turns on
-Windows fail pre-approval with a clear environment error instead of
-executing. File reads/writes, memory, projects, chat and approvals relay
-are unaffected. Non-shell approval coverage is exercised with
-`python dev/browser/smoke_approvals.py --stub`.
-
-## Uninstall / reset
-
-- **Reset (forget everything Continuum owns)**: stop the server and
-  delete the `data/` directory (or call `POST /api/reset`:
-  `{"mode": "sample"}` reseeds the synthetic demo pack, any other body
-  wipes clean). Reset clears all Continuum-owned local runtime/personal
-  state: encyclopedia entries, derived index/CORE, operation log, usage
-  log, chat sessions, transcripts, staged attachments, Muse session
-  mappings, and the project registry (registered projects, workspace
-  root, per-chat project mapping). A restart recreates empty state.
-- **What reset does NOT delete**: `.continuum.md` files inside your own
-  project folders. Those are human-readable project documents that live
-  with your projects, not Continuum runtime state; edit or delete them
-  yourself if you want them gone.
-- **Uninstall**: delete the repo folder. Continuum writes nothing outside
-  it except your own `.continuum.md` files, your staged attachments
-  (inside `data/`), and whatever Muse itself stores in its own directories
-  (`~/.local/share/muse` sessions). Remove the optional `.venv` and
-  Playwright browsers (`playwright uninstall`) if you installed them.
-
-## Repository layout
+## Repository layout (contributors)
 
 ```text
 server.py            # THE one process: UI + API + memory + MSP runtime
-memory/              # encyclopedia, index, access, retrieval, projects, MSP client
+memory/              # encyclopedia, index, delivery, retrieval, projects, MSP client
 web/                 # dependency-free frontend (chat + Pro panels + i18n)
+docs/                # user guide + experiments
+benchmarks/          # sanitized public reproduction assets
 data/                # runtime state (git-ignored, created on first run)
 evals/               # frozen 48-probe harness + report + unit tests
 dev/browser/         # Playwright dev smokes (not product runtime)
 ```
 
-## Evals and tests (for contributors)
-
-- Units: `python evals/test_*.py` (16 suites, stdlib + repo only).
-- Frozen 48-probe memory comparison lives in `evals/` with its report;
-  do not re-tune against it.
-- Browser smokes: `python dev/browser/smoke_<area>.py [--no-start --url …]`
-  (see `dev/browser/README.md`); screenshots land in `dev/browser/shots/`.
-
-## Hackathon scope
-
-Built for the Meta Global AI Developer Hackathon
-(period: Oct 26 - Nov 4, 2026; track: Push the Frontier).
-Only work built during the event is presented; this public
-repository and the 3-minute demo cover the Continuum contribution
-below, distinguishable from Meta-provided technology.
-
-Meta provides (not our contribution):
-
-- Muse Code (local agent runtime)
-- Muse Spark / Meta model service
-- Muse Server Protocol (MSP)
-- native Muse filesystem/tools
-- native approvals
-- native model/reasoning controls
-
-Continuum provides (built during the hackathon):
-
-- persistent personal memory layer
-- project-scoped context and `.continuum.md`
-- global vs project memory routing
-- provenance and supersession
-- project registry/bookkeeping
-- persistent transcripts/history
-- cross-session continuity
-- Normal / Pro web UI
-- EN / ES interface
-- attachment staging/integration
-- approval presentation
-- authentication/onboarding integration
-- local-first persistence around Muse Code
-
-Model disclosure: Continuum uses Muse Code as the local agent
-runtime and has been developed and tested with Meta Muse Spark
-through Meta's hosted service. Continuum does not redistribute
-Meta model weights. Meta model/service terms are separate from
-Continuum's source-code license.
-
-## License
-
-Continuum source code is available under the PolyForm
-Noncommercial License 1.0.0 (see `LICENSE`).
-
-For commercial licensing, contact the author.
-
-This license covers Continuum's source code only. It does not
-apply to Meta models, Muse Code, or Meta services, which are
-governed by their own separate terms.
+Units: `python evals/test_*.py` (stdlib + repo only). Browser smokes:
+`python dev/browser/smoke_<area>.py` (see `dev/browser/README.md`).

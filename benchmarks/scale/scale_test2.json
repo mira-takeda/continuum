@@ -1,0 +1,3857 @@
+{
+ "seed": 77031,
+ "facts": {
+  "A-001": {
+   "id": "A-001",
+   "project": "Acorn",
+   "attr": "shed paint",
+   "scope": "project",
+   "value": "alpine yarn",
+   "history": []
+  },
+  "B-002": {
+   "id": "B-002",
+   "project": "Birch",
+   "attr": "shed paint",
+   "scope": "project",
+   "value": "tundra vest",
+   "history": []
+  },
+  "C-003": {
+   "id": "C-003",
+   "project": "Cedar",
+   "attr": "shed paint",
+   "scope": "project",
+   "value": "glacier vest",
+   "history": []
+  },
+  "D-004": {
+   "id": "D-004",
+   "project": "Dogwood",
+   "attr": "shed paint",
+   "scope": "project",
+   "value": "river globe",
+   "history": []
+  },
+  "E-005": {
+   "id": "E-005",
+   "project": "Elm",
+   "attr": "shed paint",
+   "scope": "project",
+   "value": "prairie compass",
+   "history": []
+  },
+  "A-006": {
+   "id": "A-006",
+   "project": "Acorn",
+   "attr": "fence wood",
+   "scope": "project",
+   "value": "lunar urn",
+   "history": []
+  },
+  "B-007": {
+   "id": "B-007",
+   "project": "Birch",
+   "attr": "fence wood",
+   "scope": "project",
+   "value": "grove lantern",
+   "history": []
+  },
+  "C-008": {
+   "id": "C-008",
+   "project": "Cedar",
+   "attr": "fence wood",
+   "scope": "project",
+   "value": "island dial",
+   "history": []
+  },
+  "D-009": {
+   "id": "D-009",
+   "project": "Dogwood",
+   "attr": "fence wood",
+   "scope": "project",
+   "value": "harbor igloo",
+   "history": []
+  },
+  "E-010": {
+   "id": "E-010",
+   "project": "Elm",
+   "attr": "fence wood",
+   "scope": "project",
+   "value": "inlet quilt",
+   "history": []
+  },
+  "A-011": {
+   "id": "A-011",
+   "project": "Acorn",
+   "attr": "gate lock",
+   "scope": "project",
+   "value": "ember kettle",
+   "history": []
+  },
+  "B-012": {
+   "id": "B-012",
+   "project": "Birch",
+   "attr": "gate lock",
+   "scope": "project",
+   "value": "jungle engine",
+   "history": []
+  },
+  "C-013": {
+   "id": "C-013",
+   "project": "Cedar",
+   "attr": "gate lock",
+   "scope": "project",
+   "value": "meadow beacon",
+   "history": []
+  },
+  "D-014": {
+   "id": "D-014",
+   "project": "Dogwood",
+   "attr": "gate lock",
+   "scope": "project",
+   "value": "cinder radio",
+   "history": []
+  },
+  "E-015": {
+   "id": "E-015",
+   "project": "Elm",
+   "attr": "gate lock",
+   "scope": "project",
+   "value": "flint oven",
+   "history": []
+  },
+  "A-016": {
+   "id": "A-016",
+   "project": "Acorn",
+   "attr": "path material",
+   "scope": "project",
+   "value": "ember drum",
+   "history": []
+  },
+  "B-017": {
+   "id": "B-017",
+   "project": "Birch",
+   "attr": "path material",
+   "scope": "project",
+   "value": "heath bench",
+   "history": []
+  },
+  "C-018": {
+   "id": "C-018",
+   "project": "Cedar",
+   "attr": "path material",
+   "scope": "project",
+   "value": "baltic drum",
+   "history": []
+  },
+  "D-019": {
+   "id": "D-019",
+   "project": "Dogwood",
+   "attr": "path material",
+   "scope": "project",
+   "value": "grove cabin",
+   "history": []
+  },
+  "E-020": {
+   "id": "E-020",
+   "project": "Elm",
+   "attr": "path material",
+   "scope": "project",
+   "value": "grove yarn",
+   "history": []
+  },
+  "A-021": {
+   "id": "A-021",
+   "project": "Acorn",
+   "attr": "light timer",
+   "scope": "project",
+   "value": "willow paddle",
+   "history": []
+  },
+  "B-022": {
+   "id": "B-022",
+   "project": "Birch",
+   "attr": "light timer",
+   "scope": "project",
+   "value": "glacier bench",
+   "history": []
+  },
+  "C-023": {
+   "id": "C-023",
+   "project": "Cedar",
+   "attr": "light timer",
+   "scope": "project",
+   "value": "meadow anchor",
+   "history": []
+  },
+  "D-024": {
+   "id": "D-024",
+   "project": "Dogwood",
+   "attr": "light timer",
+   "scope": "project",
+   "value": "ember urn",
+   "history": []
+  },
+  "E-025": {
+   "id": "E-025",
+   "project": "Elm",
+   "attr": "light timer",
+   "scope": "project",
+   "value": "inlet compass",
+   "history": []
+  },
+  "A-026": {
+   "id": "A-026",
+   "project": "Acorn",
+   "attr": "tool brand",
+   "scope": "project",
+   "value": "harbor globe",
+   "history": []
+  },
+  "B-027": {
+   "id": "B-027",
+   "project": "Birch",
+   "attr": "tool brand",
+   "scope": "project",
+   "value": "meadow jacket",
+   "history": []
+  },
+  "C-028": {
+   "id": "C-028",
+   "project": "Cedar",
+   "attr": "tool brand",
+   "scope": "project",
+   "value": "glacier bridge",
+   "history": []
+  },
+  "D-029": {
+   "id": "D-029",
+   "project": "Dogwood",
+   "attr": "tool brand",
+   "scope": "project",
+   "value": "desert vest",
+   "history": []
+  },
+  "E-030": {
+   "id": "E-030",
+   "project": "Elm",
+   "attr": "tool brand",
+   "scope": "project",
+   "value": "lunar radio",
+   "history": []
+  },
+  "A-031": {
+   "id": "A-031",
+   "project": "Acorn",
+   "attr": "birdbath style",
+   "scope": "project",
+   "value": "lunar jacket",
+   "history": []
+  },
+  "A-032": {
+   "id": "A-032",
+   "project": "Acorn",
+   "attr": "custom detail 22",
+   "scope": "project",
+   "value": "prairie igloo",
+   "history": []
+  },
+  "A-033": {
+   "id": "A-033",
+   "project": "Acorn",
+   "attr": "custom detail 53",
+   "scope": "project",
+   "value": "nordic bench",
+   "history": []
+  },
+  "A-034": {
+   "id": "A-034",
+   "project": "Acorn",
+   "attr": "custom detail 57",
+   "scope": "project",
+   "value": "inlet globe",
+   "history": []
+  },
+  "A-035": {
+   "id": "A-035",
+   "project": "Acorn",
+   "attr": "custom detail 32",
+   "scope": "project",
+   "value": "lagoon lantern",
+   "history": []
+  },
+  "A-036": {
+   "id": "A-036",
+   "project": "Acorn",
+   "attr": "custom detail 49",
+   "scope": "project",
+   "value": "cinder oven",
+   "history": []
+  },
+  "A-037": {
+   "id": "A-037",
+   "project": "Acorn",
+   "attr": "compost bin",
+   "scope": "project",
+   "value": "alpine button",
+   "history": []
+  },
+  "A-038": {
+   "id": "A-038",
+   "project": "Acorn",
+   "attr": "custom detail 37",
+   "scope": "project",
+   "value": "island needle",
+   "history": [
+    {
+     "Y": "ember compass",
+     "Z": null
+    }
+   ]
+  },
+  "A-039": {
+   "id": "A-039",
+   "project": "Acorn",
+   "attr": "custom detail 40",
+   "scope": "project",
+   "value": "desert drum",
+   "history": []
+  },
+  "A-040": {
+   "id": "A-040",
+   "project": "Acorn",
+   "attr": "custom detail 29",
+   "scope": "project",
+   "value": "willow easel",
+   "history": []
+  },
+  "A-041": {
+   "id": "A-041",
+   "project": "Acorn",
+   "attr": "custom detail 10",
+   "scope": "project",
+   "value": "desert bridge",
+   "history": []
+  },
+  "A-042": {
+   "id": "A-042",
+   "project": "Acorn",
+   "attr": "custom detail 18",
+   "scope": "project",
+   "value": "ocean saddle",
+   "history": []
+  },
+  "A-043": {
+   "id": "A-043",
+   "project": "Acorn",
+   "attr": "custom detail 12",
+   "scope": "project",
+   "value": "ocean urn",
+   "history": []
+  },
+  "A-044": {
+   "id": "A-044",
+   "project": "Acorn",
+   "attr": "custom detail 24",
+   "scope": "project",
+   "value": "lagoon tent",
+   "history": []
+  },
+  "A-045": {
+   "id": "A-045",
+   "project": "Acorn",
+   "attr": "custom detail 25",
+   "scope": "project",
+   "value": "lagoon vest",
+   "history": []
+  },
+  "A-046": {
+   "id": "A-046",
+   "project": "Acorn",
+   "attr": "custom detail 27",
+   "scope": "project",
+   "value": "ocean button",
+   "history": []
+  },
+  "A-047": {
+   "id": "A-047",
+   "project": "Acorn",
+   "attr": "custom detail 30",
+   "scope": "project",
+   "value": "jungle beacon",
+   "history": [
+    {
+     "Y": "dune engine",
+     "Z": "grove bench"
+    }
+   ]
+  },
+  "A-048": {
+   "id": "A-048",
+   "project": "Acorn",
+   "attr": "custom detail 2",
+   "scope": "project",
+   "value": "flint urn",
+   "history": []
+  },
+  "A-049": {
+   "id": "A-049",
+   "project": "Acorn",
+   "attr": "trellis height",
+   "scope": "project",
+   "value": "jungle jacket",
+   "history": []
+  },
+  "A-050": {
+   "id": "A-050",
+   "project": "Acorn",
+   "attr": "custom detail 9",
+   "scope": "project",
+   "value": "willow globe",
+   "history": []
+  },
+  "A-051": {
+   "id": "A-051",
+   "project": "Acorn",
+   "attr": "mailbox post",
+   "scope": "project",
+   "value": "valley easel",
+   "history": []
+  },
+  "A-052": {
+   "id": "A-052",
+   "project": "Acorn",
+   "attr": "custom detail 56",
+   "scope": "project",
+   "value": "willow tent",
+   "history": []
+  },
+  "A-053": {
+   "id": "A-053",
+   "project": "Acorn",
+   "attr": "custom detail 45",
+   "scope": "project",
+   "value": "lunar compass",
+   "history": [
+    {
+     "Y": "tundra cabin",
+     "Z": null
+    }
+   ]
+  },
+  "A-054": {
+   "id": "A-054",
+   "project": "Acorn",
+   "attr": "custom detail 1",
+   "scope": "project",
+   "value": "dune radio",
+   "history": []
+  },
+  "A-055": {
+   "id": "A-055",
+   "project": "Acorn",
+   "attr": "custom detail 58",
+   "scope": "project",
+   "value": "cinder urn",
+   "history": []
+  },
+  "A-056": {
+   "id": "A-056",
+   "project": "Acorn",
+   "attr": "custom detail 52",
+   "scope": "project",
+   "value": "arctic bench",
+   "history": []
+  },
+  "A-057": {
+   "id": "A-057",
+   "project": "Acorn",
+   "attr": "porch stain",
+   "scope": "project",
+   "value": "valley wheel",
+   "history": []
+  },
+  "A-058": {
+   "id": "A-058",
+   "project": "Acorn",
+   "attr": "custom detail 5",
+   "scope": "project",
+   "value": "dune vest",
+   "history": []
+  },
+  "A-059": {
+   "id": "A-059",
+   "project": "Acorn",
+   "attr": "custom detail 3",
+   "scope": "project",
+   "value": "desert yarn",
+   "history": []
+  },
+  "A-060": {
+   "id": "A-060",
+   "project": "Acorn",
+   "attr": "custom detail 59",
+   "scope": "project",
+   "value": "alpine drum",
+   "history": []
+  },
+  "A-061": {
+   "id": "A-061",
+   "project": "Acorn",
+   "attr": "custom detail 11",
+   "scope": "project",
+   "value": "meadow drum",
+   "history": []
+  },
+  "A-062": {
+   "id": "A-062",
+   "project": "Acorn",
+   "attr": "custom detail 48",
+   "scope": "project",
+   "value": "glacier tent",
+   "history": []
+  },
+  "A-063": {
+   "id": "A-063",
+   "project": "Acorn",
+   "attr": "custom detail 28",
+   "scope": "project",
+   "value": "fjord magnet",
+   "history": []
+  },
+  "A-064": {
+   "id": "A-064",
+   "project": "Acorn",
+   "attr": "custom detail 50",
+   "scope": "project",
+   "value": "lagoon radio",
+   "history": []
+  },
+  "A-065": {
+   "id": "A-065",
+   "project": "Acorn",
+   "attr": "custom detail 15",
+   "scope": "project",
+   "value": "jungle kettle",
+   "history": []
+  },
+  "A-066": {
+   "id": "A-066",
+   "project": "Acorn",
+   "attr": "custom detail 46",
+   "scope": "project",
+   "value": "island fence",
+   "history": []
+  },
+  "A-067": {
+   "id": "A-067",
+   "project": "Acorn",
+   "attr": "custom detail 36",
+   "scope": "project",
+   "value": "delta anchor",
+   "history": []
+  },
+  "A-068": {
+   "id": "A-068",
+   "project": "Acorn",
+   "attr": "custom detail 33",
+   "scope": "project",
+   "value": "meadow compass",
+   "history": []
+  },
+  "A-069": {
+   "id": "A-069",
+   "project": "Acorn",
+   "attr": "custom detail 44",
+   "scope": "project",
+   "value": "fjord oven",
+   "history": []
+  },
+  "B-070": {
+   "id": "B-070",
+   "project": "Birch",
+   "attr": "custom detail 30",
+   "scope": "project",
+   "value": "desert igloo",
+   "history": []
+  },
+  "B-071": {
+   "id": "B-071",
+   "project": "Birch",
+   "attr": "custom detail 44",
+   "scope": "project",
+   "value": "alpine cabin",
+   "history": []
+  },
+  "B-072": {
+   "id": "B-072",
+   "project": "Birch",
+   "attr": "step light",
+   "scope": "project",
+   "value": "fjord wheel",
+   "history": []
+  },
+  "B-073": {
+   "id": "B-073",
+   "project": "Birch",
+   "attr": "custom detail 34",
+   "scope": "project",
+   "value": "island tent",
+   "history": []
+  },
+  "B-074": {
+   "id": "B-074",
+   "project": "Birch",
+   "attr": "custom detail 4",
+   "scope": "project",
+   "value": "cinder hammock",
+   "history": []
+  },
+  "B-075": {
+   "id": "B-075",
+   "project": "Birch",
+   "attr": "doorbell chime",
+   "scope": "project",
+   "value": "delta yarn",
+   "history": []
+  },
+  "B-076": {
+   "id": "B-076",
+   "project": "Birch",
+   "attr": "custom detail 21",
+   "scope": "project",
+   "value": "arctic radio",
+   "history": []
+  },
+  "B-077": {
+   "id": "B-077",
+   "project": "Birch",
+   "attr": "custom detail 35",
+   "scope": "project",
+   "value": "meadow cabin",
+   "history": [
+    {
+     "Y": "baltic beacon",
+     "Z": null
+    }
+   ]
+  },
+  "B-078": {
+   "id": "B-078",
+   "project": "Birch",
+   "attr": "custom detail 32",
+   "scope": "project",
+   "value": "fjord globe",
+   "history": []
+  },
+  "B-079": {
+   "id": "B-079",
+   "project": "Birch",
+   "attr": "custom detail 27",
+   "scope": "project",
+   "value": "willow drum",
+   "history": []
+  },
+  "B-080": {
+   "id": "B-080",
+   "project": "Birch",
+   "attr": "custom detail 17",
+   "scope": "project",
+   "value": "jungle cabin",
+   "history": []
+  },
+  "B-081": {
+   "id": "B-081",
+   "project": "Birch",
+   "attr": "custom detail 57",
+   "scope": "project",
+   "value": "quarry dial",
+   "history": []
+  },
+  "B-082": {
+   "id": "B-082",
+   "project": "Birch",
+   "attr": "custom detail 5",
+   "scope": "project",
+   "value": "delta radio",
+   "history": []
+  },
+  "B-083": {
+   "id": "B-083",
+   "project": "Birch",
+   "attr": "compost bin",
+   "scope": "project",
+   "value": "dune bridge",
+   "history": []
+  },
+  "B-084": {
+   "id": "B-084",
+   "project": "Birch",
+   "attr": "porch stain",
+   "scope": "project",
+   "value": "canyon easel",
+   "history": []
+  },
+  "B-085": {
+   "id": "B-085",
+   "project": "Birch",
+   "attr": "custom detail 36",
+   "scope": "project",
+   "value": "arctic easel",
+   "history": []
+  },
+  "B-086": {
+   "id": "B-086",
+   "project": "Birch",
+   "attr": "custom detail 38",
+   "scope": "project",
+   "value": "valley dial",
+   "history": []
+  },
+  "B-087": {
+   "id": "B-087",
+   "project": "Birch",
+   "attr": "custom detail 43",
+   "scope": "project",
+   "value": "heath wheel",
+   "history": []
+  },
+  "B-088": {
+   "id": "B-088",
+   "project": "Birch",
+   "attr": "custom detail 2",
+   "scope": "project",
+   "value": "river lantern",
+   "history": [
+    {
+     "Y": "baltic magnet",
+     "Z": null
+    }
+   ]
+  },
+  "B-089": {
+   "id": "B-089",
+   "project": "Birch",
+   "attr": "birdbath style",
+   "scope": "project",
+   "value": "jungle globe",
+   "history": []
+  },
+  "B-090": {
+   "id": "B-090",
+   "project": "Birch",
+   "attr": "custom detail 58",
+   "scope": "project",
+   "value": "jungle button",
+   "history": []
+  },
+  "B-091": {
+   "id": "B-091",
+   "project": "Birch",
+   "attr": "custom detail 8",
+   "scope": "project",
+   "value": "grove beacon",
+   "history": []
+  },
+  "B-092": {
+   "id": "B-092",
+   "project": "Birch",
+   "attr": "custom detail 59",
+   "scope": "project",
+   "value": "arctic globe",
+   "history": []
+  },
+  "B-093": {
+   "id": "B-093",
+   "project": "Birch",
+   "attr": "custom detail 47",
+   "scope": "project",
+   "value": "prairie beacon",
+   "history": []
+  },
+  "B-094": {
+   "id": "B-094",
+   "project": "Birch",
+   "attr": "custom detail 7",
+   "scope": "project",
+   "value": "nordic fence",
+   "history": []
+  },
+  "B-095": {
+   "id": "B-095",
+   "project": "Birch",
+   "attr": "custom detail 46",
+   "scope": "project",
+   "value": "glacier easel",
+   "history": []
+  },
+  "B-096": {
+   "id": "B-096",
+   "project": "Birch",
+   "attr": "custom detail 22",
+   "scope": "project",
+   "value": "ocean yarn",
+   "history": []
+  },
+  "B-097": {
+   "id": "B-097",
+   "project": "Birch",
+   "attr": "custom detail 51",
+   "scope": "project",
+   "value": "dune saddle",
+   "history": []
+  },
+  "B-098": {
+   "id": "B-098",
+   "project": "Birch",
+   "attr": "custom detail 52",
+   "scope": "project",
+   "value": "tundra saddle",
+   "history": []
+  },
+  "B-099": {
+   "id": "B-099",
+   "project": "Birch",
+   "attr": "custom detail 50",
+   "scope": "project",
+   "value": "lagoon easel",
+   "history": []
+  },
+  "B-100": {
+   "id": "B-100",
+   "project": "Birch",
+   "attr": "custom detail 54",
+   "scope": "project",
+   "value": "fjord yarn",
+   "history": []
+  },
+  "B-101": {
+   "id": "B-101",
+   "project": "Birch",
+   "attr": "custom detail 13",
+   "scope": "project",
+   "value": "heath cabin",
+   "history": [
+    {
+     "Y": "arctic oven",
+     "Z": "desert hammock"
+    }
+   ]
+  },
+  "B-102": {
+   "id": "B-102",
+   "project": "Birch",
+   "attr": "custom detail 14",
+   "scope": "project",
+   "value": "harbor radio",
+   "history": []
+  },
+  "B-103": {
+   "id": "B-103",
+   "project": "Birch",
+   "attr": "rain barrel",
+   "scope": "project",
+   "value": "river fence",
+   "history": []
+  },
+  "B-104": {
+   "id": "B-104",
+   "project": "Birch",
+   "attr": "custom detail 37",
+   "scope": "project",
+   "value": "tundra oven",
+   "history": []
+  },
+  "B-105": {
+   "id": "B-105",
+   "project": "Birch",
+   "attr": "custom detail 41",
+   "scope": "project",
+   "value": "meadow vest",
+   "history": []
+  },
+  "B-106": {
+   "id": "B-106",
+   "project": "Birch",
+   "attr": "custom detail 3",
+   "scope": "project",
+   "value": "canyon engine",
+   "history": []
+  },
+  "B-107": {
+   "id": "B-107",
+   "project": "Birch",
+   "attr": "custom detail 56",
+   "scope": "project",
+   "value": "river button",
+   "history": []
+  },
+  "B-108": {
+   "id": "B-108",
+   "project": "Birch",
+   "attr": "custom detail 9",
+   "scope": "project",
+   "value": "lunar oven",
+   "history": []
+  },
+  "C-109": {
+   "id": "C-109",
+   "project": "Cedar",
+   "attr": "step light",
+   "scope": "project",
+   "value": "summit fence",
+   "history": []
+  },
+  "C-110": {
+   "id": "C-110",
+   "project": "Cedar",
+   "attr": "custom detail 17",
+   "scope": "project",
+   "value": "fjord lantern",
+   "history": []
+  },
+  "C-111": {
+   "id": "C-111",
+   "project": "Cedar",
+   "attr": "custom detail 38",
+   "scope": "project",
+   "value": "quarry drum",
+   "history": []
+  },
+  "C-112": {
+   "id": "C-112",
+   "project": "Cedar",
+   "attr": "custom detail 40",
+   "scope": "project",
+   "value": "prairie hammock",
+   "history": []
+  },
+  "C-113": {
+   "id": "C-113",
+   "project": "Cedar",
+   "attr": "custom detail 47",
+   "scope": "project",
+   "value": "island igloo",
+   "history": []
+  },
+  "C-114": {
+   "id": "C-114",
+   "project": "Cedar",
+   "attr": "custom detail 37",
+   "scope": "project",
+   "value": "heath jacket",
+   "history": [
+    {
+     "Y": "lagoon dial",
+     "Z": "heath oven"
+    }
+   ]
+  },
+  "C-115": {
+   "id": "C-115",
+   "project": "Cedar",
+   "attr": "porch stain",
+   "scope": "project",
+   "value": "canyon globe",
+   "history": []
+  },
+  "C-116": {
+   "id": "C-116",
+   "project": "Cedar",
+   "attr": "custom detail 15",
+   "scope": "project",
+   "value": "harbor bridge",
+   "history": []
+  },
+  "C-117": {
+   "id": "C-117",
+   "project": "Cedar",
+   "attr": "custom detail 13",
+   "scope": "project",
+   "value": "lunar quilt",
+   "history": []
+  },
+  "C-118": {
+   "id": "C-118",
+   "project": "Cedar",
+   "attr": "custom detail 23",
+   "scope": "project",
+   "value": "summit vest",
+   "history": []
+  },
+  "C-119": {
+   "id": "C-119",
+   "project": "Cedar",
+   "attr": "doorbell chime",
+   "scope": "project",
+   "value": "alpine radio",
+   "history": []
+  },
+  "C-120": {
+   "id": "C-120",
+   "project": "Cedar",
+   "attr": "custom detail 24",
+   "scope": "project",
+   "value": "nordic needle",
+   "history": []
+  },
+  "C-121": {
+   "id": "C-121",
+   "project": "Cedar",
+   "attr": "custom detail 27",
+   "scope": "project",
+   "value": "flint lantern",
+   "history": []
+  },
+  "C-122": {
+   "id": "C-122",
+   "project": "Cedar",
+   "attr": "custom detail 2",
+   "scope": "project",
+   "value": "arctic paddle",
+   "history": []
+  },
+  "C-123": {
+   "id": "C-123",
+   "project": "Cedar",
+   "attr": "custom detail 3",
+   "scope": "project",
+   "value": "lagoon jacket",
+   "history": [
+    {
+     "Y": "alpine fence",
+     "Z": null
+    }
+   ]
+  },
+  "C-124": {
+   "id": "C-124",
+   "project": "Cedar",
+   "attr": "custom detail 36",
+   "scope": "project",
+   "value": "glacier needle",
+   "history": []
+  },
+  "C-125": {
+   "id": "C-125",
+   "project": "Cedar",
+   "attr": "custom detail 18",
+   "scope": "project",
+   "value": "ember easel",
+   "history": []
+  },
+  "C-126": {
+   "id": "C-126",
+   "project": "Cedar",
+   "attr": "custom detail 8",
+   "scope": "project",
+   "value": "heath quilt",
+   "history": []
+  },
+  "C-127": {
+   "id": "C-127",
+   "project": "Cedar",
+   "attr": "custom detail 25",
+   "scope": "project",
+   "value": "jungle yarn",
+   "history": []
+  },
+  "C-128": {
+   "id": "C-128",
+   "project": "Cedar",
+   "attr": "custom detail 50",
+   "scope": "project",
+   "value": "ocean drum",
+   "history": []
+  },
+  "C-129": {
+   "id": "C-129",
+   "project": "Cedar",
+   "attr": "custom detail 7",
+   "scope": "project",
+   "value": "alpine globe",
+   "history": []
+  },
+  "C-130": {
+   "id": "C-130",
+   "project": "Cedar",
+   "attr": "custom detail 52",
+   "scope": "project",
+   "value": "nordic tent",
+   "history": []
+  },
+  "C-131": {
+   "id": "C-131",
+   "project": "Cedar",
+   "attr": "custom detail 16",
+   "scope": "project",
+   "value": "prairie easel",
+   "history": []
+  },
+  "C-132": {
+   "id": "C-132",
+   "project": "Cedar",
+   "attr": "custom detail 19",
+   "scope": "project",
+   "value": "island paddle",
+   "history": []
+  },
+  "C-133": {
+   "id": "C-133",
+   "project": "Cedar",
+   "attr": "custom detail 4",
+   "scope": "project",
+   "value": "delta cabin",
+   "history": []
+  },
+  "C-134": {
+   "id": "C-134",
+   "project": "Cedar",
+   "attr": "custom detail 59",
+   "scope": "project",
+   "value": "jungle easel",
+   "history": []
+  },
+  "C-135": {
+   "id": "C-135",
+   "project": "Cedar",
+   "attr": "custom detail 42",
+   "scope": "project",
+   "value": "river jacket",
+   "history": []
+  },
+  "C-136": {
+   "id": "C-136",
+   "project": "Cedar",
+   "attr": "birdbath style",
+   "scope": "project",
+   "value": "canyon igloo",
+   "history": []
+  },
+  "C-137": {
+   "id": "C-137",
+   "project": "Cedar",
+   "attr": "custom detail 6",
+   "scope": "project",
+   "value": "nordic drum",
+   "history": []
+  },
+  "C-138": {
+   "id": "C-138",
+   "project": "Cedar",
+   "attr": "custom detail 33",
+   "scope": "project",
+   "value": "ember yarn",
+   "history": []
+  },
+  "C-139": {
+   "id": "C-139",
+   "project": "Cedar",
+   "attr": "custom detail 14",
+   "scope": "project",
+   "value": "tundra magnet",
+   "history": []
+  },
+  "C-140": {
+   "id": "C-140",
+   "project": "Cedar",
+   "attr": "custom detail 30",
+   "scope": "project",
+   "value": "arctic kettle",
+   "history": [
+    {
+     "Y": "fjord beacon",
+     "Z": null
+    }
+   ]
+  },
+  "C-141": {
+   "id": "C-141",
+   "project": "Cedar",
+   "attr": "rain barrel",
+   "scope": "project",
+   "value": "summit paddle",
+   "history": []
+  },
+  "C-142": {
+   "id": "C-142",
+   "project": "Cedar",
+   "attr": "custom detail 11",
+   "scope": "project",
+   "value": "inlet cabin",
+   "history": []
+  },
+  "C-143": {
+   "id": "C-143",
+   "project": "Cedar",
+   "attr": "custom detail 49",
+   "scope": "project",
+   "value": "quarry button",
+   "history": []
+  },
+  "C-144": {
+   "id": "C-144",
+   "project": "Cedar",
+   "attr": "custom detail 44",
+   "scope": "project",
+   "value": "heath needle",
+   "history": []
+  },
+  "C-145": {
+   "id": "C-145",
+   "project": "Cedar",
+   "attr": "custom detail 1",
+   "scope": "project",
+   "value": "grove drum",
+   "history": []
+  },
+  "C-146": {
+   "id": "C-146",
+   "project": "Cedar",
+   "attr": "custom detail 35",
+   "scope": "project",
+   "value": "lagoon urn",
+   "history": []
+  },
+  "C-147": {
+   "id": "C-147",
+   "project": "Cedar",
+   "attr": "custom detail 31",
+   "scope": "project",
+   "value": "flint tent",
+   "history": []
+  },
+  "D-148": {
+   "id": "D-148",
+   "project": "Dogwood",
+   "attr": "custom detail 15",
+   "scope": "project",
+   "value": "tundra drum",
+   "history": [
+    {
+     "Y": "delta quilt",
+     "Z": null
+    }
+   ]
+  },
+  "D-149": {
+   "id": "D-149",
+   "project": "Dogwood",
+   "attr": "custom detail 46",
+   "scope": "project",
+   "value": "harbor wheel",
+   "history": []
+  },
+  "D-150": {
+   "id": "D-150",
+   "project": "Dogwood",
+   "attr": "porch stain",
+   "scope": "project",
+   "value": "heath hammock",
+   "history": []
+  },
+  "D-151": {
+   "id": "D-151",
+   "project": "Dogwood",
+   "attr": "custom detail 32",
+   "scope": "project",
+   "value": "island bench",
+   "history": []
+  },
+  "D-152": {
+   "id": "D-152",
+   "project": "Dogwood",
+   "attr": "doorbell chime",
+   "scope": "project",
+   "value": "arctic drum",
+   "history": []
+  },
+  "D-153": {
+   "id": "D-153",
+   "project": "Dogwood",
+   "attr": "custom detail 50",
+   "scope": "project",
+   "value": "canyon tent",
+   "history": []
+  },
+  "D-154": {
+   "id": "D-154",
+   "project": "Dogwood",
+   "attr": "custom detail 23",
+   "scope": "project",
+   "value": "quarry radio",
+   "history": []
+  },
+  "D-155": {
+   "id": "D-155",
+   "project": "Dogwood",
+   "attr": "custom detail 14",
+   "scope": "project",
+   "value": "jungle drum",
+   "history": []
+  },
+  "D-156": {
+   "id": "D-156",
+   "project": "Dogwood",
+   "attr": "custom detail 19",
+   "scope": "project",
+   "value": "ember fence",
+   "history": []
+  },
+  "D-157": {
+   "id": "D-157",
+   "project": "Dogwood",
+   "attr": "rain barrel",
+   "scope": "project",
+   "value": "fjord needle",
+   "history": [
+    {
+     "Y": "baltic hammock",
+     "Z": null
+    }
+   ]
+  },
+  "D-158": {
+   "id": "D-158",
+   "project": "Dogwood",
+   "attr": "custom detail 44",
+   "scope": "project",
+   "value": "tundra needle",
+   "history": []
+  },
+  "D-159": {
+   "id": "D-159",
+   "project": "Dogwood",
+   "attr": "window boxes",
+   "scope": "project",
+   "value": "tundra fence",
+   "history": []
+  },
+  "D-160": {
+   "id": "D-160",
+   "project": "Dogwood",
+   "attr": "custom detail 2",
+   "scope": "project",
+   "value": "jungle magnet",
+   "history": []
+  },
+  "D-161": {
+   "id": "D-161",
+   "project": "Dogwood",
+   "attr": "custom detail 35",
+   "scope": "project",
+   "value": "meadow dial",
+   "history": []
+  },
+  "D-162": {
+   "id": "D-162",
+   "project": "Dogwood",
+   "attr": "custom detail 49",
+   "scope": "project",
+   "value": "ocean cabin",
+   "history": []
+  },
+  "D-163": {
+   "id": "D-163",
+   "project": "Dogwood",
+   "attr": "custom detail 28",
+   "scope": "project",
+   "value": "lunar hammock",
+   "history": []
+  },
+  "D-164": {
+   "id": "D-164",
+   "project": "Dogwood",
+   "attr": "custom detail 17",
+   "scope": "project",
+   "value": "delta kettle",
+   "history": []
+  },
+  "D-165": {
+   "id": "D-165",
+   "project": "Dogwood",
+   "attr": "custom detail 9",
+   "scope": "project",
+   "value": "heath globe",
+   "history": []
+  },
+  "D-166": {
+   "id": "D-166",
+   "project": "Dogwood",
+   "attr": "trellis height",
+   "scope": "project",
+   "value": "lagoon yarn",
+   "history": []
+  },
+  "D-167": {
+   "id": "D-167",
+   "project": "Dogwood",
+   "attr": "custom detail 3",
+   "scope": "project",
+   "value": "ocean fence",
+   "history": []
+  },
+  "D-168": {
+   "id": "D-168",
+   "project": "Dogwood",
+   "attr": "custom detail 37",
+   "scope": "project",
+   "value": "inlet kettle",
+   "history": []
+  },
+  "D-169": {
+   "id": "D-169",
+   "project": "Dogwood",
+   "attr": "custom detail 5",
+   "scope": "project",
+   "value": "heath dial",
+   "history": []
+  },
+  "D-170": {
+   "id": "D-170",
+   "project": "Dogwood",
+   "attr": "custom detail 7",
+   "scope": "project",
+   "value": "island quilt",
+   "history": []
+  },
+  "D-171": {
+   "id": "D-171",
+   "project": "Dogwood",
+   "attr": "custom detail 29",
+   "scope": "project",
+   "value": "grove saddle",
+   "history": []
+  },
+  "D-172": {
+   "id": "D-172",
+   "project": "Dogwood",
+   "attr": "custom detail 52",
+   "scope": "project",
+   "value": "grove engine",
+   "history": []
+  },
+  "D-173": {
+   "id": "D-173",
+   "project": "Dogwood",
+   "attr": "custom detail 57",
+   "scope": "project",
+   "value": "nordic bridge",
+   "history": []
+  },
+  "D-174": {
+   "id": "D-174",
+   "project": "Dogwood",
+   "attr": "custom detail 43",
+   "scope": "project",
+   "value": "alpine kettle",
+   "history": []
+  },
+  "D-175": {
+   "id": "D-175",
+   "project": "Dogwood",
+   "attr": "custom detail 10",
+   "scope": "project",
+   "value": "tundra quilt",
+   "history": []
+  },
+  "D-176": {
+   "id": "D-176",
+   "project": "Dogwood",
+   "attr": "custom detail 8",
+   "scope": "project",
+   "value": "cinder globe",
+   "history": []
+  },
+  "D-177": {
+   "id": "D-177",
+   "project": "Dogwood",
+   "attr": "step light",
+   "scope": "project",
+   "value": "river vest",
+   "history": []
+  },
+  "D-178": {
+   "id": "D-178",
+   "project": "Dogwood",
+   "attr": "custom detail 36",
+   "scope": "project",
+   "value": "dune drum",
+   "history": [
+    {
+     "Y": "tundra beacon",
+     "Z": "summit cabin"
+    }
+   ]
+  },
+  "D-179": {
+   "id": "D-179",
+   "project": "Dogwood",
+   "attr": "custom detail 12",
+   "scope": "project",
+   "value": "harbor hammock",
+   "history": []
+  },
+  "D-180": {
+   "id": "D-180",
+   "project": "Dogwood",
+   "attr": "custom detail 24",
+   "scope": "project",
+   "value": "lagoon magnet",
+   "history": []
+  },
+  "D-181": {
+   "id": "D-181",
+   "project": "Dogwood",
+   "attr": "custom detail 27",
+   "scope": "project",
+   "value": "meadow urn",
+   "history": []
+  },
+  "D-182": {
+   "id": "D-182",
+   "project": "Dogwood",
+   "attr": "custom detail 56",
+   "scope": "project",
+   "value": "glacier lantern",
+   "history": []
+  },
+  "D-183": {
+   "id": "D-183",
+   "project": "Dogwood",
+   "attr": "custom detail 38",
+   "scope": "project",
+   "value": "valley lantern",
+   "history": []
+  },
+  "D-184": {
+   "id": "D-184",
+   "project": "Dogwood",
+   "attr": "custom detail 26",
+   "scope": "project",
+   "value": "ember wheel",
+   "history": []
+  },
+  "D-185": {
+   "id": "D-185",
+   "project": "Dogwood",
+   "attr": "compost bin",
+   "scope": "project",
+   "value": "tundra hammock",
+   "history": []
+  },
+  "D-186": {
+   "id": "D-186",
+   "project": "Dogwood",
+   "attr": "custom detail 59",
+   "scope": "project",
+   "value": "ember quilt",
+   "history": []
+  },
+  "E-187": {
+   "id": "E-187",
+   "project": "Elm",
+   "attr": "custom detail 55",
+   "scope": "project",
+   "value": "flint drum",
+   "history": []
+  },
+  "E-188": {
+   "id": "E-188",
+   "project": "Elm",
+   "attr": "custom detail 30",
+   "scope": "project",
+   "value": "baltic button",
+   "history": []
+  },
+  "E-189": {
+   "id": "E-189",
+   "project": "Elm",
+   "attr": "custom detail 35",
+   "scope": "project",
+   "value": "summit urn",
+   "history": []
+  },
+  "E-190": {
+   "id": "E-190",
+   "project": "Elm",
+   "attr": "custom detail 6",
+   "scope": "project",
+   "value": "summit bridge",
+   "history": []
+  },
+  "E-191": {
+   "id": "E-191",
+   "project": "Elm",
+   "attr": "custom detail 28",
+   "scope": "project",
+   "value": "cinder saddle",
+   "history": []
+  },
+  "E-192": {
+   "id": "E-192",
+   "project": "Elm",
+   "attr": "custom detail 54",
+   "scope": "project",
+   "value": "inlet magnet",
+   "history": []
+  },
+  "E-193": {
+   "id": "E-193",
+   "project": "Elm",
+   "attr": "custom detail 48",
+   "scope": "project",
+   "value": "desert button",
+   "history": []
+  },
+  "E-194": {
+   "id": "E-194",
+   "project": "Elm",
+   "attr": "custom detail 58",
+   "scope": "project",
+   "value": "canyon bench",
+   "history": []
+  },
+  "E-195": {
+   "id": "E-195",
+   "project": "Elm",
+   "attr": "custom detail 15",
+   "scope": "project",
+   "value": "ocean compass",
+   "history": []
+  },
+  "E-196": {
+   "id": "E-196",
+   "project": "Elm",
+   "attr": "custom detail 43",
+   "scope": "project",
+   "value": "summit saddle",
+   "history": []
+  },
+  "E-197": {
+   "id": "E-197",
+   "project": "Elm",
+   "attr": "porch stain",
+   "scope": "project",
+   "value": "ocean kettle",
+   "history": [
+    {
+     "Y": "cinder anchor",
+     "Z": "summit oven"
+    }
+   ]
+  },
+  "E-198": {
+   "id": "E-198",
+   "project": "Elm",
+   "attr": "custom detail 36",
+   "scope": "project",
+   "value": "grove tent",
+   "history": []
+  },
+  "E-199": {
+   "id": "E-199",
+   "project": "Elm",
+   "attr": "custom detail 21",
+   "scope": "project",
+   "value": "baltic tent",
+   "history": []
+  },
+  "E-200": {
+   "id": "E-200",
+   "project": "Elm",
+   "attr": "custom detail 56",
+   "scope": "project",
+   "value": "lunar anchor",
+   "history": []
+  },
+  "E-201": {
+   "id": "E-201",
+   "project": "Elm",
+   "attr": "birdbath style",
+   "scope": "project",
+   "value": "prairie needle",
+   "history": []
+  },
+  "E-202": {
+   "id": "E-202",
+   "project": "Elm",
+   "attr": "custom detail 1",
+   "scope": "project",
+   "value": "dune cabin",
+   "history": []
+  },
+  "E-203": {
+   "id": "E-203",
+   "project": "Elm",
+   "attr": "custom detail 29",
+   "scope": "project",
+   "value": "island vest",
+   "history": []
+  },
+  "E-204": {
+   "id": "E-204",
+   "project": "Elm",
+   "attr": "custom detail 17",
+   "scope": "project",
+   "value": "desert jacket",
+   "history": []
+  },
+  "E-205": {
+   "id": "E-205",
+   "project": "Elm",
+   "attr": "custom detail 51",
+   "scope": "project",
+   "value": "tundra dial",
+   "history": []
+  },
+  "E-206": {
+   "id": "E-206",
+   "project": "Elm",
+   "attr": "custom detail 59",
+   "scope": "project",
+   "value": "valley kettle",
+   "history": [
+    {
+     "Y": "lunar drum",
+     "Z": null
+    }
+   ]
+  },
+  "E-207": {
+   "id": "E-207",
+   "project": "Elm",
+   "attr": "custom detail 22",
+   "scope": "project",
+   "value": "valley button",
+   "history": []
+  },
+  "E-208": {
+   "id": "E-208",
+   "project": "Elm",
+   "attr": "custom detail 13",
+   "scope": "project",
+   "value": "lunar needle",
+   "history": []
+  },
+  "E-209": {
+   "id": "E-209",
+   "project": "Elm",
+   "attr": "custom detail 20",
+   "scope": "project",
+   "value": "desert globe",
+   "history": []
+  },
+  "E-210": {
+   "id": "E-210",
+   "project": "Elm",
+   "attr": "custom detail 2",
+   "scope": "project",
+   "value": "arctic needle",
+   "history": []
+  },
+  "E-211": {
+   "id": "E-211",
+   "project": "Elm",
+   "attr": "custom detail 57",
+   "scope": "project",
+   "value": "dune globe",
+   "history": []
+  },
+  "E-212": {
+   "id": "E-212",
+   "project": "Elm",
+   "attr": "window boxes",
+   "scope": "project",
+   "value": "ember vest",
+   "history": []
+  },
+  "E-213": {
+   "id": "E-213",
+   "project": "Elm",
+   "attr": "custom detail 31",
+   "scope": "project",
+   "value": "grove needle",
+   "history": []
+  },
+  "E-214": {
+   "id": "E-214",
+   "project": "Elm",
+   "attr": "custom detail 16",
+   "scope": "project",
+   "value": "harbor engine",
+   "history": [
+    {
+     "Y": "island globe",
+     "Z": null
+    }
+   ]
+  },
+  "E-215": {
+   "id": "E-215",
+   "project": "Elm",
+   "attr": "custom detail 8",
+   "scope": "project",
+   "value": "tundra engine",
+   "history": []
+  },
+  "E-216": {
+   "id": "E-216",
+   "project": "Elm",
+   "attr": "step light",
+   "scope": "project",
+   "value": "nordic cabin",
+   "history": []
+  },
+  "E-217": {
+   "id": "E-217",
+   "project": "Elm",
+   "attr": "custom detail 7",
+   "scope": "project",
+   "value": "island engine",
+   "history": []
+  },
+  "E-218": {
+   "id": "E-218",
+   "project": "Elm",
+   "attr": "custom detail 27",
+   "scope": "project",
+   "value": "lunar dial",
+   "history": []
+  },
+  "E-219": {
+   "id": "E-219",
+   "project": "Elm",
+   "attr": "custom detail 32",
+   "scope": "project",
+   "value": "fjord saddle",
+   "history": []
+  },
+  "E-220": {
+   "id": "E-220",
+   "project": "Elm",
+   "attr": "custom detail 47",
+   "scope": "project",
+   "value": "arctic hammock",
+   "history": []
+  },
+  "E-221": {
+   "id": "E-221",
+   "project": "Elm",
+   "attr": "compost bin",
+   "scope": "project",
+   "value": "valley fence",
+   "history": []
+  },
+  "E-222": {
+   "id": "E-222",
+   "project": "Elm",
+   "attr": "custom detail 3",
+   "scope": "project",
+   "value": "grove button",
+   "history": []
+  },
+  "E-223": {
+   "id": "E-223",
+   "project": "Elm",
+   "attr": "custom detail 46",
+   "scope": "project",
+   "value": "flint saddle",
+   "history": []
+  },
+  "E-224": {
+   "id": "E-224",
+   "project": "Elm",
+   "attr": "custom detail 49",
+   "scope": "project",
+   "value": "harbor beacon",
+   "history": []
+  },
+  "E-225": {
+   "id": "E-225",
+   "project": "Elm",
+   "attr": "custom detail 52",
+   "scope": "project",
+   "value": "ember magnet",
+   "history": []
+  },
+  "G-226": {
+   "id": "G-226",
+   "project": null,
+   "attr": "measurement units",
+   "scope": "global",
+   "value": "centimeters",
+   "history": []
+  },
+  "G-227": {
+   "id": "G-227",
+   "project": null,
+   "attr": "list style",
+   "scope": "global",
+   "value": "numbered",
+   "history": []
+  },
+  "G-228": {
+   "id": "G-228",
+   "project": null,
+   "attr": "time format",
+   "scope": "global",
+   "value": "24-hour",
+   "history": []
+  },
+  "G-229": {
+   "id": "G-229",
+   "project": null,
+   "attr": "greeting",
+   "scope": "global",
+   "value": "brief",
+   "history": []
+  },
+  "G-230": {
+   "id": "G-230",
+   "project": null,
+   "attr": "summary length",
+   "scope": "global",
+   "value": "trio",
+   "history": []
+  },
+  "G-231": {
+   "id": "G-231",
+   "project": null,
+   "attr": "distance units",
+   "scope": "global",
+   "value": "paces",
+   "history": []
+  },
+  "G-232": {
+   "id": "G-232",
+   "project": null,
+   "attr": "volume units",
+   "scope": "global",
+   "value": "liters",
+   "history": []
+  },
+  "G-233": {
+   "id": "G-233",
+   "project": null,
+   "attr": "weight units",
+   "scope": "global",
+   "value": "grams",
+   "history": []
+  },
+  "G-234": {
+   "id": "G-234",
+   "project": null,
+   "attr": "work start",
+   "scope": "global",
+   "value": "dawn",
+   "history": []
+  },
+  "G-235": {
+   "id": "G-235",
+   "project": null,
+   "attr": "work end",
+   "scope": "global",
+   "value": "dusk",
+   "history": []
+  },
+  "G-236": {
+   "id": "G-236",
+   "project": null,
+   "attr": "notebook",
+   "scope": "global",
+   "value": "paper",
+   "history": []
+  },
+  "G-237": {
+   "id": "G-237",
+   "project": null,
+   "attr": "calendar",
+   "scope": "global",
+   "value": "wall",
+   "history": []
+  },
+  "G-238": {
+   "id": "G-238",
+   "project": null,
+   "attr": "reminder tone",
+   "scope": "global",
+   "value": "gentle",
+   "history": []
+  },
+  "G-239": {
+   "id": "G-239",
+   "project": null,
+   "attr": "file naming",
+   "scope": "global",
+   "value": "lowercase",
+   "history": []
+  },
+  "G-240": {
+   "id": "G-240",
+   "project": null,
+   "attr": "backup day",
+   "scope": "global",
+   "value": "sunday",
+   "history": []
+  },
+  "G-241": {
+   "id": "G-241",
+   "project": null,
+   "attr": "sketch style",
+   "scope": "global",
+   "value": "pencil",
+   "history": []
+  },
+  "G-242": {
+   "id": "G-242",
+   "project": null,
+   "attr": "label maker",
+   "scope": "global",
+   "value": "embosser",
+   "history": []
+  },
+  "G-243": {
+   "id": "G-243",
+   "project": null,
+   "attr": "plant water",
+   "scope": "global",
+   "value": "tuesday",
+   "history": []
+  },
+  "G-244": {
+   "id": "G-244",
+   "project": null,
+   "attr": "tool oil",
+   "scope": "global",
+   "value": "winter",
+   "history": []
+  },
+  "G-245": {
+   "id": "G-245",
+   "project": null,
+   "attr": "spare key",
+   "scope": "global",
+   "value": "lockbox",
+   "history": []
+  },
+  "G-246": {
+   "id": "G-246",
+   "project": null,
+   "attr": "password book",
+   "scope": "global",
+   "value": "vault",
+   "history": []
+  },
+  "G-247": {
+   "id": "G-247",
+   "project": null,
+   "attr": "plant food",
+   "scope": "global",
+   "value": "pellets",
+   "history": []
+  },
+  "G-248": {
+   "id": "G-248",
+   "project": null,
+   "attr": "grill fuel",
+   "scope": "global",
+   "value": "propane",
+   "history": []
+  },
+  "G-249": {
+   "id": "G-249",
+   "project": null,
+   "attr": "lantern oil",
+   "scope": "global",
+   "value": "citronella",
+   "history": []
+  },
+  "G-250": {
+   "id": "G-250",
+   "project": null,
+   "attr": "quiet hours",
+   "scope": "global",
+   "value": "afternoon",
+   "history": []
+  }
+ },
+ "conflict_ids": {
+  "shed paint": {
+   "Acorn": "A-001",
+   "Birch": "B-002",
+   "Cedar": "C-003",
+   "Dogwood": "D-004",
+   "Elm": "E-005"
+  },
+  "fence wood": {
+   "Acorn": "A-006",
+   "Birch": "B-007",
+   "Cedar": "C-008",
+   "Dogwood": "D-009",
+   "Elm": "E-010"
+  },
+  "gate lock": {
+   "Acorn": "A-011",
+   "Birch": "B-012",
+   "Cedar": "C-013",
+   "Dogwood": "D-014",
+   "Elm": "E-015"
+  },
+  "path material": {
+   "Acorn": "A-016",
+   "Birch": "B-017",
+   "Cedar": "C-018",
+   "Dogwood": "D-019",
+   "Elm": "E-020"
+  },
+  "light timer": {
+   "Acorn": "A-021",
+   "Birch": "B-022",
+   "Cedar": "C-023",
+   "Dogwood": "D-024",
+   "Elm": "E-025"
+  },
+  "tool brand": {
+   "Acorn": "A-026",
+   "Birch": "B-027",
+   "Cedar": "C-028",
+   "Dogwood": "D-029",
+   "Elm": "E-030"
+  }
+ },
+ "corrections": {
+  "A-047": {
+   "Y": "dune engine",
+   "Z": "grove bench"
+  },
+  "A-038": {
+   "Y": "ember compass",
+   "Z": null
+  },
+  "A-053": {
+   "Y": "tundra cabin",
+   "Z": null
+  },
+  "B-101": {
+   "Y": "arctic oven",
+   "Z": "desert hammock"
+  },
+  "B-088": {
+   "Y": "baltic magnet",
+   "Z": null
+  },
+  "B-077": {
+   "Y": "baltic beacon",
+   "Z": null
+  },
+  "C-114": {
+   "Y": "lagoon dial",
+   "Z": "heath oven"
+  },
+  "C-140": {
+   "Y": "fjord beacon",
+   "Z": null
+  },
+  "C-123": {
+   "Y": "alpine fence",
+   "Z": null
+  },
+  "D-178": {
+   "Y": "tundra beacon",
+   "Z": "summit cabin"
+  },
+  "D-157": {
+   "Y": "baltic hammock",
+   "Z": null
+  },
+  "D-148": {
+   "Y": "delta quilt",
+   "Z": null
+  },
+  "E-197": {
+   "Y": "cinder anchor",
+   "Z": "summit oven"
+  },
+  "E-214": {
+   "Y": "island globe",
+   "Z": null
+  },
+  "E-206": {
+   "Y": "lunar drum",
+   "Z": null
+  }
+ },
+ "teaching": [
+  {
+   "seq": 1,
+   "batch": "B00",
+   "level": 1,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-001",
+    "A-006",
+    "A-011",
+    "A-016",
+    "A-021"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. shed paint: alpine yarn.\n2. fence wood: lunar urn.\n3. gate lock: ember kettle.\n4. path material: ember drum.\n5. light timer: willow paddle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 2,
+   "batch": "B01",
+   "level": 1,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-002",
+    "B-007",
+    "B-012",
+    "B-017",
+    "B-022"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. shed paint: tundra vest.\n2. fence wood: grove lantern.\n3. gate lock: jungle engine.\n4. path material: heath bench.\n5. light timer: glacier bench.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 3,
+   "batch": "B02",
+   "level": 1,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-003",
+    "C-008",
+    "C-013",
+    "C-018",
+    "C-023"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. shed paint: glacier vest.\n2. fence wood: island dial.\n3. gate lock: meadow beacon.\n4. path material: baltic drum.\n5. light timer: meadow anchor.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 4,
+   "batch": "B03",
+   "level": 1,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-004",
+    "D-009",
+    "D-014",
+    "D-019",
+    "D-024"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. shed paint: river globe.\n2. fence wood: harbor igloo.\n3. gate lock: cinder radio.\n4. path material: grove cabin.\n5. light timer: ember urn.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 5,
+   "batch": "B04",
+   "level": 1,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-005",
+    "E-010",
+    "E-015",
+    "E-020",
+    "E-025"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. shed paint: prairie compass.\n2. fence wood: inlet quilt.\n3. gate lock: flint oven.\n4. path material: grove yarn.\n5. light timer: inlet compass.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 6,
+   "batch": "B05",
+   "level": 2,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-047",
+    "A-026",
+    "A-064",
+    "A-038",
+    "A-046"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 30: jungle beacon.\n2. tool brand: harbor globe.\n3. custom detail 50: lagoon radio.\n4. custom detail 37: island needle.\n5. custom detail 27: ocean button.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 7,
+   "batch": "B06",
+   "level": 2,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-084",
+    "B-101",
+    "B-075",
+    "B-077",
+    "B-073"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. porch stain: canyon easel.\n2. custom detail 13: heath cabin.\n3. doorbell chime: delta yarn.\n4. custom detail 35: meadow cabin.\n5. custom detail 34: island tent.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 8,
+   "batch": "B07",
+   "level": 2,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-147",
+    "C-137",
+    "C-114",
+    "C-123",
+    "C-140"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. custom detail 31: flint tent.\n2. custom detail 6: nordic drum.\n3. custom detail 37: heath jacket.\n4. custom detail 3: lagoon jacket.\n5. custom detail 30: arctic kettle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 9,
+   "batch": "B08",
+   "level": 2,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-178",
+    "D-172",
+    "D-148",
+    "D-154",
+    "D-157"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 36: dune drum.\n2. custom detail 52: grove engine.\n3. custom detail 15: tundra drum.\n4. custom detail 23: quarry radio.\n5. rain barrel: fjord needle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 10,
+   "batch": "B09",
+   "level": 2,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-206",
+    "E-221",
+    "E-197",
+    "E-214",
+    "E-188"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 59: valley kettle.\n2. compost bin: valley fence.\n3. porch stain: ocean kettle.\n4. custom detail 16: harbor engine.\n5. custom detail 30: baltic button.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 11,
+   "batch": "B10",
+   "level": 2,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-053",
+    "A-061",
+    "A-041",
+    "A-033",
+    "A-054"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 45: lunar compass.\n2. custom detail 11: meadow drum.\n3. custom detail 10: desert bridge.\n4. custom detail 53: nordic bench.\n5. custom detail 1: dune radio.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 12,
+   "batch": "B11",
+   "level": 2,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-088",
+    "B-102",
+    "B-092",
+    "B-104",
+    "B-082"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. custom detail 2: river lantern.\n2. custom detail 14: harbor radio.\n3. custom detail 59: arctic globe.\n4. custom detail 37: tundra oven.\n5. custom detail 5: delta radio.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 13,
+   "batch": "B12",
+   "level": 2,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-141",
+    "C-124",
+    "C-113",
+    "C-131",
+    "C-132"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. rain barrel: summit paddle.\n2. custom detail 36: glacier needle.\n3. custom detail 47: island igloo.\n4. custom detail 16: prairie easel.\n5. custom detail 19: island paddle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 14,
+   "batch": "B13",
+   "level": 2,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-173",
+    "D-182",
+    "D-186",
+    "D-162",
+    "D-166"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 57: nordic bridge.\n2. custom detail 56: glacier lantern.\n3. custom detail 59: ember quilt.\n4. custom detail 49: ocean cabin.\n5. trellis height: lagoon yarn.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 15,
+   "batch": "B14",
+   "level": 2,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-196",
+    "E-195",
+    "E-190",
+    "E-203",
+    "E-216"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 43: summit saddle.\n2. custom detail 15: ocean compass.\n3. custom detail 6: summit bridge.\n4. custom detail 29: island vest.\n5. step light: nordic cabin.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 16,
+   "batch": "B15",
+   "level": 2,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-060",
+    "A-050",
+    "A-051",
+    "A-037",
+    "A-048"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 59: alpine drum.\n2. custom detail 9: willow globe.\n3. mailbox post: valley easel.\n4. compost bin: alpine button.\n5. custom detail 2: flint urn.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 17,
+   "batch": "B16",
+   "level": 2,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-096",
+    "B-100",
+    "B-086",
+    "B-027",
+    "B-099"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. custom detail 22: ocean yarn.\n2. custom detail 54: fjord yarn.\n3. custom detail 38: valley dial.\n4. tool brand: meadow jacket.\n5. custom detail 50: lagoon easel.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 18,
+   "batch": "B17",
+   "level": 2,
+   "kind": "globals",
+   "project": null,
+   "fids": [
+    "G-226",
+    "G-227",
+    "G-228",
+    "G-229",
+    "G-230"
+   ],
+   "text": "General preferences for all our chats — remember:\n1. measurement units: centimeters.\n2. list style: numbered.\n3. time format: 24-hour.\n4. greeting: brief.\n5. summary length: trio.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 19,
+   "batch": "B18",
+   "level": 2,
+   "kind": "globals",
+   "project": null,
+   "fids": [
+    "G-231",
+    "G-232",
+    "G-233",
+    "G-234",
+    "G-235"
+   ],
+   "text": "General preferences for all our chats — remember:\n1. distance units: paces.\n2. volume units: liters.\n3. weight units: grams.\n4. work start: dawn.\n5. work end: dusk.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 20,
+   "batch": "B19",
+   "level": 2,
+   "kind": "globals",
+   "project": null,
+   "fids": [
+    "G-236",
+    "G-237",
+    "G-238",
+    "G-239",
+    "G-240"
+   ],
+   "text": "General preferences for all our chats — remember:\n1. notebook: paper.\n2. calendar: wall.\n3. reminder tone: gentle.\n4. file naming: lowercase.\n5. backup day: sunday.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 21,
+   "batch": "BY-Acorn",
+   "level": 2,
+   "kind": "correct-Y",
+   "project": "Acorn",
+   "fids": [
+    "A-047",
+    "A-038",
+    "A-053"
+   ],
+   "text": "Corrections for project Acorn — remember the new values:\n1. custom detail 30 is now dune engine (previously jungle beacon).\n2. custom detail 37 is now ember compass (previously island needle).\n3. custom detail 45 is now tundra cabin (previously lunar compass).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 22,
+   "batch": "BY-Birch",
+   "level": 2,
+   "kind": "correct-Y",
+   "project": "Birch",
+   "fids": [
+    "B-101",
+    "B-088",
+    "B-077"
+   ],
+   "text": "Corrections for project Birch — remember the new values:\n1. custom detail 13 is now arctic oven (previously heath cabin).\n2. custom detail 2 is now baltic magnet (previously river lantern).\n3. custom detail 35 is now baltic beacon (previously meadow cabin).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 23,
+   "batch": "BY-Cedar",
+   "level": 2,
+   "kind": "correct-Y",
+   "project": "Cedar",
+   "fids": [
+    "C-114",
+    "C-140",
+    "C-123"
+   ],
+   "text": "Corrections for project Cedar — remember the new values:\n1. custom detail 37 is now lagoon dial (previously heath jacket).\n2. custom detail 30 is now fjord beacon (previously arctic kettle).\n3. custom detail 3 is now alpine fence (previously lagoon jacket).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 24,
+   "batch": "BY-Dogwood",
+   "level": 2,
+   "kind": "correct-Y",
+   "project": "Dogwood",
+   "fids": [
+    "D-178",
+    "D-157",
+    "D-148"
+   ],
+   "text": "Corrections for project Dogwood — remember the new values:\n1. custom detail 36 is now tundra beacon (previously dune drum).\n2. rain barrel is now baltic hammock (previously fjord needle).\n3. custom detail 15 is now delta quilt (previously tundra drum).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 25,
+   "batch": "BY-Elm",
+   "level": 2,
+   "kind": "correct-Y",
+   "project": "Elm",
+   "fids": [
+    "E-197",
+    "E-214",
+    "E-206"
+   ],
+   "text": "Corrections for project Elm — remember the new values:\n1. porch stain is now cinder anchor (previously ocean kettle).\n2. custom detail 16 is now island globe (previously harbor engine).\n3. custom detail 59 is now lunar drum (previously valley kettle).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 26,
+   "batch": "B20",
+   "level": 3,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-065",
+    "A-042",
+    "A-045",
+    "A-068",
+    "A-063"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 15: jungle kettle.\n2. custom detail 18: ocean saddle.\n3. custom detail 25: lagoon vest.\n4. custom detail 33: meadow compass.\n5. custom detail 28: fjord magnet.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 27,
+   "batch": "B21",
+   "level": 3,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-069",
+    "A-062",
+    "A-067",
+    "A-049",
+    "A-058"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 44: fjord oven.\n2. custom detail 48: glacier tent.\n3. custom detail 36: delta anchor.\n4. trellis height: jungle jacket.\n5. custom detail 5: dune vest.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 28,
+   "batch": "B22",
+   "level": 3,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-043",
+    "A-031",
+    "A-056",
+    "A-059",
+    "A-039"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 12: ocean urn.\n2. birdbath style: lunar jacket.\n3. custom detail 52: arctic bench.\n4. custom detail 3: desert yarn.\n5. custom detail 40: desert drum.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 29,
+   "batch": "B23",
+   "level": 3,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-035",
+    "A-040",
+    "A-036",
+    "A-032",
+    "A-052"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 32: lagoon lantern.\n2. custom detail 29: willow easel.\n3. custom detail 49: cinder oven.\n4. custom detail 22: prairie igloo.\n5. custom detail 56: willow tent.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 30,
+   "batch": "B24",
+   "level": 3,
+   "kind": "facts",
+   "project": "Acorn",
+   "fids": [
+    "A-044",
+    "A-057",
+    "A-034",
+    "A-066",
+    "A-055"
+   ],
+   "text": "Project Acorn — remember these decisions:\n1. custom detail 24: lagoon tent.\n2. porch stain: valley wheel.\n3. custom detail 57: inlet globe.\n4. custom detail 46: island fence.\n5. custom detail 58: cinder urn.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 31,
+   "batch": "B25",
+   "level": 3,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-089",
+    "B-081",
+    "B-105",
+    "B-072",
+    "B-091"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. birdbath style: jungle globe.\n2. custom detail 57: quarry dial.\n3. custom detail 41: meadow vest.\n4. step light: fjord wheel.\n5. custom detail 8: grove beacon.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 32,
+   "batch": "B26",
+   "level": 3,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-074",
+    "B-106",
+    "B-090",
+    "B-108",
+    "B-094"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. custom detail 4: cinder hammock.\n2. custom detail 3: canyon engine.\n3. custom detail 58: jungle button.\n4. custom detail 9: lunar oven.\n5. custom detail 7: nordic fence.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 33,
+   "batch": "B27",
+   "level": 3,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-093",
+    "B-078",
+    "B-079",
+    "B-080",
+    "B-070"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. custom detail 47: prairie beacon.\n2. custom detail 32: fjord globe.\n3. custom detail 27: willow drum.\n4. custom detail 17: jungle cabin.\n5. custom detail 30: desert igloo.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 34,
+   "batch": "B28",
+   "level": 3,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-103",
+    "B-095",
+    "B-097",
+    "B-085",
+    "B-107"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. rain barrel: river fence.\n2. custom detail 46: glacier easel.\n3. custom detail 51: dune saddle.\n4. custom detail 36: arctic easel.\n5. custom detail 56: river button.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 35,
+   "batch": "B29",
+   "level": 3,
+   "kind": "facts",
+   "project": "Birch",
+   "fids": [
+    "B-076",
+    "B-071",
+    "B-087",
+    "B-098",
+    "B-083"
+   ],
+   "text": "Project Birch — remember these decisions:\n1. custom detail 21: arctic radio.\n2. custom detail 44: alpine cabin.\n3. custom detail 43: heath wheel.\n4. custom detail 52: tundra saddle.\n5. compost bin: dune bridge.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 36,
+   "batch": "B30",
+   "level": 3,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-139",
+    "C-111",
+    "C-128",
+    "C-145",
+    "C-028"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. custom detail 14: tundra magnet.\n2. custom detail 38: quarry drum.\n3. custom detail 50: ocean drum.\n4. custom detail 1: grove drum.\n5. tool brand: glacier bridge.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 37,
+   "batch": "B31",
+   "level": 3,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-118",
+    "C-129",
+    "C-126",
+    "C-117",
+    "C-144"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. custom detail 23: summit vest.\n2. custom detail 7: alpine globe.\n3. custom detail 8: heath quilt.\n4. custom detail 13: lunar quilt.\n5. custom detail 44: heath needle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 38,
+   "batch": "B32",
+   "level": 3,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-112",
+    "C-121",
+    "C-142",
+    "C-116",
+    "C-130"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. custom detail 40: prairie hammock.\n2. custom detail 27: flint lantern.\n3. custom detail 11: inlet cabin.\n4. custom detail 15: harbor bridge.\n5. custom detail 52: nordic tent.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 39,
+   "batch": "B33",
+   "level": 3,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-125",
+    "C-136",
+    "C-135",
+    "C-122",
+    "C-138"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. custom detail 18: ember easel.\n2. birdbath style: canyon igloo.\n3. custom detail 42: river jacket.\n4. custom detail 2: arctic paddle.\n5. custom detail 33: ember yarn.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 40,
+   "batch": "B34",
+   "level": 3,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-109",
+    "C-143",
+    "C-134",
+    "C-133",
+    "C-120"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. step light: summit fence.\n2. custom detail 49: quarry button.\n3. custom detail 59: jungle easel.\n4. custom detail 4: delta cabin.\n5. custom detail 24: nordic needle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 41,
+   "batch": "B35",
+   "level": 3,
+   "kind": "facts",
+   "project": "Cedar",
+   "fids": [
+    "C-146",
+    "C-110",
+    "C-127",
+    "C-119",
+    "C-115"
+   ],
+   "text": "Project Cedar — remember these decisions:\n1. custom detail 35: lagoon urn.\n2. custom detail 17: fjord lantern.\n3. custom detail 25: jungle yarn.\n4. doorbell chime: alpine radio.\n5. porch stain: canyon globe.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 42,
+   "batch": "B36",
+   "level": 3,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-153",
+    "D-159",
+    "D-181",
+    "D-175",
+    "D-155"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 50: canyon tent.\n2. window boxes: tundra fence.\n3. custom detail 27: meadow urn.\n4. custom detail 10: tundra quilt.\n5. custom detail 14: jungle drum.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 43,
+   "batch": "B37",
+   "level": 3,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-179",
+    "D-185",
+    "D-177",
+    "D-160",
+    "D-184"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 12: harbor hammock.\n2. compost bin: tundra hammock.\n3. step light: river vest.\n4. custom detail 2: jungle magnet.\n5. custom detail 26: ember wheel.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 44,
+   "batch": "B38",
+   "level": 3,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-174",
+    "D-165",
+    "D-168",
+    "D-151",
+    "D-180"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 43: alpine kettle.\n2. custom detail 9: heath globe.\n3. custom detail 37: inlet kettle.\n4. custom detail 32: island bench.\n5. custom detail 24: lagoon magnet.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 45,
+   "batch": "B39",
+   "level": 3,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-156",
+    "D-161",
+    "D-152",
+    "D-167",
+    "D-158"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 19: ember fence.\n2. custom detail 35: meadow dial.\n3. doorbell chime: arctic drum.\n4. custom detail 3: ocean fence.\n5. custom detail 44: tundra needle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 46,
+   "batch": "B40",
+   "level": 3,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-176",
+    "D-164",
+    "D-149",
+    "D-163",
+    "D-150"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 8: cinder globe.\n2. custom detail 17: delta kettle.\n3. custom detail 46: harbor wheel.\n4. custom detail 28: lunar hammock.\n5. porch stain: heath hammock.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 47,
+   "batch": "B41",
+   "level": 3,
+   "kind": "facts",
+   "project": "Dogwood",
+   "fids": [
+    "D-171",
+    "D-183",
+    "D-170",
+    "D-169",
+    "D-029"
+   ],
+   "text": "Project Dogwood — remember these decisions:\n1. custom detail 29: grove saddle.\n2. custom detail 38: valley lantern.\n3. custom detail 7: island quilt.\n4. custom detail 5: heath dial.\n5. tool brand: desert vest.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 48,
+   "batch": "B42",
+   "level": 3,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-217",
+    "E-205",
+    "E-211",
+    "E-209",
+    "E-212"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 7: island engine.\n2. custom detail 51: tundra dial.\n3. custom detail 57: dune globe.\n4. custom detail 20: desert globe.\n5. window boxes: ember vest.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 49,
+   "batch": "B43",
+   "level": 3,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-201",
+    "E-189",
+    "E-193",
+    "E-225",
+    "E-204"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. birdbath style: prairie needle.\n2. custom detail 35: summit urn.\n3. custom detail 48: desert button.\n4. custom detail 52: ember magnet.\n5. custom detail 17: desert jacket.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 50,
+   "batch": "B44",
+   "level": 3,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-200",
+    "E-215",
+    "E-030",
+    "E-199",
+    "E-219"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 56: lunar anchor.\n2. custom detail 8: tundra engine.\n3. tool brand: lunar radio.\n4. custom detail 21: baltic tent.\n5. custom detail 32: fjord saddle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 51,
+   "batch": "B45",
+   "level": 3,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-223",
+    "E-210",
+    "E-208",
+    "E-198",
+    "E-220"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 46: flint saddle.\n2. custom detail 2: arctic needle.\n3. custom detail 13: lunar needle.\n4. custom detail 36: grove tent.\n5. custom detail 47: arctic hammock.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 52,
+   "batch": "B46",
+   "level": 3,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-213",
+    "E-218",
+    "E-224",
+    "E-202",
+    "E-191"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 31: grove needle.\n2. custom detail 27: lunar dial.\n3. custom detail 49: harbor beacon.\n4. custom detail 1: dune cabin.\n5. custom detail 28: cinder saddle.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 53,
+   "batch": "B47",
+   "level": 3,
+   "kind": "facts",
+   "project": "Elm",
+   "fids": [
+    "E-222",
+    "E-187",
+    "E-192",
+    "E-207",
+    "E-194"
+   ],
+   "text": "Project Elm — remember these decisions:\n1. custom detail 3: grove button.\n2. custom detail 55: flint drum.\n3. custom detail 54: inlet magnet.\n4. custom detail 22: valley button.\n5. custom detail 58: canyon bench.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 54,
+   "batch": "B48",
+   "level": 3,
+   "kind": "globals",
+   "project": null,
+   "fids": [
+    "G-241",
+    "G-242",
+    "G-243",
+    "G-244",
+    "G-245"
+   ],
+   "text": "General preferences for all our chats — remember:\n1. sketch style: pencil.\n2. label maker: embosser.\n3. plant water: tuesday.\n4. tool oil: winter.\n5. spare key: lockbox.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 55,
+   "batch": "B49",
+   "level": 3,
+   "kind": "globals",
+   "project": null,
+   "fids": [
+    "G-246",
+    "G-247",
+    "G-248",
+    "G-249",
+    "G-250"
+   ],
+   "text": "General preferences for all our chats — remember:\n1. password book: vault.\n2. plant food: pellets.\n3. grill fuel: propane.\n4. lantern oil: citronella.\n5. quiet hours: afternoon.\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 56,
+   "batch": "BZ-Acorn",
+   "level": 3,
+   "kind": "correct-Z",
+   "project": "Acorn",
+   "fids": [
+    "A-047"
+   ],
+   "text": "Further corrections for project Acorn:\n1. custom detail 30 is now grove bench (previously dune engine, originally jungle beacon).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 57,
+   "batch": "BZ-Birch",
+   "level": 3,
+   "kind": "correct-Z",
+   "project": "Birch",
+   "fids": [
+    "B-101"
+   ],
+   "text": "Further corrections for project Birch:\n1. custom detail 13 is now desert hammock (previously arctic oven, originally heath cabin).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 58,
+   "batch": "BZ-Cedar",
+   "level": 3,
+   "kind": "correct-Z",
+   "project": "Cedar",
+   "fids": [
+    "C-114"
+   ],
+   "text": "Further corrections for project Cedar:\n1. custom detail 37 is now heath oven (previously lagoon dial, originally heath jacket).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 59,
+   "batch": "BZ-Dogwood",
+   "level": 3,
+   "kind": "correct-Z",
+   "project": "Dogwood",
+   "fids": [
+    "D-178"
+   ],
+   "text": "Further corrections for project Dogwood:\n1. custom detail 36 is now summit cabin (previously tundra beacon, originally dune drum).\nAcknowledge briefly in one sentence."
+  },
+  {
+   "seq": 60,
+   "batch": "BZ-Elm",
+   "level": 3,
+   "kind": "correct-Z",
+   "project": "Elm",
+   "fids": [
+    "E-197"
+   ],
+   "text": "Further corrections for project Elm:\n1. porch stain is now summit oven (previously cinder anchor, originally ocean kettle).\nAcknowledge briefly in one sentence."
+  }
+ ],
+ "probes": [
+  {
+   "id": "T2-L1-local-0",
+   "level": 1,
+   "kind": "project-local",
+   "project": "Elm",
+   "fids": [
+    "E-010"
+   ],
+   "text": "What did we decide about fence wood for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "inlet quilt"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-local-1",
+   "level": 1,
+   "kind": "project-local",
+   "project": "Elm",
+   "fids": [
+    "E-015"
+   ],
+   "text": "What did we decide about gate lock for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "flint oven"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-local-2",
+   "level": 1,
+   "kind": "project-local",
+   "project": "Elm",
+   "fids": [
+    "E-020"
+   ],
+   "text": "What did we decide about path material for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "grove yarn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-local-3",
+   "level": 1,
+   "kind": "project-local",
+   "project": "Elm",
+   "fids": [
+    "E-025"
+   ],
+   "text": "What did we decide about light timer for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "inlet compass"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-oldest-0",
+   "level": 1,
+   "kind": "oldest",
+   "project": "Acorn",
+   "fids": [
+    "A-001"
+   ],
+   "text": "What did we decide about shed paint for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "alpine yarn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-oldest-1",
+   "level": 1,
+   "kind": "oldest",
+   "project": "Acorn",
+   "fids": [
+    "A-006"
+   ],
+   "text": "What did we decide about fence wood for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "lunar urn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-newest-0",
+   "level": 1,
+   "kind": "newest",
+   "project": "Elm",
+   "fids": [
+    "E-020"
+   ],
+   "text": "What did we decide about path material for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "grove yarn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-newest-1",
+   "level": 1,
+   "kind": "newest",
+   "project": "Elm",
+   "fids": [
+    "E-025"
+   ],
+   "text": "What did we decide about light timer for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "inlet compass"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-conflict-0",
+   "level": 1,
+   "kind": "conflicting",
+   "project": "Acorn",
+   "fids": [
+    "A-001",
+    "B-002"
+   ],
+   "text": "What is the shed paint for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present_absent",
+    "present": [
+     "alpine yarn"
+    ],
+    "absent": [
+     "tundra vest"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-conflict-1",
+   "level": 1,
+   "kind": "conflicting",
+   "project": "Cedar",
+   "fids": [
+    "C-008",
+    "D-009"
+   ],
+   "text": "What is the fence wood for Cedar? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present_absent",
+    "present": [
+     "island dial"
+    ],
+    "absent": [
+     "harbor igloo"
+    ]
+   }
+  },
+  {
+   "id": "T2-L1-AB",
+   "level": 1,
+   "kind": "compare",
+   "project": null,
+   "fids": [
+    "A-001",
+    "B-002"
+   ],
+   "text": "Compare Acorn and Birch: what is the shed paint for each? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "ab",
+    "a": "Acorn",
+    "b": "Birch",
+    "va": "alpine yarn",
+    "vb": "tundra vest"
+   }
+  },
+  {
+   "id": "T2-L1-amb",
+   "level": 1,
+   "kind": "ambiguous",
+   "project": null,
+   "fids": [],
+   "text": "What color should we paint the shed? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "clarify",
+    "absent": [
+     "alpine yarn",
+     "tundra vest",
+     "glacier vest",
+     "river globe",
+     "prairie compass"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-global-0",
+   "level": 2,
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-231"
+   ],
+   "text": "What did we decide about distance units? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "paces"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-global-1",
+   "level": 2,
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-227"
+   ],
+   "text": "What did we decide about list style? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "numbered"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-local-0",
+   "level": 2,
+   "kind": "project-local",
+   "project": "Cedar",
+   "fids": [
+    "C-114"
+   ],
+   "text": "What did we decide about custom detail 37 for Cedar? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "lagoon dial"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-local-1",
+   "level": 2,
+   "kind": "project-local",
+   "project": "Acorn",
+   "fids": [
+    "A-041"
+   ],
+   "text": "What did we decide about custom detail 10 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "desert bridge"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-oldest",
+   "level": 2,
+   "kind": "oldest",
+   "project": "Acorn",
+   "fids": [
+    "A-001"
+   ],
+   "text": "What did we decide about shed paint for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "alpine yarn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-newest",
+   "level": 2,
+   "kind": "newest",
+   "project": "Elm",
+   "fids": [
+    "E-214"
+   ],
+   "text": "What did we decide about custom detail 16 for Elm? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "island globe"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-corr-0",
+   "level": 2,
+   "kind": "corrected",
+   "project": "Cedar",
+   "fids": [
+    "C-123"
+   ],
+   "text": "What is the current custom detail 3 for Cedar? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "alpine fence",
+    "old": "lagoon jacket"
+   }
+  },
+  {
+   "id": "T2-L2-corr-1",
+   "level": 2,
+   "kind": "corrected",
+   "project": "Acorn",
+   "fids": [
+    "A-053"
+   ],
+   "text": "What is the current custom detail 45 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "tundra cabin",
+    "old": "lunar compass"
+   }
+  },
+  {
+   "id": "T2-L2-conflict-0",
+   "level": 2,
+   "kind": "conflicting",
+   "project": "Acorn",
+   "fids": [
+    "A-011",
+    "E-015"
+   ],
+   "text": "What is the gate lock for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present_absent",
+    "present": [
+     "ember kettle"
+    ],
+    "absent": [
+     "flint oven"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-conflict-1",
+   "level": 2,
+   "kind": "conflicting",
+   "project": "Birch",
+   "fids": [
+    "B-017",
+    "C-018"
+   ],
+   "text": "What is the path material for Birch? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present_absent",
+    "present": [
+     "heath bench"
+    ],
+    "absent": [
+     "baltic drum"
+    ]
+   }
+  },
+  {
+   "id": "T2-L2-AB",
+   "level": 2,
+   "kind": "compare",
+   "project": null,
+   "fids": [
+    "A-001",
+    "B-002"
+   ],
+   "text": "Compare Acorn and Birch: what is the shed paint for each? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "ab",
+    "a": "Acorn",
+    "b": "Birch",
+    "va": "alpine yarn",
+    "vb": "tundra vest"
+   }
+  },
+  {
+   "id": "T2-L2-amb",
+   "level": 2,
+   "kind": "ambiguous",
+   "project": null,
+   "fids": [],
+   "text": "What color should we paint the shed? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "clarify",
+    "absent": [
+     "alpine yarn",
+     "tundra vest",
+     "glacier vest",
+     "river globe",
+     "prairie compass"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-global-0",
+   "level": 3,
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-228"
+   ],
+   "text": "What did we decide about time format? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "24-hour"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-global-1",
+   "level": 3,
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-242"
+   ],
+   "text": "What did we decide about label maker? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "embosser"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-local-0",
+   "level": 3,
+   "kind": "project-local",
+   "project": "Cedar",
+   "fids": [
+    "C-109"
+   ],
+   "text": "What did we decide about step light for Cedar? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "summit fence"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-local-1",
+   "level": 3,
+   "kind": "project-local",
+   "project": "Dogwood",
+   "fids": [
+    "D-181"
+   ],
+   "text": "What did we decide about custom detail 27 for Dogwood? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "meadow urn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-oldest",
+   "level": 3,
+   "kind": "oldest",
+   "project": "Acorn",
+   "fids": [
+    "A-001"
+   ],
+   "text": "What did we decide about shed paint for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "alpine yarn"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-newest",
+   "level": 3,
+   "kind": "newest",
+   "project": "Dogwood",
+   "fids": [
+    "D-178"
+   ],
+   "text": "What did we decide about custom detail 36 for Dogwood? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "summit cabin"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-corr-Y",
+   "level": 3,
+   "kind": "corrected",
+   "project": "Acorn",
+   "fids": [
+    "A-038"
+   ],
+   "text": "What is the current custom detail 37 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "ember compass",
+    "old": "island needle"
+   }
+  },
+  {
+   "id": "T2-L3-corr-Z",
+   "level": 3,
+   "kind": "corrected",
+   "project": "Acorn",
+   "fids": [
+    "A-047"
+   ],
+   "text": "What is the current custom detail 30 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "grove bench",
+    "old": "dune engine"
+   }
+  },
+  {
+   "id": "T2-L3-conflict-0",
+   "level": 3,
+   "kind": "conflicting",
+   "project": "Acorn",
+   "fids": [
+    "A-011",
+    "E-015"
+   ],
+   "text": "What is the gate lock for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present_absent",
+    "present": [
+     "ember kettle"
+    ],
+    "absent": [
+     "flint oven"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-conflict-1",
+   "level": 3,
+   "kind": "conflicting",
+   "project": "Birch",
+   "fids": [
+    "B-017",
+    "C-018"
+   ],
+   "text": "What is the path material for Birch? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present_absent",
+    "present": [
+     "heath bench"
+    ],
+    "absent": [
+     "baltic drum"
+    ]
+   }
+  },
+  {
+   "id": "T2-L3-AB",
+   "level": 3,
+   "kind": "compare",
+   "project": null,
+   "fids": [
+    "A-001",
+    "B-002"
+   ],
+   "text": "Compare Acorn and Birch: what is the shed paint for each? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "ab",
+    "a": "Acorn",
+    "b": "Birch",
+    "va": "alpine yarn",
+    "vb": "tundra vest"
+   }
+  },
+  {
+   "id": "T2-L3-amb",
+   "level": 3,
+   "kind": "ambiguous",
+   "project": null,
+   "fids": [],
+   "text": "What color should we paint the shed? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "clarify",
+    "absent": [
+     "alpine yarn",
+     "tundra vest",
+     "glacier vest",
+     "river globe",
+     "prairie compass"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-global-0",
+   "level": "R",
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-246"
+   ],
+   "text": "What did we decide about password book? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "vault"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-global-1",
+   "level": "R",
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-232"
+   ],
+   "text": "What did we decide about volume units? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "liters"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-global-2",
+   "level": "R",
+   "kind": "global",
+   "project": null,
+   "fids": [
+    "G-237"
+   ],
+   "text": "What did we decide about calendar? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "wall"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-Acorn-0",
+   "level": "R",
+   "kind": "project-local",
+   "project": "Acorn",
+   "fids": [
+    "A-044"
+   ],
+   "text": "What did we decide about custom detail 24 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "lagoon tent"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-Acorn-1",
+   "level": "R",
+   "kind": "project-local",
+   "project": "Acorn",
+   "fids": [
+    "A-045"
+   ],
+   "text": "What did we decide about custom detail 25 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "lagoon vest"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-Acorn-2",
+   "level": "R",
+   "kind": "project-local",
+   "project": "Acorn",
+   "fids": [
+    "A-050"
+   ],
+   "text": "What did we decide about custom detail 9 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "willow globe"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-Birch-0",
+   "level": "R",
+   "kind": "project-local",
+   "project": "Birch",
+   "fids": [
+    "B-017"
+   ],
+   "text": "What did we decide about path material for Birch? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "heath bench"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-Birch-1",
+   "level": "R",
+   "kind": "project-local",
+   "project": "Birch",
+   "fids": [
+    "B-103"
+   ],
+   "text": "What did we decide about rain barrel for Birch? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "river fence"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-Birch-2",
+   "level": "R",
+   "kind": "project-local",
+   "project": "Birch",
+   "fids": [
+    "B-081"
+   ],
+   "text": "What did we decide about custom detail 57 for Birch? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "present",
+    "words": [
+     "quarry dial"
+    ]
+   }
+  },
+  {
+   "id": "T2-R-corrY-0",
+   "level": "R",
+   "kind": "corrected",
+   "project": "Acorn",
+   "fids": [
+    "A-038"
+   ],
+   "text": "What is the current custom detail 37 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "ember compass",
+    "old": "island needle"
+   }
+  },
+  {
+   "id": "T2-R-corrY-1",
+   "level": "R",
+   "kind": "corrected",
+   "project": "Acorn",
+   "fids": [
+    "A-053"
+   ],
+   "text": "What is the current custom detail 45 for Acorn? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "tundra cabin",
+    "old": "lunar compass"
+   }
+  },
+  {
+   "id": "T2-R-corrZ",
+   "level": "R",
+   "kind": "corrected",
+   "project": "Birch",
+   "fids": [
+    "B-101"
+   ],
+   "text": "What is the current custom detail 13 for Birch? Answer briefly in one sentence.",
+   "rule": {
+    "rule": "corrected",
+    "new": "desert hammock",
+    "old": "arctic oven"
+   }
+  }
+ ]
+}

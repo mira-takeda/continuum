@@ -147,6 +147,7 @@ h1 em{background:none;color:var(--text)}
 .send-btn:hover{background:#ffffff}
 .stop-btn{background:#3a2320;color:#e8c4bd;border-color:#6e3a34}
 .composer-note{color:var(--quiet)}
+.composer-disclaimer{text-align:center;font-size:9px;color:var(--quiet);margin:4px 0 0;opacity:.75}
 .context-rail{background:var(--panel)}
 .rail-top small{color:var(--quiet)}
 .rail-card{border-color:var(--line);background:var(--panel2)}
