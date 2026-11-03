@@ -94,6 +94,19 @@ The launcher starts the local server and opens
 <http://127.0.0.1:8137/>. If a Continuum server is already running
 there, it just opens the browser.
 
+macOS Gatekeeper note: after downloading/cloning Continuum and
+double-clicking `Start Continuum.command`, macOS may block it because
+the script is not notarized. This warning comes from macOS Gatekeeper;
+it does not mean Continuum detected malware. If that happens:
+
+1. Click "Done".
+2. Open System Settings → Privacy & Security.
+3. Scroll to Security.
+4. Find the message that `Start Continuum.command` was blocked.
+5. Click "Open Anyway".
+6. Authenticate with password/Touch ID if requested.
+7. Confirm "Open".
+
 First run: Continuum detects whether Muse Code is installed. If it is
 missing, the UI explains how to install it with the official installer
 (<https://dev.meta.ai/docs/muse-code/>). If Muse is installed but not
