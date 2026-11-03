@@ -83,9 +83,12 @@ not imply Meta endorsement.
 
 ## Quick start
 
-Windows: double-click `Start Continuum.bat`
+### 1. Easy (recommended)
 
-macOS: double-click `Start Continuum.command`
+No terminal needed:
+
+- Windows: double-click `Start Continuum.bat`
+- macOS: double-click `Start Continuum.command`
 
 The launcher starts the local server and opens
 <http://127.0.0.1:8137/>. If a Continuum server is already running
@@ -98,12 +101,29 @@ authenticated, a **Connect Meta** banner links to the official setup
 flow instead of failing cryptically. Continuum stores no Muse
 credentials; auth belongs entirely to Muse (`muse login`).
 
-Terminal fallback (developers, custom ports):
+### 2. Terminal (technical users):
+
+Windows PowerShell:
+
+```powershell
+git clone <PUBLIC_REPO_URL>
+cd continuum
+python server.py
+```
+
+macOS/Linux:
 
 ```sh
-python server.py            # python3 on macOS/Linux
-python server.py --port 8140
+git clone <PUBLIC_REPO_URL>
+cd continuum
+python3 server.py
 ```
+
+(`<PUBLIC_REPO_URL>` is a placeholder for the public GitHub URL; it
+will be replaced with the real URL after the repository is created.)
+
+Then open <http://127.0.0.1:8137/> in your browser.
+Custom port: `python server.py --port 8140` (`python3` on macOS/Linux).
 
 Stop with Ctrl-C. See [docs/USER_GUIDE.md](docs/USER_GUIDE.md) for the
 full non-technical guide.
