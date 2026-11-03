@@ -106,7 +106,7 @@ credentials; auth belongs entirely to Muse (`muse login`).
 Windows PowerShell:
 
 ```powershell
-git clone <PUBLIC_REPO_URL>
+git clone https://github.com/mira-takeda/continuum.git
 cd continuum
 python server.py
 ```
@@ -114,13 +114,10 @@ python server.py
 macOS/Linux:
 
 ```sh
-git clone <PUBLIC_REPO_URL>
+git clone https://github.com/mira-takeda/continuum.git
 cd continuum
 python3 server.py
 ```
-
-(`<PUBLIC_REPO_URL>` is a placeholder for the public GitHub URL; it
-will be replaced with the real URL after the repository is created.)
 
 Then open <http://127.0.0.1:8137/> in your browser.
 Custom port: `python server.py --port 8140` (`python3` on macOS/Linux).
