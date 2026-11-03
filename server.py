@@ -851,6 +851,145 @@ def run_turn_sse(handler, bid, message, attachments=None):
             pass
 
 
+REFRESH_LABEL = "Refresh Memory (manual)"
+REFRESH_DISPLAY = "Manual memory refresh. Acknowledge briefly."
+
+
+def run_refresh(bid, _host=None):
+    """One forced memory snapshot into the CURRENT native session. Blocking.
+
+    Never creates a session, clears history, resets the project, or alters
+    stored memories. Delivery state commits only after turn/start
+    acceptance; a failure before that leaves state untouched, so the next
+    ordinary turn is unaffected. _host is a test seam (unit tests inject
+    a fake).
+    """
+    P = store.data_paths(ROOT)
+    os.makedirs(P["entries"], exist_ok=True)
+    try:
+        host = _host or get_host()
+    except MSPError as e:
+        return {"ok": False, "error": str(e), "need_install": True}
+    if host.provider == "meta":
+        st = auth_status()
+        if not st["logged_in"]:
+            return {"ok": False,
+                    "error": "Muse Code is not logged in. " + st["text"][:300],
+                    "need_auth": True}
+    lk = turn_lock(bid)
+    if not lk.acquire(blocking=False):
+        return {"ok": False, "error": "A turn is already running in this chat.",
+                "busy": True}
+    t0 = time.time()
+    try:
+        sid = ensure_msp_session(host, bid)
+        sessions = load_json(SESSIONS, {})
+        n = int(sessions.get(bid, 0)) + 1
+        sessions[bid] = n
+        save_json(SESSIONS, sessions)
+        turn = f"s{bid}t{n}"
+        idx = index_mod.load_or_build(ROOT)
+        try:
+            proj_section = projects_mod.assemble(ROOT, bid)
+        except Exception:
+            proj_section = ""
+        try:
+            ops_help = projects_mod.project_ops_help(ROOT, bid)
+        except Exception:
+            ops_help = ""
+        try:
+            plan = delivery_mod.plan_refresh(
+                ROOT, sid=sid, bid=bid, idx=idx, proj_section=proj_section,
+                ops_help=ops_help)
+        except Exception as e:
+            return {"ok": False, "native_sid": sid,
+                    "error": "refresh plan failed: %s" % str(e)[:200]}
+        events = []
+        turn_id = None
+        try:
+            for ev in turn_mod.stream_turn(host, sid, plan["full"],
+                                           REFRESH_DISPLAY, TURN_TIMEOUT):
+                if ev.get("t") == "turn-started":
+                    turn_id = ev.get("turn_id")
+                    ACTIVE_TURNS[bid] = turn_id
+                    if plan.get("commit"):
+                        try:
+                            delivery_mod.commit(ROOT, sid, plan["commit"])
+                        except Exception:
+                            pass
+                events.append(ev)
+        except Exception as e:
+            return {"ok": False, "native_sid": sid,
+                    "error": "refresh stream failed: %s" % str(e)[:200]}
+        finally:
+            ACTIVE_TURNS.pop(bid, None)
+        summary = turn_mod.summarize(events)
+        tok = summary["usage"] or {}
+        try:
+            delivery_mod.note_usage(ROOT, sid, tok.get("promptTokens"))
+        except Exception:
+            pass
+        text = summary["text"]
+        try:
+            display_text = extract_mod.split_ops_block(text)[0]
+        except Exception:
+            display_text = text
+        model_name = f"muse-code/{muse_version() or 'unknown'}"
+        try:
+            writes = extract_mod.apply_ops_from_block(
+                ROOT, text, turn, model_name, active_project=(
+                    projects_mod.active_for(ROOT, bid) or ""))
+        except Exception:
+            writes = []
+        for w in writes or []:
+            if (w.get("kind") or "").startswith(
+                    ("project-", "rejected", "duplicate")):
+                continue
+            try:
+                index_mod.update_one(ROOT, w["entry_id"])
+            except Exception:
+                pass
+        if writes:
+            try:
+                core_mod.rebuild(ROOT)
+            except Exception:
+                pass
+        try:
+            transcript_append(TRANSCRIPTS, bid, REFRESH_LABEL,
+                              display_text or "(no reply)", turn)
+        except Exception:
+            pass
+        try:
+            log_usage({"ts": store.utcnow(), "model": model_name,
+                       "purpose": "refresh", "system": "S2",
+                       "timeout": summary["terminal"] is None,
+                       "prompt_tokens": tok.get("promptTokens"),
+                       "total_tokens": tok.get("totalTokens"),
+                       "agent_chars": len(text),
+                       "latency_ms": int((time.time() - t0) * 1000),
+                       "mocked": False, "provider": host.provider,
+                       "session": sid, "turn": turn_id})
+        except Exception:
+            pass
+        stats = plan.get("stats") or {}
+        if summary["terminal"] != "completed":
+            return {"ok": False, "native_sid": sid,
+                    "terminal": summary["terminal"],
+                    "error": summary.get("error") or "refresh turn did not "
+                             "complete", "mode": stats.get("mode"),
+                    "items": stats.get("items"), "chars": stats.get(
+                        "added_chars")}
+        return {"ok": True, "native_sid": sid, "mode": stats.get("mode"),
+                "items": stats.get("items"), "chars": stats.get("added_chars"),
+                "tokens_est": stats.get("tokens_est"),
+                "reply": (display_text or "")[:300]}
+    finally:
+        try:
+            lk.release()
+        except Exception:
+            pass
+
+
 def lab_state():
     P = store.data_paths(ROOT)
     idx = index_mod.load_or_build(ROOT)
@@ -1431,6 +1570,25 @@ class H(BaseHTTPRequestHandler):
             index_mod.build(ROOT)
             core_mod.rebuild(ROOT)
             return self._send(200, {"undone": bool(r), "op": r})
+        if p == "/api/memory/refresh":
+            b = self._body()
+            if not find_muse():
+                return self._send(409, {"ok": False,
+                                        "error": "Muse Code is not installed.",
+                                        "need_install": True})
+            bid = b.get("session_id") or "demo"
+            try:
+                out = run_refresh(bid)
+            except Exception as e:
+                return self._send(500, {"ok": False,
+                                        "error": "refresh failed: %s"
+                                        % str(e)[:200]})
+            if out.get("ok"):
+                return self._send(200, out)
+            if out.get("busy") or out.get("need_install") \
+                    or out.get("need_auth"):
+                return self._send(409, out)
+            return self._send(500, out)
         if p == "/api/unlink":
             b = self._body()
             try:

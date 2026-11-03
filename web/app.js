@@ -285,6 +285,18 @@ async function renderLabView(node){
   const undo=el('button','project-mini',t('labUndo'));
   undo.addEventListener('click',async()=>{try{await bridge.undoLast();toast(t('undoToast'));renderView()}catch(e){toast(t('errPrefix')+e.message)}});
   node.append(undo);
+  const refr=el('button','project-mini',t('memRefresh'));
+  refr.addEventListener('click',async()=>{
+    if(state.working){toast(t('memBusy'));return}
+    refr.disabled=true;refr.textContent=t('memRefreshing');
+    try{
+      const r=await bridge.refreshMemory(state.sessionId);
+      toast(t('memRefreshed',{n:r.items??0,t:r.tokens_est??0}));
+      renderView();
+    }catch(e){toast(t('errPrefix')+e.message)}
+    finally{refr.disabled=false;refr.textContent=t('memRefresh')}
+  });
+  node.append(refr);
   const evs=(lab.log)||[];
   if(!evs.length)emptyBlock(node,t('labNoChanges'));
   const grid=el('div','alt-grid');

@@ -92,6 +92,7 @@ export class ContinuumBridge {
     return await r.json();
   }
   async undoLast(){return this.post('/api/undo',{});}
+  async refreshMemory(session_id){return this.post('/api/memory/refresh',{session_id});}
   async runtimeStatus(){
     const r=await fetch(`${this.base}/api/runtime/status`,{cache:'no-store'});
     if(!r.ok)throw new Error(`Runtime HTTP ${r.status}`);

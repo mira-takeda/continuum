@@ -377,6 +377,149 @@ def _delta(root, st, sid, bid, message, ret, idx, proj_section):
     return {"mode": stats["mode"], "full": full, "commit": commit, "stats": stats}
 
 
+REFRESH_MESSAGE = ("Manual memory refresh applied above. Acknowledge "
+                     "briefly in one short sentence and continue.")
+
+
+def _sup_line(entries_dir, eid, snap):
+    """Explicit supersession line with Was/Now quotes (refresh restatement)."""
+    try:
+        meta, _ = store.load(entries_dir, eid)
+        nb = meta.get("superseded_by")
+        new_id = nb if isinstance(nb, str) else None
+    except Exception:
+        new_id = None
+    nsnap = _entry_snapshot(entries_dir, new_id) if new_id else None
+    ntitle = nsnap["title"] if nsnap else (new_id or "(pending)")
+    now = (nsnap["body"] if nsnap else "")[:QUOTE_TRUNC]
+    was = snap["body"][:QUOTE_TRUNC]
+    if new_id:
+        line = ('SUPERSEDED [%s] "%s" by [%s] "%s".\nWas: "%s"\nNow: "%s".'
+                % (eid, snap["title"], new_id, ntitle, was, now))
+    else:
+        line = ('SUPERSEDED [%s] "%s" (no longer current).'
+                % (eid, snap["title"]))
+    return line, new_id, nsnap
+
+
+def plan_refresh(root, sid, bid, idx, proj_section, ops_help="",
+                 message=None):
+    """One forced memory snapshot into an EXISTING session. Pure read.
+
+    Unlike plan_turn, this restates current state even for already
+    delivered items (manual user request), but never resends fixed
+    help/protocol text to a session that already got it. Supersessions
+    are explicit Was/Now lines so stale history cannot win. Returns the
+    same {"mode", "full", "commit", "stats"} shape; commit only after
+    turn/start acceptance. A never-bootstrapped sid gets a real
+    bootstrap (help required there).
+    """
+    if message is None:
+        message = REFRESH_MESSAGE
+    with _LOCK:
+        st = _load_state(root)
+        if (st.get("run_id") != RUN_ID
+                or st.get("protocol") != DELIVERY_PROTOCOL):
+            st = {"run_id": RUN_ID, "protocol": DELIVERY_PROTOCOL, "sids": {}}
+            return _bootstrap(
+                root, st, sid, bid, message,
+                {"opened": [], "paths": [], "shortlist": [], "deep": 0},
+                idx, proj_section, ops_help)
+        s = st["sids"].get(sid)
+        if not s or not s.get("bootstrapped"):
+            return _bootstrap(
+                root, st, sid, bid, message,
+                {"opened": [], "paths": [], "shortlist": [], "deep": 0},
+                idx, proj_section, ops_help)
+        return _refresh(root, st, sid, bid, message, idx, proj_section)
+
+
+def _refresh(root, st, sid, bid, message, idx, proj_section):
+    s = st["sids"][sid]
+    entries_dir = store.data_paths(root)["entries"]
+    seen = set(s.get("seen") or [])
+    bodies = dict(s.get("bodies") or {})
+    projs = dict(s.get("projects") or {})
+    try:
+        active = projects_mod.active_for(root, bid)
+    except Exception:
+        active = None
+    # Restate: current working set (core + top index) plus every
+    # still-current delivered body, so recall is restored in one shot.
+    restate = set(_core_ids(root)) | set(_index_top_ids(idx))
+    for eid, h in bodies.items():
+        snap = _entry_snapshot(entries_dir, eid)
+        if snap is not None and snap["status"] == "current" \
+                and content_hash(snap["status"], snap["title"],
+                                 snap["body"]) == h:
+            restate.add(eid)
+    lines_add, lines_sup, lines_wd = [], [], []
+    new_seen, new_bodies = set(), {}
+    for eid in sorted(restate):
+        snap = _entry_snapshot(entries_dir, eid)
+        if snap is None:
+            continue  # delivered-but-deleted handled below if it was ours
+        if snap["status"] != "current":
+            continue  # superseded ids handled by the explicit scan below
+        h = content_hash(snap["status"], snap["title"], snap["body"])
+        body = snap["body"][:BODY_TRUNC]
+        lines_add.append("ADD [%s] %s (%s, %s):\n%s"
+                         % (eid, snap["title"], _type_list(snap["types"]),
+                            snap["status"], body))
+        new_seen.add(eid)
+        new_bodies[eid] = h
+    # Explicit supersessions: EVERY delivered entry now superseded is
+    # re-asserted (no sup_noted skip: the point of a refresh is to make
+    # current state unambiguous against stale native history).
+    sup_noted = dict(s.get("sup_noted") or {})
+    for eid in sorted(seen | set(bodies)):
+        snap = _entry_snapshot(entries_dir, eid)
+        if snap is None:
+            if eid in seen or eid in bodies:
+                lines_wd.append('WITHDRAWN [%s] (entry deleted).' % eid)
+            continue
+        if snap["status"] != "superseded":
+            continue
+        line, new_id, nsnap = _sup_line(entries_dir, eid, snap)
+        lines_sup.append(line)
+        sup_noted[eid] = new_id or ""
+        if new_id and nsnap and len(nsnap["body"]) <= QUOTE_TRUNC:
+            new_bodies[new_id] = content_hash(nsnap["status"], nsnap["title"],
+                                              nsnap["body"])
+        if new_id:
+            new_seen.add(new_id)
+    if active:
+        h = hashlib.sha256((proj_section or "").encode(
+            "utf-8", "replace")).hexdigest()[:16]
+        projs[active] = h  # restated below in full, whatever it was
+    commit = {"seen_add": sorted(new_seen), "bodies": new_bodies,
+              "projects": projs, "last_project": active,
+              "sup_noted": sup_noted}
+    parts = []
+    parts.extend(lines_add)
+    parts.extend(lines_sup)
+    if lines_sup:
+        parts.append("Supersessions above apply only to the named entries. "
+                     "Old values quoted as Was: are NOT current.")
+    parts.extend(lines_wd)
+    parts.append("Compact index:\n" + turn_mod.index_gists_compact(idx))
+    body = "\n".join(parts)
+    if active and proj_section:
+        body += "\n\n" + proj_section
+    n_items = (len(lines_add) + len(lines_sup) + len(lines_wd)
+               + (1 if active and proj_section else 0))
+    full = ("<continuum-refresh>\nManual memory refresh. The statements below "
+            "are the CURRENT authoritative state; where they conflict with "
+            "older memory context earlier in this session, the statements "
+            "below win.\n" + body + "\n</continuum-refresh>\n\n"
+            "USER MESSAGE:\n" + message)
+    added = len(full) - len(message) - len("USER MESSAGE:\n")
+    stats = {"mode": "refresh", "added_chars": added, "items": n_items,
+             "tokens_est": added // 4,
+             "new_entries": len(lines_add), "superseded": len(lines_sup)}
+    return {"mode": "refresh", "full": full, "commit": commit, "stats": stats}
+
+
 def commit(root, sid, commit_data):
     """Record a delivery AFTER turn/start acceptance. Merges, never resets."""
     if not commit_data:
